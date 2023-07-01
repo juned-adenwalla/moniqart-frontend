@@ -137,117 +137,13 @@
                             <h2>Explore <br> Our Categories</h2>
                             <p>Look into yourself, get something in return as your AchievementLook into yourself,
                                 get something Return as your achievement</p>
-                            <a href="courses.html" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
+                            <a href="courses" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
                                 Categories</a>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="row g-4" data-aos="fade-left" data-aos-duration="800">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat1">
-                                            <img src="assets/images/icon/home1/1.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Data Science</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat2">
-                                            <img src="assets/images/icon/home1/2.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">English</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat3">
-                                            <img src="assets/images/icon/home1/3.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Finance</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat1">
-                                            <img src="assets/images/icon/home1/4.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Content
-                                                Writing</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat2">
-                                            <img src="assets/images/icon/home1/5.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Development</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat3">
-                                            <img src="assets/images/icon/home1/6.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Art & Design</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat2">
-                                            <img src="assets/images/icon/home1/7.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Management</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-4">
-                                <div class="categories__item">
-                                    <div class="categories__item-inner">
-                                        <div class="categories__thumb categories__thumb--cat3">
-                                            <img src="assets/images/icon/home1/8.png" alt="course icon">
-                                        </div>
-
-                                        <div class="categories__item-content">
-                                            <a href="course-category.html" class="stretched-link active">Business</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php category_list(); ?>
                         </div>
                     </div>
                 </div>
@@ -293,7 +189,7 @@
                                     <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Expert Trainer</li>
                                     <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Lifetime access</li>
                                 </ul>
-                                <a href="about.html" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
+                                <a href="about-us" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
                                     +</a>
                             </div>
                         </div>
@@ -318,136 +214,7 @@
             <div class="course__wrapper">
                 <div class="course__slider swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/1.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat1">Web Development</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.9</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(526)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="course-details.html">Contrar to popuar belieif loreme Ipsum is an
-                                                not
-                                                consectetur cites of the word in...</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="mentor-details.html"><img src="assets/images/avatar/1.png"
-                                                    alt="avatar"> Jhon
-                                                Doe</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/2.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save course__btn--active"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat1">English</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(1326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="course-details.html">How to Learning Basic English
-                                                Strategy for Research</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="mentor-details.html"><img src="assets/images/avatar/2.png"
-                                                    alt="avatar"> Jenny
-                                                Wilsone</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/3.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat2">Content Writing</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="course-details.html">Content is King: Writing Killer Conte-nt Web
-                                                & Marketing</a>
-                                        </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="mentor-details.html"><img src="assets/images/avatar/3.png"
-                                                    alt="avatar"> Theresa
-                                                Webb</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/4.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save course__btn--active"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat3">Art & Design</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(2326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="course-details.html">How to Learning Basic design
-                                                Strategy for Research.</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="mentor-details.html"><img src="assets/images/avatar/4.png"
-                                                    alt="avatar"> Wade
-                                                Warren</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php displayCourses(null, null, 'slider'); ?>
                     </div>
                     <div class="slider__pagination-1"></div>
                 </div>
@@ -923,21 +690,7 @@
 
 
     <!-- ===============>> newsletter start here <<================= -->
-    <div class="newsletter" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            <div class="newsletter__wrapper">
-                <div class="newsletter__content">
-                    <div class="newsletter__content-inner newsletter__content-inner--style1 text-center"
-                        style="background-image:url(assets/images/footer/2.png)">
-                        <h2>Get free Pro memberships for
-                            your high school class</h2>
-
-                        <a href="signin.html" class="trk-btn trk-btn--rounded trk-btn--primary1">Join With Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('templates/_newsletter.php'); ?>
     <!-- ===============>> newsletter end here <<================= -->
 
 

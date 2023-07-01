@@ -9,43 +9,43 @@ include('includes/_functions.php');
                 <div class="header-wrapper">
                     <div class="header-start header-start--style1">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index">
                                 <img src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>" alt="logo">
                             </a>
                         </div>
                         <div class="menu-area">
                             <ul class="menu menu--style1">
                                 <li>
-                                    <a href="#0">Homes </a>
-                                    <ul class="submenu">
+                                    <a href="/">Homes </a>
+                                    <!-- <ul class="submenu">
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index-2.html">Home 2</a></li>
                                         <li><a href="index-3.html">Home 3</a></li>
                                         <li><a href="index-4.html">Home 4</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
                                 <li>
-                                    <a href="#0">Courses</a>
-                                    <ul class="submenu">
+                                    <a href="courses">Courses</a>
+                                    <!-- <ul class="submenu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="course-details.html">Courses Details</a></li>
                                         <li><a href="course-category.html">Course Category</a></li>
                                         <li><a href="course-category.html">Course Category</a></li>
                                         <li><a href="mentors.html">Mentors</a></li>
                                         <li><a href="mentor-details.html">Mentor Details</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
                                 <li>
-                                    <a href="#0">Blogs</a>
-                                    <ul class="submenu">
+                                    <a href="blogs">Blogs</a>
+                                    <!-- <ul class="submenu">
                                         <li><a href="blogs.html">Blogs </a></li>
                                         <li><a href="blogs-2.html">Blogs 2 </a></li>
                                         <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
                                 <li>
-                                    <a href="#0">Pages</a>
-                                    <ul class="submenu">
+                                    <a href="about-us">About Us</a>
+                                    <!-- <ul class="submenu">
                                                                                 <li><a href="about.html">About Us</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="cart.html">Cart</a></li>
@@ -55,11 +55,11 @@ include('includes/_functions.php');
                                         <li><a href="forgot-pass.html">Reset Password</a></li>
                                         <li><a href="404.html">404 Error</a></li>
                                         
-                                    </ul>
+                                    </ul> -->
 
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="contact">Contact Us</a>
                                 </li>
                             </ul>
 
@@ -68,7 +68,7 @@ include('includes/_functions.php');
                     <div class="header-end">
                         <div class="menu-area">
                             <div class="header-btn">
-                                <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">
                                     <span>Sign Up</span>
                                 </a>
                             </div>
