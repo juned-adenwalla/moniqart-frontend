@@ -24,123 +24,37 @@
 <body>
 
 
-    <!-- ===============>> Preloader start here <<================= -->
-
-    <div class="preloader">
-        <div class="preloader__book">
-            <div class="inner">
-                <div class="left"></div>
-                <div class="right"></div>
-                <div class="middle"></div>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
+     <!-- ===============>> Preloader start here <<================= -->
+     <?php include('templates/_preloader.php'); ?>
     <!-- ===============>> Preloader end here <<================= -->
 
 
     <!-- ===============>> Header section start here <<================= -->
-    <header class="header-section header-section--style2">
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="header-start header-start--style1">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="menu-area">
-                            <ul class="menu menu--style1">
-                                <li>
-                                    <a href="#0">Homes </a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                        <li><a href="index-4.html">Home 4</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Courses</a>
-                                    <ul class="submenu">
-                                        <li><a href="courses.html">Courses</a></li>
-                                        <li><a href="course-details.html">Courses Details</a></li>
-                                        <li><a href="course-category.html">Course Category</a></li>
-                                        <li><a href="mentors.html">Mentors</a></li>
-                                        <li><a href="mentor-details.html">Mentor Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Blogs</a>
-                                    <ul class="submenu">
-                                        <li><a href="blogs.html">Blogs </a></li>
-                                        <li><a href="blogs-2.html">Blogs 2 </a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Pages</a>
-                                    <ul class="submenu">
-                                                                                <li><a href="about.html">About Us</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">checkout</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                        <li><a href="signin.html">Sign In</a></li>
-                                        <li><a href="forgot-pass.html">Reset Password</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact Us</a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="header-end">
-                        <div class="menu-area">
-                            <div class="header-btn">
-                                <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--primary1">
-                                    <span>Sign Up</span>
-                                </a>
-                            </div>
-
-                            <!-- toggle icons -->
-                            <div class="header-bar d-xl-none home1">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include('templates/_header.php'); ?>
     <!-- ===============>> Header section end here <<================= -->
+    <?php
 
+    if(isset($_POST['register'])){
+        // Collect form data
+        $username = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $password = $_POST['password'];
+        
+        // Call the userSignup function
+        $signupResult = userRegister($username, $email, $phone, $password);
+        if ($signupResult) {
+            // Signup successful, redirect to a success page
+            echo "<script>window.location.href = 'verify';</script>";
+            exit();
+        } else {
+            // Signup failed, redirect back to the signup page with an error message
+            echo "<script>window.location.href = 'signin';</script>";
+            exit();
+        }
+    }
+
+    ?>
 
 
     <!-- ==========Page Header Section Starts Here========== -->
@@ -176,11 +90,11 @@
                                 <p>Start your 30-day free trail.</p>
                             </div>
                             <!-- account form -->
-                            <form action="#" class="account__form">
+                            <form action="#" method="post" class="account__form">
                                 <div class="row g-4">
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="account-name"
+                                            <input type="text" name="name" class="form-control" id="account-name"
                                                 placeholder="Enter name" required>
                                             <div class="valid-tooltip">
                                                 Looks good!
@@ -192,7 +106,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="email" class="form-control" id="account-email"
+                                            <input type="email" name="email" class="form-control" id="account-email"
                                                 placeholder="Enter email" required>
                                             <div class="valid-tooltip">
                                                 This email is valid
@@ -204,7 +118,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="account-mobile"
+                                            <input type="text" name="phone" class="form-control" id="account-mobile"
                                                 placeholder="Enter number" required>
                                             <div class="valid-tooltip">
                                                 This mobile is valid
@@ -219,7 +133,7 @@
                                         <div class="input-group">
                                             <!-- <span class="input-group-icon"><i
                                                     class="fa-solid fa-eye"></i></span> -->
-                                            <input type="password" class="form-control showhide-pass" id="account-pass"
+                                            <input type="password" name="password" class="form-control showhide-pass" id="account-pass"
                                                 placeholder="Password" required>
 
                                             <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon"
@@ -236,7 +150,7 @@
 
                                 <div class="account__form-passcheck">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="" id="terms-check">
+                                        <input type="checkbox" class="form-check-input" value="" id="terms-check" required>
                                         <label for="terms-check" class="form-check-label">
                                             Agree to our <a href="#"> terms & conditions</a>
                                         </label>
@@ -246,7 +160,7 @@
                                     </div> -->
                                 </div>
 
-                                <button type="submit"
+                                <button type="submit" name="register"
                                     class="trk-btn trk-btn--border trk-btn--secondary1 d-block mt-4">Sign Up</button>
                             </form>
                             <!-- account social -->
@@ -275,161 +189,7 @@
 
 
     <!-- ===============>> footer start here <<================= -->
-    <footer class="footer brand-1" style="background-image:url(assets/images/footer/1.png)">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__top padding-top padding-bottom ">
-                    <div class="row g-5">
-                        <div class="col-xl-4 col-md-6">
-                            <div class="footer__about">
-                                <a href="index.html" class="footer__about-logo"><img src="assets/images/logo/logo.png"
-                                        alt="Logo"></a>
-                                <p class="footer__about-moto">You minim mollit non deserunt ullamco est sit aliqua dolor
-                                    do
-                                    amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam
-                                    consequat
-                                    sunt nostrud amet.</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-sm-6">
-                            <div class="footer__links">
-                                <div class="footer__links-item">
-                                    <div class="footer__links-tittle">
-                                        <h6>Get In Touch</h6>
-                                    </div>
-                                    <ul class="footer__about-info">
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/1.svg" alt="icon">
-                                                <div class="info">
-                                                    <p class="m-0">4517 Washington Ave. Manchester, Kentucky
-                                                        39495
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/2.svg" alt="icon">
-                                                <div class="info"> <a
-                                                        href="mailto:felicia.reid@example.com">felicia.reid@example.com</a>
-                                                    <br>
-                                                    <a href="mailto:debra.holt@example.com">debra.holt@example.com</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/3.svg" alt="icon">
-                                                <div class="info"> <a href="tel:+2075550119">(207) 555-0119</a>
-                                                    <br>
-                                                    <a href="tel:+7025550122">(702) 555-0122</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-sm-6">
-                            <div class="footer__links">
-                                <div class="footer__links-tittle">
-                                    <h6>Explore Links</h6>
-                                </div>
-                                <div class="footer__links-content">
-                                    <div class="footer__links-content">
-                                        <ul class="footer__linklist">
-                                            <li class="footer__linklist-item"> <a href="courses.html">Courses</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="about.html">About Us</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Content
-                                                    Writing</a> </li>
-                                            <li class="footer__linklist-item"> <a
-                                                    href="course-details.html">Management</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Web
-                                                    Development</a>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Art &
-                                                    Design</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-12">
-                            <div class="footer__links">
-                                <div class="footer__links-tittle">
-                                    <h6>Office Time</h6>
-                                </div>
-                                <div class="footer__links-content">
-                                    <ul class="footer__linklist">
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Mon-Sat: 10:00AM - 4.00PM</p>
-                                        </li>
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Sunday: 10:00AM - 4.00PM</p>
-                                        </li>
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Friday: Close</p>
-                                        </li>
-                                    </ul>
-                                    <ul class="social mt-4">
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-instagram"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-youtube"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="signin.html" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="footer__bottom">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer__end">
-                                <div class="footer__end-copyright">
-                                    <p class=" mb-0">© 2023 Copyright | All Rights Reserved </p>
-                                </div>
-                                <div>
-                                    <ul class="footer__end-links">
-                                        <li class="footer__end-item">
-                                            <a href="#"> Terms & Conditions </a>
-                                        </li>
-                                        <li class="footer__end-item">
-                                            <a href="#"> Privacy Policy </a>
-                                        </li>
-                                        <li class="footer__end-item">
-                                            <a href="#"> Sitemap </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include('templates/_footer.php'); ?>
     <!-- ===============>> footer end here <<================= -->
 
 

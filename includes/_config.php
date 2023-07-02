@@ -8,7 +8,7 @@ $db_host = $json_data["db_server"];
 $db_user = $json_data["db_username"];
 $db_password = $json_data["db_password"];
 $db_name = $json_data["db_name"];
-$base_url = $json_data["site_url"];
+$site_url = $json_data["site_url"];
 $dashboard_url = $json_data["dashboard_url"];
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 // Check connection

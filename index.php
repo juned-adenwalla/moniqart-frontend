@@ -214,7 +214,7 @@
             <div class="course__wrapper">
                 <div class="course__slider swiper">
                     <div class="swiper-wrapper">
-                        <?php displayCourses(null, null, 'slider'); ?>
+                        <?php displayCourses(null, null, 'slider', 5); ?>
                     </div>
                     <div class="slider__pagination-1"></div>
                 </div>
@@ -562,75 +562,7 @@
             </div>
             <div class="blog__wrapper">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/1.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat3">Art & Design</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Why Product Thinking is the next big thing in UX
-                                            Design</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            30
-                                            January 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/2.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat2">Business</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Range Input That Looks Consistent Across All
-                                            Browser</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            13
-                                            March 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/3.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat1">Development</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Generating RPG Tethered Assets: Phase of
-                                            Development</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            21
-                                            April 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php displayBlogPosts(null,null,1,3); ?>
                 </div>
             </div>
         </div>

@@ -1,6 +1,10 @@
 <?php 
-
+session_start();
 include('includes/_functions.php');
+
+if (isset($_POST['currency'])) {
+    $_SESSION['baseCurrency'] = $_POST['currency'];
+}
 
 ?>
 <header class="header-section brand-1">
@@ -16,7 +20,7 @@ include('includes/_functions.php');
                         <div class="menu-area">
                             <ul class="menu menu--style1">
                                 <li>
-                                    <a href="/">Homes </a>
+                                    <a href="<?php echo frontend_url(''); ?>">Homes </a>
                                     <!-- <ul class="submenu">
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index-2.html">Home 2</a></li>
@@ -68,6 +72,11 @@ include('includes/_functions.php');
                     <div class="header-end">
                         <div class="menu-area">
                             <div class="header-btn">
+                                <form action="#" method="post">
+                                    <select name="currency" onchange="this.form.submit()">
+                                        <?php _allcurrency(); ?>
+                                    </select>
+                                </form>
                                 <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">
                                     <span>Sign Up</span>
                                 </a>
