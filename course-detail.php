@@ -33,7 +33,11 @@
     <?php include('templates/_header.php'); ?>
     <!-- ===============>> Header section end here <<================= -->
     <?php
-        $param = $_GET['id'];
+        if(isset($_GET['id'])){
+            $param = $_GET['id'];
+        }else{
+            echo "<script>window.location.href = 'courses';</script>";
+        }
 
         // Single Course Data 
         $courseName = singleDetail('tblcourse', '_parmalink', $param, '_coursename');
@@ -55,7 +59,12 @@
         $courseEndDate = singleDetail('tblcourse', '_parmalink', $param, '_enddate');
         $coursePreviewURL = singleDetail('tblcourse', '_parmalink', $param, '_previewurl');
         $courseid = singleDetail('tblcourse', '_parmalink', $param, '_id');
-
+        // Get the current date
+        $currentDate = date('d F Y');
+        
+        // Convert both dates to comparable formats
+        $timestampToCompare = strtotime($courseEndDate);
+        $formattedCurrentDate = date('d F Y', time());
         // Lesson Plan Data 
 
     ?>
@@ -92,13 +101,19 @@
                         </div>
                         <div class="coursedetails__offer">
                             <div class="coursedetails__offer-price">
-                                <h3><?php echo currency_symbol($_SESSION['baseCurrency']);echo _conversion($coursePrice,$_SESSION['baseCurrency']); ?></h3> <span><?php echo currency_symbol($_SESSION['baseCurrency']);echo _conversion($courseDiscountedPrice,$_SESSION['baseCurrency']); ?></span>
+                                <h3><?php echo currency_symbol($_SESSION['baseCurrency']);echo _conversion($courseDiscountedPrice,$_SESSION['baseCurrency']); ?></h3> <span><?php echo currency_symbol($_SESSION['baseCurrency']);echo _conversion($coursePrice,$_SESSION['baseCurrency']); ?></span>
                             </div>
                             <div class="coursedetails__offer-time">
                                 <p><i class="fa-solid fa-chart-simple"></i> <span><?php echo $courseCourseType;?></span> Level</p>
                             </div>
-                            <a href="signin.html" class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Buy
+                            <?php 
+                            if($formattedCurrentDate > $courseEndDate){ ?>
+                                <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
+                            <?php }else{ ?>
+                                <a href="checkout?id=<?php echo $param; ?>&type=course" class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Buy
                                 Now</a>
+                            <?php }
+                            ?>
 
                             <div class="coursedetails__offer-social">
                                 <ul class="social">
@@ -191,14 +206,14 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" content
                                     aria-labelledby="pills-overview-tab" tabindex="0">
-                                    <div class="coursedetails__overview">
+                                    <div class="coursedetails__overview" style="margin-top: 20px;">
                                         <?php echo $courseDetailDesc; ?>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-curriculum" role="tabpanel"
                                     aria-labelledby="pills-curriculum-tab" tabindex="0">
                                     <div class="coursedetails__curriculum">
-                                        <div class="coursedetails__overview">
+                                        <div class="coursedetails__overview" style="margin-top: 20px;">
                                             <?php echo $courseWhatLearn; ?>
                                         </div>
                                     </div>
@@ -206,14 +221,14 @@
                                 <div class="tab-pane fade" id="pills-requirment" role="tabpanel"
                                     aria-labelledby="pills-requirment-tab" tabindex="0">
                                     <div class="coursedetails__requirment">
-                                        <div class="coursedetails__requirment">
+                                        <div class="coursedetails__requirment" style="margin-top: 20px;">
                                             <?php echo $courseRequirment; ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-eligibility" role="tabpanel"
                                     aria-labelledby="pills-eligibility-tab" tabindex="0">
-                                    <div class="coursedetails__eligibility">
+                                    <div class="coursedetails__eligibility" style="margin-top: 20px;">
                                         <div class="coursedetails__eligibility">
                                             <?php echo $courseEligibility; ?>
                                         </div>

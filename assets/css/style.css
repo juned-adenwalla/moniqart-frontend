@@ -40,7 +40,7 @@ Tags: LMS , Online learning managment.
 }
 
 .header-wrapper .header-start--style1 {
-  align-items: flex-end;
+  /* align-items: center; */
 }
 
 .categories--style2 .categories__item-btn {

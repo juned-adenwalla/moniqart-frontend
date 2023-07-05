@@ -43,15 +43,6 @@
         
         // Call the userSignup function
         $signupResult = userRegister($username, $email, $phone, $password);
-        if ($signupResult) {
-            // Signup successful, redirect to a success page
-            echo "<script>window.location.href = 'verify';</script>";
-            exit();
-        } else {
-            // Signup failed, redirect back to the signup page with an error message
-            echo "<script>window.location.href = 'signin';</script>";
-            exit();
-        }
     }
 
     ?>
@@ -164,15 +155,15 @@
                                     class="trk-btn trk-btn--border trk-btn--secondary1 d-block mt-4">Sign Up</button>
                             </form>
                             <!-- account social -->
-                            <div class="account__social">
+                            <!-- <div class="account__social">
                                 <a href="#" class="account__social-btn"><span><img src="assets/images/others/google.svg"
                                             alt="google icon"></span>
                                     Sign in with google
                                 </a>
-                            </div>
+                            </div> -->
 
                             <div class="account__switch">
-                                <p>Already have an account? <a href="signin.html">Log in</a></p>
+                                <p>Already have an account? <a href="signin">Log in</a></p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +174,9 @@
     <!-- ===============>> account end here <<================= -->
 
 
-
+    <!-- ===============>> newsletter start here <<================= -->
+    <?php include('templates/_newsletter.php'); ?>
+    <!-- ===============>> newsletter end here <<================= -->
 
 
 

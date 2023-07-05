@@ -1,9 +1,17 @@
 <?php 
 session_start();
 include('includes/_functions.php');
+date_default_timezone_set(_siteconfig('_timezone'));
 
 if (isset($_POST['currency'])) {
     $_SESSION['baseCurrency'] = $_POST['currency'];
+}else{
+    if(!isset($_SESSION['baseCurrency'])){
+        $_SESSION['baseCurrency'] = 'INR';
+    }
+}
+if(!isset($_POST['payment'])){
+    $_SESSION['discount'] = null;
 }
 
 ?>
@@ -14,7 +22,7 @@ if (isset($_POST['currency'])) {
                     <div class="header-start header-start--style1">
                         <div class="logo">
                             <a href="index">
-                                <img src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>" alt="logo">
+                                <img style="width: 180px;" src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>" alt="logo">
                             </a>
                         </div>
                         <div class="menu-area">
@@ -77,8 +85,17 @@ if (isset($_POST['currency'])) {
                                         <?php _allcurrency(); ?>
                                     </select>
                                 </form>
-                                <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">
-                                    <span>Sign Up</span>
+                                    <?php 
+                                    if(isset($_SESSION['userid'])){ ?>
+                                        <a href="my-account" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                            <span>Dashboard</span>
+                                        </a>
+                                    <?php }else{ ?>
+                                        <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                            <span>Signup</span>
+                                        </a>
+                                    <?php }
+                                    ?>
                                 </a>
                             </div>
 

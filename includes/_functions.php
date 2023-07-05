@@ -1,5 +1,13 @@
 <?php 
 
+// Function limit text 
+function limitText($text, $limit) {
+    if (strlen($text) > $limit) {
+        $text = substr($text, 0, $limit) . "...";
+    }
+    return $text;
+}
+
 // Function to call site settings 
 function _siteconfig($param)
 {
@@ -81,6 +89,8 @@ function _conversion($amount, $currency)
             $price = $data['_price'];
         }
         return $amount * $price;
+    }else{
+        return 'Not converted';
     }
 }
 
@@ -260,7 +270,7 @@ function currency_symbol($cur){
     );
 
     if(array_key_exists($cur,$currencies)){
-        return $currencies[$cur];
+      return $currencies[$cur];
     }else{
         return $cur;
     }
@@ -270,7 +280,7 @@ function currency_symbol($cur){
 function singleDetail($tableName, $columnName, $columnValue, $returnColumn){
     require('_config.php');
     // Prepare the SQL query
-    $query = "SELECT * FROM `$tableName` WHERE `$columnName` = '$columnValue'";
+    $query = "SELECT * FROM `$tableName` WHERE `$columnName` = '$columnValue' ORDER BY `_id` DESC LIMIT 1";
 
     // Execute the query
     $result = mysqli_query($conn, $query);
@@ -420,7 +430,7 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                                     <div class="course__content-bottom">
                                         <a><img src="assets/images/avatar/1.png" alt="avatar">' . singleDetail('tblusers', '_id', $mentorName, '_username') . '</a>
                                         <div class="course-price">
-                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' ._conversion($discountPrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' ._conversion($coursePrice,$_SESSION['baseCurrency']) . '</span>
+                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($discountPrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($coursePrice,$_SESSION['baseCurrency']) . '</span>
                                         </div>
                                     </div>
                                 </div>
@@ -443,7 +453,7 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                                     <div class="course__content-bottom">
                                         <a><img src="assets/images/avatar/2.png" alt="avatar">' . singleDetail('tblusers', '_id', $mentorName, '_username') . '</a>
                                         <div class="course-price">
-                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' ._conversion($discountPrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' ._conversion($coursePrice,$_SESSION['baseCurrency']) . '</span>
+                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($discountPrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($coursePrice,$_SESSION['baseCurrency']) . '</span>
                                         </div>
                                     </div>
                                 </div>
@@ -581,8 +591,24 @@ function displayLessonPlans($courseid){
 
 // Function user register 
 function userRegister($username, $email, $phone, $password){
-    // Your database connection code here
     require('_config.php');
+
+    // Check if the phone number or email already exists
+    $checkQuery = "SELECT COUNT(*) FROM `tblusers` WHERE `_userphone` = ? OR `_useremail` = ?";
+    $checkStmt = mysqli_prepare($conn, $checkQuery);
+    mysqli_stmt_bind_param($checkStmt, "ss", $phone, $email);
+    mysqli_stmt_execute($checkStmt);
+    mysqli_stmt_bind_result($checkStmt, $count);
+    mysqli_stmt_fetch($checkStmt);
+    mysqli_stmt_close($checkStmt);
+
+    if ($count > 0) {
+        // Phone number or email already exists
+        require('includes/_alert.php');
+        $alert = new PHPAlert();
+        $alert->warn("User Already Exists");
+        return false;
+    }
 
     // Generate an OTP (One-Time Password)
     $otp = rand(100000, 999999);
@@ -592,7 +618,7 @@ function userRegister($username, $email, $phone, $password){
 
     // Prepare and bind the INSERT statement with prepared statements
     $query = "INSERT INTO `tblusers`(`_username`, `_useremail`, `_userphone`, `_usertype`, `_userstatus`, `_userpassword`, `_userotp`, `_userverify`)
-              VALUES (?, ?, ?, 0, 'true', ?, ?, 'false')";
+            VALUES (?, ?, ?, 0, 'true', ?, ?, 'false')";
 
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "sssss", $username, $email, $phone, $hashedPassword, $otp);
@@ -603,12 +629,13 @@ function userRegister($username, $email, $phone, $password){
     // Check if the query was successful
     if ($result) {
         // User signup successful
-        sendSMS($phone,$otp);
-        return true;
-   
+        sendSMS($phone, $otp);
+        echo "<script>window.location.href = 'verify?phone=" . $phone . "';</script>";
     } else {
         // User signup failed
-        echo false;
+        require('includes/_alert.php');
+        $alert = new PHPAlert();
+        $alert->warn("Something Went Wrong");
     }
 
     // Close the prepared statement and database connection
@@ -654,6 +681,548 @@ function sendSMS($phone,$message){
     } else {
       return true;
     }
+}
+
+// Function to verify OTP 
+function verifyOTP($phone,$otp){
+    require('_config.php');
+     // Your database connection code here
+
+    // Fetch the stored OTP for the given email from the database
+    $query = "SELECT `_userotp` FROM `tblusers` WHERE `_userphone` = '$phone' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $storedOTP = $row['_userotp'];
+
+        // Compare the stored OTP with the OTP entered by the user
+        if ($storedOTP == $otp) {
+            // OTP is verified
+            // Update the user's verification status in the database
+            $updateQuery = "UPDATE `tblusers` SET `_userverify` = 'true' WHERE `_userphone` = '$phone'";
+            mysqli_query($conn, $updateQuery);
+
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    return false;
+}
+
+// Function to login user 
+function userLogin($emailOrPhone, $password) {
+    require('_config.php');
+
+    // Prepare and bind the SELECT statement with prepared statements
+    $query = "SELECT `_userphone`, `_userpassword` FROM `tblusers` WHERE `_useremail` = ? OR `_userphone` = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "ss", $emailOrPhone, $emailOrPhone);
+
+    // Execute the prepared statement
+    mysqli_stmt_execute($stmt);
+
+    // Fetch the result
+    $result = mysqli_stmt_get_result($stmt);
+
+    // Check if a row is returned
+    if ($row = mysqli_fetch_assoc($result)) {
+        // Verify the password
+        if (password_verify($password, $row['_userpassword'])) {
+            // Password is correct, retrieve the user ID
+            $userid = $row['_userphone'];
+
+            // Store the user ID in the session
+            $_SESSION['userid'] = $userid;
+
+            // Close the prepared statement and database connection
+            mysqli_stmt_close($stmt);
+            mysqli_close($conn);
+
+            // Login successful
+            return true;
+        }else{
+            require('includes/_alert.php');
+            $alert = new PHPAlert();
+            $alert->warn("Wrong Password");
+        }
+    }else{
+        require('includes/_alert.php');
+        $alert = new PHPAlert();
+        $alert->warn("User Not Found");
+    }
+
+    // Close the prepared statement and database connection
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    // Login failed
+    return false;
+}
+
+// Function to reset password 
+function resetPassword($phone) {
+    // Your database connection code here
+    require('_config.php');
+
+    // Generate a new password
+    $newPassword = rand(100000, 999999);
+
+    // Hash the new password for security
+    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+    // Prepare and bind the UPDATE statement with prepared statements
+    $query = "UPDATE `tblusers` SET `_userpassword` = ? WHERE `_useremail` = ? OR `_userphone` = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "sss", $hashedPassword, $phone, $phone);
+
+    // Execute the prepared statement
+    $result = mysqli_stmt_execute($stmt);
+
+    // Check if the query was successful
+    if ($result) {
+        // Password reset successful
+
+        // Close the prepared statement and database connection
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+
+        // Return the new password
+        sendSMS($phone,$newPassword);
+        require('includes/_alert.php');
+        $alert = new PHPAlert();
+        $alert->success("Password Reset Done");
+    } else {
+        // Password reset failed
+
+        // Close the prepared statement and database connection
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+
+        return false;
+    }
+}
+
+// Function to update profile 
+function updateUser($username, $email, $phone, $bio, $age, $location, $state, $pin) {
+    // Your database connection code here
+    require('_config.php');
+    require('_alert.php');
+    $user = $_SESSION['userid'];
+    // Get the current user's information
+    $query = "SELECT _useremail, _userphone FROM tblusers WHERE _userphone = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "s", $user);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $currentEmail, $currentPhone);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+
+    // Check if email or phone number has changed
+    if ($email !== $currentEmail || $phone !== $currentPhone) {
+        // Check if the new email or phone number is linked with any other account
+        $query = "SELECT COUNT(*) AS count FROM tblusers WHERE (_useremail = ? OR _userphone = ?) AND _userphone <> ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "sss", $email, $phone, $user);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $count);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
+
+        if ($count > 0) {
+            // New email or phone number is linked with another account
+            $alert = new PHPAlert();
+            $alert->warn("Email or Phone is linked with another account");
+        }
+    }
+
+    // Update the user's information
+    $query = "UPDATE tblusers SET _username = ?, _useremail = ?, _userphone = ?, _userbio = ?, _userage = ?, _userlocation = ?, _userstate = ?, _userpin = ? WHERE _userphone = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "ssssissss", $username, $email, $phone, $bio, $age, $location, $state, $pin, $user);
+    $result = mysqli_stmt_execute($stmt);
+
+    // Check if the query was successful
+    if ($result) {
+        // User update successful
+        $alert = new PHPAlert();
+        $alert->success("Account Updated");
+    } else {
+        // User update failed
+        $alert = new PHPAlert();
+        $alert->warn("Something Went Wrong");
+    }
+
+    // Close the prepared statement and database connection
+    mysqli_stmt_close($stmt);
+}
+
+// Function to get user transaction 
+function userTransactions(){
+    require('_config.php');
+    $user = $_SESSION['userid'];
+    // Execute the SELECT query
+    $query = "SELECT * FROM tblpayment WHERE `_useremail` = '$user'";
+    $result = mysqli_query($conn, $query);
+    // Check if any rows are returned
+    if (mysqli_num_rows($result) > 0) {
+        // Loop through each row and fetch the data
+        while ($row = mysqli_fetch_assoc($result)) {
+            $id = $row['_id'];
+            $currency = $row['_currency'];
+            $amount = $row['_amount'];
+            $razorpayid = $row['_razorpayid'];
+            $couponcode = $row['_couponcode'];
+            $status = $row['_status'];
+            $productid = $row['_productid'];
+            $updationDate = date_create($row['UpdationDate']);
+
+            // Output the data in the table rows
+            echo "<tr>";
+            echo "<th scope='row'>$razorpayid</th>";
+            echo "<td>$currency</td>";
+            echo "<td>$amount</td>";
+            echo "<td><a href='course-detail?id=" . singleDetail('tblcourse', '_id', $productid, '_parmalink') . "'>Check Product</a></td>";
+            echo "<td>$couponcode</td>";
+            echo "<td>" . date_format($updationDate,"d F Y") . "</td>";
+            if($status == 'failed'){
+                echo "<td style='color:red'>Failed</td>";
+            }else{
+                echo "<td style='color:green'>Success</td>";
+            }
+            echo "</tr>";
+        }
+    } else {
+        // No data found
+        echo "<tr><td colspan='7'><span style='color:red;text-align:center'>No Record Found</span></td></tr>";
+    }
+
+}
+
+// Function to get user courses
+function userCourses(){
+    require('_config.php');
+    $user = $_SESSION['userid'];
+    // Execute the SELECT query
+    $query = "SELECT * FROM tblpurchasedcourses WHERE `_userid` = $user";
+    $result = mysqli_query($conn, $query);
+
+    // Check if any rows are returned
+    if (mysqli_num_rows($result) > 0) {
+        // Loop through each row and fetch the data
+        while ($row = mysqli_fetch_assoc($result)) {
+            $courseid = $row['_courseid'];
+            $coursestatus = $row['_coursestatus'];
+            $purchasedate = date_create($row['CreationDate']);
+
+            // Output the data in the table rows ?>
+
+            <div class="coursedetails__coursereviews">
+                <div class="coursedetails__coursereviews-author">
+                    <div class="coursedetails__coursereviews-thumb">
+                        <img src="<?php echo base_url('uploads/coursethumbnail/' . singleDetail('tblcourse', '_id', $courseid, '_thumbnail')); ?>" alt="author">
+                    </div>
+                    <div class="coursedetails__coursereviews-designation">
+                        <h6><?php echo limitText(singleDetail('tblcourse', '_id', $courseid, '_coursename'), 60); ?></h6>
+                        Purchased on : <span><?php echo date_format($purchasedate,"d F Y"); ?></span>&nbsp;|
+                        Course Status :
+                        <?php
+                          if($coursestatus == 'active'){ ?>
+                            <span style="color:green">Active</span>
+                          <?php }else{?>
+                            <span style="color:red">In-Active</span>
+                          <?php }  
+                        ?>
+                        <blockquote>
+                        <p><?php echo limitText(singleDetail('tblcourse', '_id', $courseid, '_coursedescription'), 180); ?></p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="coursedetails__coursereviews-rating">
+                    <a class='trk-btn trk-btn--rounded trk-btn--primary1' href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
+        // No data found
+        echo "<tr><td colspan='7'><span style='color:red;text-align:center'>No Record Found</span></td></tr>";
+    }
+
+}
+
+// Function to get fee markups 
+function feeMarkup(){
+    require('_config.php');
+    // Execute the query to retrieve fee markups
+    $query = "SELECT * FROM `tbltaxes` WHERE `_status` = 'true'";
+    $result = mysqli_query($conn, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Loop through the rows and display the fee markups
+        while ($row = mysqli_fetch_assoc($result)) {
+            $taxName = $row['_taxname'];
+            $taxAmount = $row['_taxamount'];
+            $taxType = $row['_taxtype'];
+            if($taxType == 'Fixed'){
+                 // Display the fee markup in the template
+                echo '<tr>
+                        <th scope="row">' . $taxName . '</th>
+                        <td>+ ' . currency_symbol($_SESSION['baseCurrency']); echo _conversion($taxAmount,$_SESSION['baseCurrency']) . '</td>
+                    </tr>';
+            }else{
+                 // Display the fee markup in the template
+                 echo '<tr>
+                        <th scope="row">' . $taxName . '</th>
+                        <td>+ ' . $taxAmount . '%</td>
+                    </tr>';
+            }
+        }
+    } else {
+        // Query failed
+        echo 'No Fee Applicable';
+    }
+}
+
+// Function to get discount markup
+function discountMarkup($couponCode,$couponType,$baseamount){
+    require('_config.php');
+     // Prepare and bind the SELECT statement with prepared statements
+     $query = "SELECT * FROM `tblcoupon` WHERE `_couponname` = ? AND `_totaluse` < `_maxusage` LIMIT 1";
+     $stmt = mysqli_prepare($conn, $query);
+     mysqli_stmt_bind_param($stmt, "s", $couponCode);
+     mysqli_stmt_execute($stmt);
+     $result = mysqli_stmt_get_result($stmt);
+ 
+     // Check if a coupon is found
+     if ($row = mysqli_fetch_assoc($result)) {
+        $couponamount = _conversion($row['_couponamount'],$_SESSION['baseCurrency']);
+        $amount = _conversion($baseamount,$_SESSION['baseCurrency']);
+         // Bind the coupon details to the template
+         if($row['_couponprod'] == $couponType){
+            if($row['_couponcondition'] == 'more'){
+                if($amount >= $couponamount){
+                    if($row['_coupontype'] == 'Fixed'){
+                        echo '<th scope="row">' . $row['_couponname'] . '</th>';
+                        echo '<td>- ' . currency_symbol($_SESSION['baseCurrency']); echo $couponamount . '</td>';
+                        $_SESSION['discount'] = $row['_couponamount'];
+                        $_SESSION['couponcode'] = $couponCode;
+                        require('includes/_alert.php');
+                        $alert = new PHPAlert();
+                        $alert->success("Coupon Applied");
+                    }else if($row['_coupontype'] == 'Variable'){
+                        echo '<th scope="row">' . $row['_couponname'] . '</th>';
+                        echo '<td>- ' . $row['_couponamount'] . '%</td>';
+                        $discountAmount = ($row['_couponamount'] / 100) * $baseamount;
+                        $_SESSION['discount'] = $discountAmount;
+                        $_SESSION['couponcode'] = $couponCode;
+                        require('includes/_alert.php');
+                        $alert = new PHPAlert();
+                        $alert->success("Coupon Applied");
+                    }
+                }else if($couponamount <= $amount){
+                    require('includes/_alert.php');
+                    $alert = new PHPAlert();
+                    $alert->warn("Coupon Not Good");
+                }
+            }else if($row['_couponcondition'] == 'less'){
+                if($amount <= $couponamount){
+                    require('includes/_alert.php');
+                    $alert = new PHPAlert();
+                    $alert->warn("Coupon Not Applicable");
+                    
+                }else if($couponamount <= $amount){
+                    if($row['_coupontype'] == 'Fixed'){
+                        echo '<th scope="row">' . $row['_couponname'] . '</th>';
+                        echo '<td>- ' . currency_symbol($_SESSION['baseCurrency']); echo $couponamount . '</td>';
+                        $_SESSION['discount'] = $row['_couponamount'];
+                        $_SESSION['couponcode'] = $couponCode;
+                        require('includes/_alert.php');
+                        $alert = new PHPAlert();
+                        $alert->success("Coupon Applied");
+                    }else if($row['_coupontype'] == 'Variable'){
+                        echo '<th scope="row">' . $row['_couponname'] . '</th>';
+                        echo '<td>- ' . $row['_couponamount'] . '%</td>';
+                        $discountAmount = ($row['_couponamount'] / 100) * $baseamount;
+                        $_SESSION['discount'] = $discountAmount;
+                        $_SESSION['couponcode'] = $couponCode;
+                        require('includes/_alert.php');
+                        $alert = new PHPAlert();
+                        $alert->success("Coupon Applied");
+                    }
+                }
+            }
+         }else{
+            require('includes/_alert.php');
+            $alert = new PHPAlert();
+            $alert->warn("Invalid Coupon");
+         }
+     }else{
+        require('includes/_alert.php');
+        $alert = new PHPAlert();
+        $alert->warn("Invalid Coupon");
+     }
+ 
+     // Close the prepared statement and database connection
+     mysqli_stmt_close($stmt);
+}
+
+// Function to get total bill amount
+function getTotal($amount){
+    $totalArr = array();
+    require('_config.php');
+    // Execute the query to retrieve fee markups
+    $query = "SELECT * FROM `tbltaxes` WHERE `_status` = 'true'";
+    $result = mysqli_query($conn, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Loop through the rows and display the fee markups
+        while ($row = mysqli_fetch_assoc($result)) {
+            $taxAmount = $row['_taxamount'];
+            $taxType = $row['_taxtype'];
+            if($taxType == 'Fixed'){
+                array_push($totalArr,$taxAmount);
+            }else{
+                $taxAmount = ($taxAmount / 100) * $amount;
+                array_push($totalArr,$taxAmount);
+            }
+        }
+    }
+    if(isset($_SESSION['discount'])){
+        $finalAmount = $amount - $_SESSION['discount'];
+    }else{
+        $finalAmount = $amount;
+    }
+    return $finalAmount + array_sum($totalArr);
+    
+}
+
+// Function for payment callback 
+function paymentCallback($razorpayId, $userEmail, $amount, $currency, $status, $producttype, $productid, $couponcode){
+    // Perform any additional processing or validation if needed
+    require('_config.php');
+
+    if($producttype == 'course'){
+        $producttitle = singleDetail('tblcourse', '_id', $productid, '_coursename');
+    }else if($producttype == 'membership'){
+        $producttitle = singleDetail('tblmembership', '_id', $productid, '_membershipname');
+    }
+    // Prepare the SQL query with placeholders
+    $query = "INSERT INTO `tblpayment`(`_razorpayid`, `_useremail`, `_amount`, `_currency`, `_status`, `_producttitle`, `_productid`, `_producttype`, `_couponcode`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Prepare the statement
+    $stmt = $conn->prepare($query);
+    if (!$stmt) {
+        echo "Error: " . $conn->error;
+        $conn->close();
+        exit;
+    }
+
+    // Bind the parameters to the statement
+    $stmt->bind_param("ssdssssss", $razorpayId, $userEmail, $amount, $currency, $status, $producttitle, $productid, $producttype, $couponcode);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        if($status == 'success'){
+            if($producttype == 'course'){
+                if(insertPurchasedCourse($productid, $userEmail)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else if($producttype == 'membership'){
+                if(updateUserMembership($userEmail, $productid, date('Y-m-d'), singleDetail('tblmembership', '_id', $productid, '_duration'))){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }else{
+            echo "<script>window.location.href = 'my-account?purchase=failed';</script>";
+        }
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close the statement and connection
+    $stmt->close();
+    $conn->close();
+}
+
+// Function for purchasing course
+function insertPurchasedCourse($courseId, $userId) {
+    require('_config.php');
+
+    // Construct the SQL query
+    $query = "INSERT INTO `tblpurchasedcourses`(`_courseid`, `_userid`, `_coursestatus`) VALUES ('$courseId', '$userId', 'active')";
+
+    // Execute the query
+    if (mysqli_query($conn, $query)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Function for purchasing memebership 
+function updateUserMembership($userPhone, $userMembership, $userMemStart, $userMemsLeft) {
+    require('_config.php');
+
+    // Construct the SQL query
+    $query = "UPDATE `tblusers` SET `_usermembership`='$userMembership', `_usermemstart`='$userMemStart', `_usermemsleft`='$userMemsLeft' WHERE `_userphone`='$userPhone'";
+
+    // Execute the query
+    if (mysqli_query($conn, $query)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Function to get lesson plan for view course 
+function viewLessonPlan($courseID,$param){
+    require('_config.php');
+    $query = "SELECT * FROM `tbllessons` WHERE `_courseid` = $courseID AND `_status` = 'true'";
+    // Execute the query and fetch the results
+    $result = mysqli_query($conn, $query);
+
+    $lessonHtml = '';
+    $number = 1;
+    // Loop through the fetched results and build the HTML template
+    while ($row = mysqli_fetch_assoc($result)) {
+        $lessonName = $row['_lessonname'];
+        $lessonDesc = $row['_lessondescription'];
+        $lessonID = $row['_id'];
+        // Build the HTML for each lesson and append it to the $lessonHtml string
+        $lessonHtml .= ' <div class="col-12" style="border: 1px solid #A7ADB6;border-radius:12px">
+                            <div class="accordion__item">
+                                <div class="accordion__header" id="faq' . $number . '">
+                                    <button class="accordion__button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faqBody' . $number . '" aria-expanded="false"
+                                        aria-controls="faqBody' . $number . '">
+                                        <span class="lesson-name" style="font-size:16px">' . limitText($lessonName,15) . '</span> <span
+                                            class="lesson"><span class="lesson-number">Lesson ' . str_pad($number, 2, '0', STR_PAD_LEFT) . '</span> <span
+                                                class="plus-icon"></span> </span>
+                                    </button>
+                                </div>
+                                <div id="faqBody' . $number . '" class="accordion-collapse collapse" aria-labelledby="faq' . $number . '"
+                                    data-bs-parent="#faqAccordion' . $number . '">
+                                    <div class="accordion__body">
+                                        ' . $lessonDesc . '<br><br>
+                                        <a href="view-course?id='.$param.'&lesson='.$lessonID.'" class="trk-btn trk-btn--primary1" style="width:100%;border-radius:10px">Learn lesson</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+        $number++;                
+    }
+
+    // Output the generated lesson HTML
+    echo $lessonHtml;
 }
 
 ?>
