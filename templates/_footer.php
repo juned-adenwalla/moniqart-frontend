@@ -5,7 +5,7 @@
                     <div class="row g-5">
                         <div class="col-xl-4 col-md-6">
                             <div class="footer__about">
-                                <a href="index.html" class="footer__about-logo"><img src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>"
+                                <a href="index.html" class="footer__about-logo"><img style="width: 120px;" src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>"
                                         alt="Logo"></a>
                                 <p class="footer__about-moto">You minim mollit non deserunt ullamco est sit aliqua dolor
                                     do

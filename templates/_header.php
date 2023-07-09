@@ -24,7 +24,7 @@ echo _siteconfig('_customcss');
                     <div class="header-start header-start--style1">
                         <div class="logo">
                             <a href="index">
-                                <img style="width: 180px;" src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>" alt="logo">
+                                <img style="width: 120px;" src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>" alt="logo">
                             </a>
                         </div>
                         <div class="menu-area">
