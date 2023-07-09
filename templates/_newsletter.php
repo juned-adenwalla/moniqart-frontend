@@ -7,7 +7,7 @@
                     <h2>Get free Pro memberships for
                         your high school class</h2>
 
-                    <a href="signin.html" class="trk-btn trk-btn--rounded trk-btn--primary1">Join With Us</a>
+                    <a href="subscription" class="trk-btn trk-btn--rounded trk-btn--primary1">Join With Us</a>
                 </div>
             </div>
         </div>

@@ -381,7 +381,7 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
     require('_config.php');
 
     // Prepare the query
-    $query = "SELECT * FROM tblcourse WHERE _status = 'true'";
+    $query = "SELECT * FROM tblcourse WHERE _status = 'true' ORDER BY CreationDate DESC";
     
     // Add category filter if provided
     if ($category !== null) {
@@ -471,12 +471,36 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
     echo $html;
 }
 
+// Function get course count 
+function getTotalCourses($category = null, $search = null) {
+    require('_config.php');
+    
+    // Prepare the query
+    $query = "SELECT COUNT(*) as total FROM tblcourse WHERE _status = 'true' ORDER BY CreationDate DESC";
+    
+    // Add category filter if provided
+    if ($category !== null) {
+        $query .= " AND _categoryid = '$category'";
+    }
+    
+    // Add search filter if provided
+    if ($search !== null) {
+        $query .= " AND (_coursename LIKE '%$search%' OR _coursedescription LIKE '%$search%')";
+    }
+    
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    
+    // Return the total number of courses
+    return $row['total'];
+}
+
 // Function listing blogs posts 
-function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 10) {
+function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 10, $offset = 0) {
     require('_config.php');
 
     // Prepare the SQL query with filters and pagination
-    $query = "SELECT * FROM `tblblog` WHERE `_status` = 'true'";
+    $query = "SELECT * FROM `tblblog` WHERE `_status` = 'true' ORDER BY CreationDate DESC";
     
     if ($category) {
         $query .= " AND `_blogcategory` = '$category'";
@@ -486,12 +510,8 @@ function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 
         $query .= " AND (`_blogtitle` LIKE '%$search%' OR `_blogdesc` LIKE '%$search%')";
     }
 
-    // Calculate the offset based on the current page and limit
-    $offset = ($page - 1) * $limit;
-
     // Add pagination to the query
     $query .= " LIMIT $limit OFFSET $offset";
-
     // Execute the query
     $result = mysqli_query($conn, $query);
 
@@ -506,6 +526,7 @@ function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 
             $category = $row['_blogcategory'];
             $blogTitle = $row['_blogtitle'];
             $blogThumb = $row['_blogimg'];
+            $blogParmalink = $row['_parmalink'];
             $blogDate = date_create($row['Creation_at_Date']);
 
             // Determine the class name for the categories__thumb
@@ -523,7 +544,7 @@ function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 
                                     <div class="blog__content-top">
                                         <span class="blog__meta-tag ' . $thumbClass .'">' . singleDetail('tblcategory', '_id', $category, '_categoryname') . '</span>
                                     </div>
-                                    <h6><a href="blog-details.html">' . $blogTitle . '</a></h6>
+                                    <h6><a href="blog-details?id=' . $blogParmalink . '">' . $blogTitle . '</a></h6>
 
                                     <div class="blog__content-bottom blog__content-bottom--border">
                                         <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
@@ -546,6 +567,29 @@ function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 
         // No blog posts found
         echo 'No blog posts found.';
     }
+}
+
+// Function to get blog count 
+function getTotalBlogPosts($category = null, $search = null) {
+    require('_config.php');
+
+    // Prepare the SQL query with filters
+    $query = "SELECT COUNT(*) as total FROM `tblblog` WHERE `_status` = 'true'";
+
+    if ($category) {
+        $query .= " AND `_blogcategory` = '$category'";
+    }
+
+    if ($search) {
+        $query .= " AND (`_blogtitle` LIKE '%$search%' OR `_blogdesc` LIKE '%$search%')";
+    }
+
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    // Return the total number of blog posts
+    return $row['total'];
 }
 
 // Function to get lesson plans 
@@ -864,7 +908,7 @@ function userTransactions(){
     require('_config.php');
     $user = $_SESSION['userid'];
     // Execute the SELECT query
-    $query = "SELECT * FROM tblpayment WHERE `_useremail` = '$user'";
+    $query = "SELECT * FROM tblpayment WHERE `_useremail` = '$user' ORDER BY CreationDate DESC";
     $result = mysqli_query($conn, $query);
     // Check if any rows are returned
     if (mysqli_num_rows($result) > 0) {
@@ -877,16 +921,16 @@ function userTransactions(){
             $couponcode = $row['_couponcode'];
             $status = $row['_status'];
             $productid = $row['_productid'];
-            $updationDate = date_create($row['UpdationDate']);
+            $updationDate = date_create($row['CreationDate']);
 
             // Output the data in the table rows
             echo "<tr>";
-            echo "<th scope='row'>$razorpayid</th>";
+            echo "<th>$razorpayid</th>";
             echo "<td>$currency</td>";
             echo "<td>$amount</td>";
             echo "<td><a href='course-detail?id=" . singleDetail('tblcourse', '_id', $productid, '_parmalink') . "'>Check Product</a></td>";
             echo "<td>$couponcode</td>";
-            echo "<td>" . date_format($updationDate,"d F Y") . "</td>";
+            echo "<td>" . date_format($updationDate,"d F Y (h:i a)") . "</td>";
             if($status == 'failed'){
                 echo "<td style='color:red'>Failed</td>";
             }else{
@@ -906,7 +950,7 @@ function userCourses(){
     require('_config.php');
     $user = $_SESSION['userid'];
     // Execute the SELECT query
-    $query = "SELECT * FROM tblpurchasedcourses WHERE `_userid` = $user";
+    $query = "SELECT * FROM tblpurchasedcourses WHERE `_userid` = $user ORDER BY CreationDate DESC";
     $result = mysqli_query($conn, $query);
 
     // Check if any rows are returned
@@ -1159,9 +1203,9 @@ function insertPurchasedCourse($courseId, $userId) {
 
     // Construct the SQL query
     $query = "INSERT INTO `tblpurchasedcourses`(`_courseid`, `_userid`, `_coursestatus`) VALUES ('$courseId', '$userId', 'active')";
-
     // Execute the query
     if (mysqli_query($conn, $query)) {
+        emailNotification('purchase',$courseId,'test mail');
         return true;
     } else {
         return false;
@@ -1225,4 +1269,194 @@ function viewLessonPlan($courseID,$param){
     echo $lessonHtml;
 }
 
+// Function to get all live lessons of instructor 
+function getLessonPlansByTeacherEmail($teacherID) {
+    require('_config.php');
+    // Search for courses based on teacher's email
+    $courseQuery = "SELECT * FROM `tblcourse` WHERE `_teacheremailid` = '$teacherID' AND `_status` = 'true'";
+    $courseResult = $conn->query($courseQuery);
+
+    // Get the current date
+    $currentDate = date('Y-m-d');
+
+    $lessonPlans = array();
+
+    if ($courseResult->num_rows > 0) {
+        while ($courseRow = $courseResult->fetch_assoc()) {
+        $courseId = $courseRow['_id'];
+        $courseThumbnail = $courseRow['_thumbnail'];
+
+        // Search for lesson plans assigned to the course
+        $lessonQuery = "SELECT * FROM `tbllessons` WHERE `_courseid` = '$courseId' AND `_lessontype` = 'live' AND `_lessondate` >= '$currentDate' ORDER BY `_lessondate`, `_lessontime`";
+        $lessonResult = $conn->query($lessonQuery);
+
+        if ($lessonResult->num_rows > 0) {
+            while ($lessonRow = $lessonResult->fetch_assoc()) {
+            $lessonDate = $lessonRow['_lessondate'];
+            $lessonTime = $lessonRow['_lessontime'];
+            $lessonId = $lessonRow['_id'];
+            $lessonURL = $lessonRow['_lessonurl'];
+
+            $lessonPlans[] = array(
+                'courseId' => $courseId,
+                'lessonDate' => $lessonDate,
+                'lessonTime' => $lessonTime,
+                'lessonId' => $lessonId,
+                'courseId' => $courseId,
+                'courseThumbnail' => $courseThumbnail,
+                'lessonURL' => $lessonURL
+            );
+            }
+        }
+        }
+    }
+
+    // Close the connection
+    $conn->close();
+
+    // Sort the lesson plans based on date and time
+    usort($lessonPlans, function($a, $b) {
+        $dateComparison = strcmp($a['lessonDate'], $b['lessonDate']);
+        if ($dateComparison !== 0) {
+        return $dateComparison;
+        }
+        return strcmp($a['lessonTime'], $b['lessonTime']);
+    });
+
+    return $lessonPlans;
+}
+
+// Function to get remaining time 
+function calculateTimePending($startDate, $startTime) {
+    date_default_timezone_set(_siteconfig('_timezone'));
+  
+    $currentDateTime = new DateTime();
+    $eventDateTime = DateTime::createFromFormat('Y-m-d H:i:s', $startDate . ' ' . $startTime);
+    echo $eventDateTime;
+    if ($currentDateTime < $eventDateTime) {
+        $remainingTime = $currentDateTime->diff($eventDateTime);
+        return $remainingTime;
+    } else {
+        return 'Not Prepared';
+    }
+}
+
+// Function to load memberships 
+function loadMemberships(){
+    require('_config.php');
+    
+    // Prepare the SQL query
+    $query = "SELECT * FROM `tblmembership` WHERE `_status` = 'true'";
+    
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+
+    // Check if any membership plans were found
+    if (mysqli_num_rows($result) > 0) {
+        // Initialize the HTML variable
+        $html = '';
+
+        // Loop through the membership plans and bind the data to the HTML template
+        while ($row = mysqli_fetch_assoc($result)) {
+            $membershipName = $row['_membershipname'];
+            $membershipDesc = $row['_membershipdesc'];
+            $duration = $row['_duration'];
+            $price = $row['_price'];
+            $permalink = $row['_membershippermalink'];
+
+            // Generate the HTML code for each membership plan using the provided template
+            $html .= '<div class="col-md-4 ml-auto pricing-box align-self-center">
+                        <div class="card mb-4">
+                            <div class="card-body p-4 text-center">
+                                <h5 class="font-weight-normal">' . $membershipName . '</h5>
+                                <sup>' . currency_symbol($_SESSION['baseCurrency']) . '</sup><span class="text-dark display-5">' . _conversion($price,$_SESSION['baseCurrency']) . '</span>
+                                <h6 class="font-weight-light font-14">' . $duration . ' Month (s)</h6>
+                                <p class="mt-4">' . $membershipDesc . '</p>
+                            </div>
+                            <a class="btn btn-danger-gradiant p-3 btn-block border-0 text-white" style="background-color:#B1FDAF" href="checkout?id=' . $permalink .'&type=membership">CHOOSE PLAN </a>
+                        </div>
+                    </div>';
+        }
+
+        // Output the HTML code
+        echo $html;
+    } else {
+        // No membership plans found
+        echo 'No membership plans found.';
+    }
+}
+
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+// Function to send email notification 
+function emailNotification($notification,$productid = null,$subject){
+    require('_config.php');
+
+    $sql = "SELECT * FROM `tblemailconfig` WHERE `_supplierstatus` = 'true'";
+    $query = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($query);
+    require_once "../vendor/autoload.php";
+    $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
+    //Set PHPMailer to use SMTP.
+    $mail->isSMTP();
+    foreach ($query as $data) {
+        //Enable SMTP debugging.
+        // $mail->SMTPDebug = 10;                                       
+        //Set SMTP host name                          
+        $mail->Host = $data['_hostname'];
+        //Set this to true if SMTP host requires authentication to send email
+        $mail->SMTPAuth = $data['_smtpauth'];
+        //Provide username and password     
+        $mail->Username = $data['_emailaddress'];
+        $mail->Password = $data['_emailpassword'];
+        //If SMTP requires TLS encryption then set it
+        $mail->SMTPSecure = "ssl";
+        //Set TCP port to connect to
+        $mail->Port = $data['_hostport'];
+
+        $mail->From = $data['_emailaddress'];
+        $mail->FromName = $data['_sendername'];
+        //Address to which recipient will reply
+        $mail->addReplyTo($data['_emailaddress'], "Reply");
+    }
+    //To address and namS
+    $mail->addAddress(singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_useremail')); //Recipient name is optional
+
+    $mail->isHTML(true);
+
+    $sql = "SELECT * FROM `tblemailtemplates`";
+    $query = mysqli_query($conn, $sql);
+    foreach ($query as $data) {
+        if($notification == 'purchase'){
+            $template = $data['_purchasetemplate'];
+        }
+    }
+    if($notification == 'purchase'){
+        $variables = array();
+        $variables['user_name'] = singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_username');
+        $variables['product_price'] = singleDetail('tblcourse', '_id', $productid, '_discountprice');
+        $variables['product_name'] = singleDetail('tblcourse', '_id', $productid, '_coursename');
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }
+
+    $mail->Subject = 'Test Email';
+    $mail->Body = $sendmail;
+    $mail->IsHTML(true);
+    if ($mail->send()) {
+    } else {
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+}
+
+function _usetemplate($template, $data)
+{
+    foreach ($data as $key => $value) {
+        $template = str_replace('{{ ' . $key . ' }}', $value, $template);
+    }
+
+    return $template;
+}
 ?>

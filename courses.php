@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('includes/_functions.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title>All Courses | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -60,7 +60,7 @@
         <div class="container">
             <div class="course__topbar mb-5" data-aos="fade-up" data-aos-duration="800">
                 <div class="course__topbar-left">
-                    <form action="#" method="post">
+                    <form action="#" method="get">
                         <select name="category" class="form-select" onchange="this.form.submit()">
                             <option value="#">Category</option>
                             <?php category_filter(); ?>
@@ -70,9 +70,9 @@
                 <div class="course__topbar-right">
                     <div class="course__search">
                         <div class="body">
-                            <form class="" action="#">
+                            <form class="" action="#" method="get">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="text" name="search" class="form-control" placeholder="Search">
                                     <button type="submit" class="search-btn"><i
                                             class="fa-solid fa-magnifying-glass"></i></button>
                                 </div>
@@ -85,26 +85,40 @@
             <div class="course__wrapper" data-aos="fade-up" data-aos-duration="1000">
                 <div class="row g-4">
                     <?php 
-                        if(isset($_POST['category'])){
-                            displayCourses($_POST['category'], null, 'grid', 5);
+                        $limit = 10;
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number from the query string
+                        $offset = ($page - 1) * $limit; // Calculate the offset based on the current page
+                        if(isset($_GET['category'])){
+                            displayCourses($_GET['category'], null, 'grid', $limit, $offset);
+                        }else if(isset($_GET['search'])){
+                            displayCourses(null, $_GET['search'], 'grid', $limit, $offset);
                         }else{
-                            displayCourses(null, null, 'grid', 5);
+                            displayCourses(null, null, 'grid', $limit, $offset);
                         }
                     ?>
                 </div>
                 <div class="paginations">
+                    <?php
+                        // Display the pagination links
+                        if(isset($_GET['search'])){
+                            $totalCourses = getTotalCourses(null, $_GET['search']); // Function to get the total number of courses based on the filters
+                        }else if(isset($_GET['category'])){
+                            $totalCourses = getTotalCourses($_GET['category'], null);
+                        }else{
+                            $totalCourses = getTotalCourses();
+                        }                   
+                        $totalPages = ceil($totalCourses / $limit); // Calculate the total number of pages
+                    ?>
                     <ul class="lab-ul d-flex flex-wrap justify-content-center mb-1">
                         <li>
-                            <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="courses?page=1"><i class="fa-solid fa-arrow-left"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="active">1</a>
-                        </li>
-                        <li>
-                            <a href="#">2</a>
-                        </li>
-                        <li class="d-none d-sm-block">
-                            <a href="#">3</a>
+                            <?php 
+                                for ($i = 1; $i <= $totalPages; $i++){
+                                    echo '<a href="?page=' . $i . '">' . $i . '</a>';
+                                }
+                            ?>    
                         </li>
                         <li>
                             <a href="#"><i class="fa-solid fa-arrow-right"></i></a>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('includes/_functions.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title>About | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -185,130 +185,7 @@
             <div class="course__wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <div class="course__slider swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/1.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat1">Web Development</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.9</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(526)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="#">Contrar to popuar belieif loreme Ipsum is an not
-                                                consectetur cites of the word in...</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="#"><img src="assets/images/avatar/1.png" alt="avatar"> Jhon
-                                                Doe</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/2.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save course__btn--active"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat1">English</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(1326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="#">How to Learning Basic English
-                                                Strategy for Research</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="#"><img src="assets/images/avatar/2.png" alt="avatar"> Jenny
-                                                Wilsone</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/3.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat2">Content Writing</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="#">Content is King: Writing Killer Conte-nt Web & Marketing</a>
-                                        </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="#"><img src="assets/images/avatar/3.png" alt="avatar"> Theresa
-                                                Webb</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="course__item">
-                                <div class="course__item-inner">
-                                    <div class="course__thumb">
-                                        <img src="assets/images/course/4.png" alt="course Images">
-                                        <a href="#" class="course__btn course__btn--save course__btn--active"><i
-                                                class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-
-                                    <div class="course__content">
-                                        <div class="course__content-top">
-                                            <span class="course__meta-tag course__meta-tag--cat3">Art & Design</span>
-                                            <div class="course__focus-inner">
-                                                <span>4.5</span>
-                                                <img src="assets/images/course/star.png" alt="review-star">
-                                                <span>(2326)</span>
-                                            </div>
-                                        </div>
-                                        <h6> <a href="#">How to Learning Basic design
-                                                Strategy for Research.</a> </h6>
-                                        <div class="course__content-bottom">
-                                            <a href="#"><img src="assets/images/avatar/4.png" alt="avatar"> Wade
-                                                Warren</a>
-                                            <div class="course-price">
-                                                <del>$100</del> <span> $50.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php displayCourses(null, null, 'slider', 5); ?>
                     </div>
                     <div class="slider__pagination-1"></div>
                 </div>

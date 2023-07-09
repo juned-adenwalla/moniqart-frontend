@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('includes/_functions.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title>My Account | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -82,7 +82,10 @@
             $alert->success("Purchase Success");
         }
     }
-
+    if(isset($_GET['logout'])){
+        session_destroy();
+        echo "<script>window.location.href = 'signin';</script>";
+    }
     ?>
 
     <!-- ==========Page Header Section Starts Here========== -->
@@ -111,7 +114,7 @@
                         <div class="coursedetails__header">
                             <div class="row">
                                 <div class="col-lg-1">
-                                    <form action="" enctype="multipart/form-data" method="post">
+                                    <form action="" enctype="multipart/form-data" method="post" style="margin-top: 30px;">
                                         <?php
                                         if(singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_userdp')){ ?>
                                             <img style="border-radius: 12px;" src="<?php echo base_url('uploads/profile/' . singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_userdp')); ?>" class="upload-image" onclick="document.getElementById('imageFile').click();" alt="">
@@ -136,6 +139,9 @@
                                                 }
                                             ?>
                                         </span>
+                                        <span>
+                                            &nbsp;&nbsp;<a class="badge bg-secondary" href="my-account?logout=true"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -150,18 +156,26 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="trk-btn" id="pills-transactions-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-transactions" role="tab" aria-controls="pills-transactions"
-                                        aria-selected="false"><i class="fa-solid fa-sliders"></i>Transactions</button>
+                                        aria-selected="false"><i class="fa-solid fa-building-columns"></i>Transactions</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="trk-btn" id="pills-my-courses-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-my-courses" role="tab" aria-controls="pills-my-courses"
-                                        aria-selected="false"><i class="fa-solid fa-video"></i>My Courses</button>
+                                        aria-selected="false"><i class="fa-solid fa-chalkboard-user"></i>My Courses</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="trk-btn" id="pills-my-orders-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-my-orders" role="tab" aria-controls="pills-my-orders"
                                         aria-selected="false"><i class="fa-solid fa-cart-shopping"></i>My Orders</button>
                                 </li>
+                                <?php
+                                if(singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_usertype') == 1){ ?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="trk-btn" id="pills-my-instructor-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-my-instructor" role="tab" aria-controls="pills-my-instructor"
+                                        aria-selected="false"><i class="fa-solid fa-network-wired"></i>Instructor</button>
+                                    </li>
+                                <?php }?>
                                 <li class="nav-item" role="presentation">
                                     <button class="trk-btn" id="pills-help-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-help" role="tab" aria-controls="pills-help"
@@ -258,6 +272,35 @@
                                     <div class="coursedetails__my-orders text-center" style="margin-top: 50px;">
                                         <a><img src="assets/gif/16957-comming-soon (1).gif" alt=""></a>
                                     </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-my-instructor" role="tabpanel"
+                                    aria-labelledby="pills-my-instructor-tab" tabindex="0">
+                                    <div class="coursedetails__my-instructor">
+                                        <?php 
+                                            $lessonPlans = getLessonPlansByTeacherEmail(singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_id')); 
+                                            foreach ($lessonPlans as $lessonPlan) { ?>
+                                                <div class="coursedetails__coursereviews">
+                                                    <div class="coursedetails__coursereviews-author">
+                                                        <div class="coursedetails__coursereviews-thumb">
+                                                            <img src="<?php echo base_url('uploads/coursethumbnail/' . $lessonPlan['courseThumbnail']); ?>" alt="author">
+                                                        </div>
+                                                        <div class="coursedetails__coursereviews-designation">
+                                                            <h6><?php echo limitText(singleDetail('tbllessons', '_id', $lessonPlan['lessonId'], '_lessonname'), 60); ?></h6>
+                                                            Start Date : <span><?php echo date('F d, Y', strtotime($lessonPlan['lessonDate'])); ?></span>&nbsp;|
+                                                            Start Time : <span><?php echo date('h:i A', strtotime($lessonPlan['lessonTime'])); ?></span>&nbsp;|
+                                                            Time Left : <span><?php echo calculateTimePending(strtotime($lessonPlan['lessonDate']), strtotime($lessonPlan['lessonTime'])); ?></span>
+                                                            <blockquote>
+                                                            <p><strong>Course :</strong><a href="course-detail?id=<?php echo singleDetail('tblcourse', '_id', $lessonPlan['courseId'], '_parmalink'); ?>"><?php echo limitText(singleDetail('tblcourse', '_id', $lessonPlan['courseId'], '_coursename'), 180); ?></a></p>
+                                                            </blockquote>
+                                                        </div>
+                                                    </div>
+                                                    <div class="coursedetails__coursereviews-rating">
+                                                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' target="_blank" href='<?php echo $lessonPlan["lessonURL"]; ?>'>Join Meet</a>
+                                                    </div>
+                                                </div>
+                                            <?php }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-help" role="tabpanel"

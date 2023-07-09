@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include('includes/_functions.php'); ?>
+<?php 
 
+    if(isset($_GET['id'])){
+        $param = $_GET['id'];
+    }else{
+        echo "<script>window.location.href = '404';</script>";
+    }
+
+    $blogName = singleDetail('tblblog', '_parmalink', $param, '_blogtitle');
+    $blogDesc = singleDetail('tblblog', '_parmalink', $param, '_blogdesc');
+    $blogImg = singleDetail('tblblog', '_parmalink', $param, '_blogimg');
+    $blogDate = date('d F Y',strtotime(singleDetail('tblblog', '_parmalink', $param, 'Creation_at_Date')));
+    $blogAuthor = singleDetail('tblblog', '_parmalink', $param, '_userid');
+    $blogCategory = singleDetail('tblblog', '_parmalink', $param, '_blogcategory');
+    $blogSubCategory = singleDetail('tblblog', '_parmalink', $param, '_blogsubcategory');
+
+    ?>  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title><?php echo $blogName; ?> | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -24,130 +41,21 @@
 <body>
 
 
-    <!-- ===============>> Preloader start here <<================= -->
-
-    <div class="preloader">
-        <div class="preloader__book">
-            <div class="inner">
-                <div class="left"></div>
-                <div class="right"></div>
-                <div class="middle"></div>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
+     <!-- ===============>> Preloader start here <<================= -->
+     <?php include('templates/_preloader.php'); ?>
     <!-- ===============>> Preloader end here <<================= -->
 
 
     <!-- ===============>> Header section start here <<================= -->
-    <header class="header-section header-section--style2">
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="header-start header-start--style1">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="menu-area">
-                            <ul class="menu menu--style1">
-                                <li>
-                                    <a href="#0">Homes </a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                        <li><a href="index-4.html">Home 4</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Courses</a>
-                                    <ul class="submenu">
-                                        <li><a href="courses.html">Courses</a></li>
-                                        <li><a href="course-details.html">Courses Details</a></li>
-                                        <li><a href="course-category.html">Course Category</a></li>
-<li><a href="mentors.html">Mentors</a></li>
-                                        <li><a href="mentor-details.html">Mentor Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Blogs</a>
-                                    <ul class="submenu">
-                                        <li><a href="blogs.html">Blogs </a></li>
-                                        <li><a href="blogs-2.html">Blogs 2 </a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Pages</a>
-                                    <ul class="submenu">
-                                                                                <li><a href="about.html">About Us</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">checkout</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                        <li><a href="signin.html">Sign In</a></li>
-                                        <li><a href="forgot-pass.html">Reset Password</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact Us</a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="header-end">
-                        <div class="menu-area">
-                            <div class="header-btn">
-                                <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--primary1">
-                                    <span>Sign Up</span>
-                                </a>
-                            </div>
-
-                            <!-- toggle icons -->
-                            <div class="header-bar d-xl-none home1">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include('templates/_header.php'); ?>
     <!-- ===============>> Header section end here <<================= -->
-
 
 
     <!-- ==========Page Header Section Starts Here========== -->
     <div class="pageheader" style="background-image:url(assets/images/bg/home1/5.png)">
         <div class="container">
             <div class="pageheader__content">
-                <h2>Blog Details</h2>
+                <h2><?php echo $blogName; ?></h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -167,51 +75,37 @@
         <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
             <div class="section__wrapper">
                 <div class="row g-5">
-                    <div class="col-lg-8 col-12">
+                    <div class="col-lg-12 col-12">
                         <div class="row g-4 justify-content-center">
                             <div class="col-12">
                                 <div class="blog__item">
                                     <div class="blog__inner">
                                         <div class="blog__thumb">
-                                            <img src="assets/images/blog/home3/details/1.png" alt="blog-images">
+                                            <img src="<?php echo base_url('uploads/blogsPics/' . $blogImg); ?>" alt="blog-images">
                                         </div>
                                         <div class="blog__content">
                                             <div class="blog__meta">
                                                 <ul>
                                                     <li><i class="fa-solid fa-user"></i>
-                                                        Esther Howard</li>
+                                                        <?php echo singleDetail('tblusers', '_id', $blogAuthor, '_username'); ?>
+                                                    </li>
                                                     <li><i class="fa-solid fa-clock"></i>
-                                                        November 21, 2023</li>
-                                                    <li><i class="fa-solid fa-eye"></i>
-                                                        120 Views</li>
+                                                        <?php echo $blogDate; ?>
+                                                    </li>
                                                     <li>
-                                                        <a href="#"><i class="fa-solid fa-comment"></i>
-                                                            Comments (03)</a>
+                                                        <span style="background-color: #FFE3EC;font-size: 0.75rem;padding: 0.15rem 1rem;border-radius: 50px;color: #081A28;font-weight: 500;text-transform: capitalize;">
+                                                            <?php echo singleDetail('tblcategory', '_id', $blogCategory, '_categoryname'); ?>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span style="background-color: #99fc96;font-size: 0.75rem;padding: 0.15rem 1rem;border-radius: 50px;color: #081A28;font-weight: 500;text-transform: capitalize;">
+                                                            <?php echo singleDetail('tblsubcategory', '_id', $blogSubCategory, '_subcategoryname'); ?>
+                                                        </span>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <h2>Discover New Learning Tools of Education</h2>
-                                            <p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic
-                                                fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3
-                                                wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth
-                                                art party deep v chillwave. Seitan High Life reprehenderit consectetur
-                                                cupidatat kogi. Et leggings fanny pack.</p>
-                                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch
-                                                freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit
-                                                kale chips proident chillwave deep v laborum. Aliquip veniam delectus,
-                                                Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone
-                                                Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
-                                                Help your team feel more connected to your company by incorporating the
-                                                right digital technology tools into their workflow.Andrea Meyer</p>
-                                            <p>See-through delicate embroidered organza blue lining luxury acetate-mix
-                                                stretch pleat detailing. Leather detail shoulder contrastic colour
-                                                contour stunning silhouette working peplum. Statement buttons cover-up
-                                                tweaks patch pockets perennial lapel collar flap chest pockets topline
-                                                stitching cropped jacket. Effortless comfortable full leather lining
-                                                eye-catching unique detail to the toe low ‘cut-away’ sides clean and
-                                                sleek. Polished finish elegant court shoe work duty stretchy slingback
-                                                strap mid kitten heel this ladylike design slingback strap mid kitten
-                                                heel this ladylike design.</p>
+                                            <h2><?php echo $blogName; ?></h2>
+                                            <p><?php echo $blogDesc; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -226,17 +120,17 @@
                                                     class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
                                         </li>
                                     </ul>
-                                    <ul class="tags">
+                                    <!-- <ul class="tags">
                                         <li><a href="#">Advices</a></li>
                                         <li><a href="#">business</a></li>
                                         <li><a href="#">strategy</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-8  col-12">
+                    <!-- <div class="col-lg-4 col-md-8  col-12">
                         <div class="sidebar">
                             <div class="row g-4">
                                 <div class="col-12">
@@ -353,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -370,75 +264,7 @@
             </div>
             <div class="blog__wrapper">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="700">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/1.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat3">Art & Design</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Why Product Thinking is the next big thing in UX
-                                            Design</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            30
-                                            January 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/2.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat2">Business</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Range Input That Looks Consistent Across All
-                                            Browser</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            13
-                                            March 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="900">
-                        <div class="blog__item">
-                            <div class="blog__item-inner">
-                                <div class="blog__thumb">
-                                    <img src="assets/images/blog/3.png" alt="blog Images">
-                                </div>
-
-                                <div class="blog__content">
-                                    <div class="blog__content-top">
-                                        <span class="blog__meta-tag blog__meta-tag--cat1">Development</span>
-                                    </div>
-                                    <h6> <a href="blog-details.html">Generating RPG Tethered Assets: Phase of
-                                            Development</a> </h6>
-
-                                    <div class="blog__content-bottom blog__content-bottom--border">
-                                        <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
-                                            21
-                                            April 2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php displayBlogPosts(null,null,1,3); ?>
                 </div>
             </div>
         </div>
@@ -450,7 +276,7 @@
 
 
     <!-- ===============>> Blog comment start here <<================= -->
-    <div class="blog home blog--details padding-bottom">
+    <!-- <div class="blog home blog--details padding-bottom">
         <div class="container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <div class="section__wrapper">
                 <div class="row g-5">
@@ -624,187 +450,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- ===============>> Blog comment end here <<================= -->
 
 
 
 
     <!-- ===============>> newsletter start here <<================= -->
-    <div class="newsletter" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            <div class="newsletter__wrapper">
-                <div class="newsletter__content">
-                    <div class="newsletter__content-inner newsletter__content-inner--style1 text-center"
-                        style="background-image:url(assets/images/footer/2.png)">
-                        <h2>Get free Pro memberships for
-                            your high school class</h2>
-
-                        <a href="signin.html" class="trk-btn trk-btn--rounded trk-btn--primary1">Join With Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('templates/_newsletter.php'); ?>
     <!-- ===============>> newsletter end here <<================= -->
 
 
     <!-- ===============>> footer start here <<================= -->
-    <footer class="footer brand-1" style="background-image:url(assets/images/footer/1.png)">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__top footer__top--style1 padding-bottom ">
-                    <div class="row g-5">
-                        <div class="col-xl-4 col-md-6">
-                            <div class="footer__about">
-                                <a href="index.html" class="footer__about-logo"><img src="assets/images/logo/logo.png"
-                                        alt="Logo"></a>
-                                <p class="footer__about-moto">You minim mollit non deserunt ullamco est sit aliqua dolor
-                                    do
-                                    amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam
-                                    consequat
-                                    sunt nostrud amet.</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-sm-6">
-                            <div class="footer__links">
-                                <div class="footer__links-item">
-                                    <div class="footer__links-tittle">
-                                        <h6>Get In Touch</h6>
-                                    </div>
-                                    <ul class="footer__about-info">
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/1.svg" alt="icon">
-                                                <div class="info">
-                                                    <p class="m-0">4517 Washington Ave. Manchester, Kentucky
-                                                        39495
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/2.svg" alt="icon">
-                                                <div class="info"> <a
-                                                        href="mailto:felicia.reid@example.com">felicia.reid@example.com</a>
-                                                    <br>
-                                                    <a href="mailto:debra.holt@example.com">debra.holt@example.com</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="footer__about-item">
-                                            <div class="footer__about-inner">
-                                                <img src="assets/images/footer/3.svg" alt="icon">
-                                                <div class="info"> <a href="tel:+2075550119">(207) 555-0119</a>
-                                                    <br>
-                                                    <a href="tel:+7025550122">(702) 555-0122</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-sm-6">
-                            <div class="footer__links">
-                                <div class="footer__links-tittle">
-                                    <h6>Explore Links</h6>
-                                </div>
-                                <div class="footer__links-content">
-                                    <div class="footer__links-content">
-                                        <ul class="footer__linklist">
-                                            <li class="footer__linklist-item"> <a href="courses.html">Courses</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="about.html">About Us</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Content
-                                                    Writing</a> </li>
-                                            <li class="footer__linklist-item"> <a
-                                                    href="course-details.html">Management</a>
-                                            </li>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Web
-                                                    Development</a>
-                                            <li class="footer__linklist-item"> <a href="course-details.html">Art &
-                                                    Design</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-12">
-                            <div class="footer__links">
-                                <div class="footer__links-tittle">
-                                    <h6>Office Time</h6>
-                                </div>
-                                <div class="footer__links-content">
-                                    <ul class="footer__linklist">
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Mon-Sat: 10:00AM - 4.00PM</p>
-                                        </li>
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Sunday: 10:00AM - 4.00PM</p>
-                                        </li>
-                                        <li class="footer__linklist-item">
-                                            <p class="m-0">Friday: Close</p>
-                                        </li>
-                                    </ul>
-                                    <ul class="social mt-4">
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-instagram"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-youtube"></i></a>
-                                        </li>
-                                        <li class="social__item">
-                                            <a href="signin.html" class="social__link social__link--rounded1"><i
-                                                    class="fab fa-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="footer__bottom">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer__end">
-                                <div class="footer__end-copyright">
-                                    <p class=" mb-0">© 2023 Copyright | All Rights Reserved </p>
-                                </div>
-                                <div>
-                                    <ul class="footer__end-links">
-                                        <li class="footer__end-item">
-                                            <a href="#"> Terms & Conditions </a>
-                                        </li>
-                                        <li class="footer__end-item">
-                                            <a href="#"> Privacy Policy </a>
-                                        </li>
-                                        <li class="footer__end-item">
-                                            <a href="#"> Sitemap </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include('templates/_footer.php'); ?>
     <!-- ===============>> footer end here <<================= -->
 
 

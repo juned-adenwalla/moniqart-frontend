@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('includes/_functions.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title>Verify Account | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 

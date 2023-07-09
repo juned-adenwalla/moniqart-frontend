@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include('includes/_functions.php'); ?>
+<?php
+    if(isset($_GET['id'])){
+        $param = $_GET['id'];
+    }else{
+        echo "<script>window.location.href = 'courses';</script>";
+    }
 
+    // Single Course Data 
+    $courseName = singleDetail('tblcourse', '_parmalink', $param, '_coursename');
+    $courseDesc = singleDetail('tblcourse', '_parmalink', $param, '_coursedescription');
+    $courseDetailDesc = singleDetail('tblcourse', '_parmalink', $param, '_detaileddescription');
+    $courseWhatLearn = singleDetail('tblcourse', '_parmalink', $param, '_whatlearn');
+    $courseRequirment = singleDetail('tblcourse', '_parmalink', $param, '_requirements');
+    $courseEligibility = singleDetail('tblcourse', '_parmalink', $param, '_eligibilitycriteria');
+    $courseThumbnail = singleDetail('tblcourse', '_parmalink', $param, '_thumbnail');
+    $courseBanner = singleDetail('tblcourse', '_parmalink', $param, '_banner');
+    $coursePrice = singleDetail('tblcourse', '_parmalink', $param, '_pricing');
+    $courseDiscountedPrice = singleDetail('tblcourse', '_parmalink', $param, '_discountprice');
+    $courseTeacher = singleDetail('tblcourse', '_parmalink', $param, '_teacheremailid');
+    $courseCategory = singleDetail('tblcourse', '_parmalink', $param, '_categoryid');
+    $courseSubCategory = singleDetail('tblcourse', '_parmalink', $param, '_subcategoryid');
+    $courseCourseType = singleDetail('tblcourse', '_parmalink', $param, '_coursetype');
+    $courseCourseChannel = singleDetail('tblcourse', '_parmalink', $param, '_coursechannel');
+    $courseStartDate = singleDetail('tblcourse', '_parmalink', $param, '_startdate');
+    $courseEndDate = singleDetail('tblcourse', '_parmalink', $param, '_enddate');
+    $coursePreviewURL = singleDetail('tblcourse', '_parmalink', $param, '_previewurl');
+    $courseid = singleDetail('tblcourse', '_parmalink', $param, '_id');
+    // Get the current date
+    $currentDate = date('d F Y');
+    
+    // Convert both dates to comparable formats
+    $timestampToCompare = strtotime($courseEndDate);
+    $formattedCurrentDate = date('d F Y', time());
+    // Lesson Plan Data 
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title><?php echo $courseName; ?> | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -32,42 +68,6 @@
     <!-- ===============>> Header section start here <<================= -->
     <?php include('templates/_header.php'); ?>
     <!-- ===============>> Header section end here <<================= -->
-    <?php
-        if(isset($_GET['id'])){
-            $param = $_GET['id'];
-        }else{
-            echo "<script>window.location.href = 'courses';</script>";
-        }
-
-        // Single Course Data 
-        $courseName = singleDetail('tblcourse', '_parmalink', $param, '_coursename');
-        $courseDesc = singleDetail('tblcourse', '_parmalink', $param, '_coursedescription');
-        $courseDetailDesc = singleDetail('tblcourse', '_parmalink', $param, '_detaileddescription');
-        $courseWhatLearn = singleDetail('tblcourse', '_parmalink', $param, '_whatlearn');
-        $courseRequirment = singleDetail('tblcourse', '_parmalink', $param, '_requirements');
-        $courseEligibility = singleDetail('tblcourse', '_parmalink', $param, '_eligibilitycriteria');
-        $courseThumbnail = singleDetail('tblcourse', '_parmalink', $param, '_thumbnail');
-        $courseBanner = singleDetail('tblcourse', '_parmalink', $param, '_banner');
-        $coursePrice = singleDetail('tblcourse', '_parmalink', $param, '_pricing');
-        $courseDiscountedPrice = singleDetail('tblcourse', '_parmalink', $param, '_discountprice');
-        $courseTeacher = singleDetail('tblcourse', '_parmalink', $param, '_teacheremailid');
-        $courseCategory = singleDetail('tblcourse', '_parmalink', $param, '_categoryid');
-        $courseSubCategory = singleDetail('tblcourse', '_parmalink', $param, '_subcategoryid');
-        $courseCourseType = singleDetail('tblcourse', '_parmalink', $param, '_coursetype');
-        $courseCourseChannel = singleDetail('tblcourse', '_parmalink', $param, '_coursechannel');
-        $courseStartDate = singleDetail('tblcourse', '_parmalink', $param, '_startdate');
-        $courseEndDate = singleDetail('tblcourse', '_parmalink', $param, '_enddate');
-        $coursePreviewURL = singleDetail('tblcourse', '_parmalink', $param, '_previewurl');
-        $courseid = singleDetail('tblcourse', '_parmalink', $param, '_id');
-        // Get the current date
-        $currentDate = date('d F Y');
-        
-        // Convert both dates to comparable formats
-        $timestampToCompare = strtotime($courseEndDate);
-        $formattedCurrentDate = date('d F Y', time());
-        // Lesson Plan Data 
-
-    ?>
 
     <!-- ==========Page Header Section Starts Here========== -->
     <div class="pageheader" style="background-image:url(<?php echo base_url('uploads/coursebanner/' . $courseBanner); ?>">

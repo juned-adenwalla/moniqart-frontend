@@ -1,6 +1,5 @@
 <?php 
 session_start();
-include('includes/_functions.php');
 date_default_timezone_set(_siteconfig('_timezone'));
 
 if (isset($_POST['currency'])) {
@@ -13,6 +12,9 @@ if (isset($_POST['currency'])) {
 if(!isset($_POST['payment'])){
     $_SESSION['discount'] = null;
 }
+
+echo _siteconfig('_customheader');
+echo _siteconfig('_customcss');
 
 ?>
 <header class="header-section brand-1">

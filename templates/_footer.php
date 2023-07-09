@@ -5,7 +5,7 @@
                     <div class="row g-5">
                         <div class="col-xl-4 col-md-6">
                             <div class="footer__about">
-                                <a href="index.html" class="footer__about-logo"><img src="assets/images/logo/logo.png"
+                                <a href="index.html" class="footer__about-logo"><img src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>"
                                         alt="Logo"></a>
                                 <p class="footer__about-moto">You minim mollit non deserunt ullamco est sit aliqua dolor
                                     do
@@ -36,9 +36,9 @@
                                             <div class="footer__about-inner">
                                                 <img src="assets/images/footer/2.svg" alt="icon">
                                                 <div class="info"> <a
-                                                        href="mailto:felicia.reid@example.com">felicia.reid@example.com</a>
+                                                        href="mailto:<?php echo _siteconfig('_siteemail'); ?>"><?php echo _siteconfig('_siteemail'); ?></a>
                                                     <br>
-                                                    <a href="mailto:debra.holt@example.com">debra.holt@example.com</a>
+                                                    <!-- <a href="mailto:debra.holt@example.com">debra.holt@example.com</a> -->
                                                 </div>
                                             </div>
                                         </li>
@@ -46,9 +46,9 @@
                                         <li class="footer__about-item">
                                             <div class="footer__about-inner">
                                                 <img src="assets/images/footer/3.svg" alt="icon">
-                                                <div class="info"> <a href="tel:+2075550119">(207) 555-0119</a>
+                                                <div class="info"> <a href="tel:<?php echo _siteconfig('_sitephone'); ?>"><?php echo _siteconfig('_sitephone'); ?></a>
                                                     <br>
-                                                    <a href="tel:+7025550122">(702) 555-0122</a>
+                                                    <!-- <a href="tel:+7025550122">(702) 555-0122</a> -->
                                                 </div>
                                             </div>
                                         </li>
@@ -128,7 +128,7 @@
                         <div class="col-lg-12">
                             <div class="footer__end">
                                 <div class="footer__end-copyright">
-                                    <p class=" mb-0">© 2023 Copyright | All Rights Reserved </p>
+                                    <p class=" mb-0"><?php echo _siteconfig('_customfooter'); ?></p>
                                 </div>
                                 <div>
                                     <ul class="footer__end-links">

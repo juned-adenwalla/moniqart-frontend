@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('includes/_functions.php'); ?>
+<?php
+    if(isset($_GET['id']) && isset($_GET['lesson'])){
+        $param = $_GET['id'];
+        $lesson = $_GET['lesson'];
+    }else{
+        echo "<script>window.location.href = 'courses';</script>";
+    }
+    $courseName = singleDetail('tblcourse', '_parmalink', $param, '_coursename');
+    $courseID = singleDetail('tblcourse', '_parmalink', $param, '_id');
+    $courseBanner = singleDetail('tblcourse', '_parmalink', $param, '_banner');
+    $courseThumbnail = singleDetail('tblcourse', '_parmalink', $param, '_thumbnail');
+    $lessonType = singleDetail('tbllessons', '_id', $lesson, '_lessontype');
+    $lessonVideo = singleDetail('tbllessons', '_id', $lesson, '_recordedfilename');
+    $lessonTitle = singleDetail('tbllessons', '_id', $lesson, '_lessonname');
+    $lessonDetail = singleDetail('tbllessons', '_id', $lesson, '_lessondescription');
+    $lessomURL = singleDetail('tbllessons', '_id', $lesson, '_lessonurl');
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education </title>
+    <title><?php echo $courseName; ?> | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -32,23 +49,6 @@
     <!-- ===============>> Header section start here <<================= -->
     <?php include('templates/_header.php'); ?>
     <!-- ===============>> Header section end here <<================= -->
-
-    <?php
-        if(isset($_GET['id']) && isset($_GET['lesson'])){
-            $param = $_GET['id'];
-            $lesson = $_GET['lesson'];
-        }else{
-            echo "<script>window.location.href = 'courses';</script>";
-        }
-        $courseName = singleDetail('tblcourse', '_parmalink', $param, '_coursename');
-        $courseID = singleDetail('tblcourse', '_parmalink', $param, '_id');
-        $courseBanner = singleDetail('tblcourse', '_parmalink', $param, '_banner');
-        $courseThumbnail = singleDetail('tblcourse', '_parmalink', $param, '_thumbnail');
-        $lessonType = singleDetail('tbllessons', '_id', $lesson, '_lessontype');
-        $lessonVideo = singleDetail('tbllessons', '_id', $lesson, '_recordedfilename');
-        $lessonTitle = singleDetail('tbllessons', '_id', $lesson, '_lessonname');
-        $lessonDetail = singleDetail('tbllessons', '_id', $lesson, '_lessondescription');
-    ?>
 
     <!-- ==========Page Header Section Starts Here========== -->
     <div class="pageheader" style="background-image:url(<?php echo base_url('uploads/coursebanner/' . $courseBanner); ?>)">
@@ -87,19 +87,10 @@
                                 if($lessonType == 'live'){ ?>
                                     <div class="coursedetails__coursereviews">
                                         <div class="coursedetails__coursereviews-author">
-                                            <div class="coursedetails__coursereviews-thumb">
-                                                <img src="assets/images/testimonial/home1/2.png" alt="author">
-                                            </div>
                                             <div class="coursedetails__coursereviews-designation">
-                                                <h6>Mobarok Hossain</h6>
-                                                <span>Frontend Designer</span>
-                                                <blockquote>
-                                                    <p>There are many variations of passages of Lorem Ipsum
-                                                        available, but the majority have suffered alteration in
-                                                        some
-                                                        form, by injected humor</p>
-                                                </blockquote>
-
+                                                <a href="<?php echo $lessomURL; ?>" target="_blank" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                                    Join Live Course
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
