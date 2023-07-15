@@ -36,7 +36,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>About US</h2>
@@ -63,13 +63,9 @@
                                 <div class="subtitle subtitle--style4">
                                     <p class="mb-0">who we are</p>
                                 </div>
-                                <h2 class="about-title">We are providing the best quality online courses. Our all
-                                    instructors are high
-                                    expert</h2>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humor, or randomized words which don't
-                                    look even slightly believable. If you are going to use a passage of Lorem Ipsum, you
-                                    need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                <h2 class="about-title">Healing Through Art: Guided Therapy with Mona Joy</h2>
+                                <p>We believe that art has the ability to heal. Our therapy sessions are led by trained and certified art therapist Mona Joy who guides patients in the creative process, encourages them to express themselves through art, and provides support and guidance throughout the process</p>
+                                <q style="font-style:italic;">Many of the motions involved in making art, such as holding a paintbrush or scribbling with a crayon, are essential to the growth of fine motor skills in young children and adults as well</q>- Mona Joy
                             </div>
                             <div class="about__counter">
                                 <div class="about__counter-item">
@@ -99,7 +95,7 @@
                         <div class="about__thumb" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img src="assets/images/about/home1/2.png" alt="about-image">
+                                    <img src="assets/images/about/2.png" alt="about-image">
                                 </div>
                             </div>
                         </div>
@@ -128,12 +124,11 @@
                         <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                             <div class="feature__item-inner">
                                 <div class="feature__thumb">
-                                    <img src="assets/images/about/home1/3.png" alt="feature-image">
+                                    <img src="assets/images/about/skill.jpg" alt="feature-image">
                                 </div>
                                 <div class="feature__content">
-                                    <h5>Discover From Anywhere</h5>
-                                    <p class="mb-0">The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-                                        below.</p>
+                                    <h5>Skill Development</h5>
+                                    <p class="mb-0">We offer art workshops and classes that provide structured learning environments where participants can enhance their artistic skills.</p>
                                 </div>
                             </div>
                         </div>
@@ -142,12 +137,11 @@
                         <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                             <div class="feature__item-inner">
                                 <div class="feature__thumb">
-                                    <img src="assets/images/about/home1/4.png" alt="feature-image">
+                                    <img src="assets/images/about/creative.jpg" alt="feature-image">
                                 </div>
                                 <div class="feature__content">
-                                    <h5>Our Expert Creator</h5>
-                                    <p class="mb-0">The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-                                        below.</p>
+                                    <h5>Creative Exploration</h5>
+                                    <p class="mb-0">Our studio fosters an environment that encourages creative exploration and free expression of ideas.</p>
                                 </div>
                             </div>
                         </div>
@@ -156,12 +150,52 @@
                         <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                             <div class="feature__item-inner">
                                 <div class="feature__thumb">
-                                    <img src="assets/images/about/home1/5.png" alt="feature-image">
+                                    <img src="assets/images/about/therapy.jpg" alt="feature-image">
                                 </div>
                                 <div class="feature__content">
-                                    <h5>24/7 Live Support</h5>
-                                    <p class="mb-0">The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-                                        below.</p>
+                                    <h5>Art Therapy and Emotional Well-being</h5>
+                                    <p class="mb-0">Art therapy can help manage stress, improve self-esteem, enhance emotional well-being, and provide a healthy outlet for processing emotions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4" style="margin-top: 20px;">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                            <div class="feature__item-inner">
+                                <div class="feature__thumb">
+                                    <img src="assets/images/about/exhibition.jpg" alt="feature-image">
+                                </div>
+                                <div class="feature__content">
+                                    <h5>Exhibition and Showcase Opportunities</h5>
+                                    <p class="mb-0">We hold events that offer opportunities to share your artwork with a wider audience, receive feedback, and gain exposure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature__item-inner">
+                                <div class="feature__thumb">
+                                    <img src="assets/images/about/exam.jpg" alt="feature-image">
+                                </div>
+                                <div class="feature__content">
+                                    <h5>Exam Preparation</h5>
+                                    <p class="mb-0">Art exam preparation sessions provide valuable guidance and support for individuals aiming to excel in art-related exams.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="feature__item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                            <div class="feature__item-inner">
+                                <div class="feature__thumb">
+                                    <img src="assets/images/about/resource.jpg" alt="feature-image">
+                                </div>
+                                <div class="feature__content">
+                                    <h5>Access to Resources and Materials</h5>
+                                    <p class="mb-0">Get access to a variety of art materials, tools, and resources and gain hands-on experience using professional-grade materials.</p>
                                 </div>
                             </div>
                         </div>

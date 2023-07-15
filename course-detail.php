@@ -27,6 +27,7 @@
     $courseStartDate = singleDetail('tblcourse', '_parmalink', $param, '_startdate');
     $courseEndDate = singleDetail('tblcourse', '_parmalink', $param, '_enddate');
     $coursePreviewURL = singleDetail('tblcourse', '_parmalink', $param, '_previewurl');
+    $courseEnrollStatus = singleDetail('tblcourse', '_parmalink', $param, '_enrollstatus');
     $courseid = singleDetail('tblcourse', '_parmalink', $param, '_id');
     // Get the current date
     $currentDate = date('d F Y');
@@ -107,7 +108,7 @@
                                 <p><i class="fa-solid fa-chart-simple"></i> <span><?php echo $courseCourseType;?></span> Level</p>
                             </div>
                             <?php 
-                            if($formattedCurrentDate > $courseEndDate){ ?>
+                            if($courseEnrollStatus == 'false'){ ?>
                                 <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
                             <?php }else{ ?>
                                 <a href="checkout?id=<?php echo $param; ?>&type=course" class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Buy

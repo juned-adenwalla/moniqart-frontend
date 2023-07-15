@@ -89,7 +89,7 @@
     ?>
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/3.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/3.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2><?php echo singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_username'); ?></h2>
@@ -149,7 +149,12 @@
                         <div class="coursedetails__info">
                             <ul class="nav nav-pills " id="pills-tab" role="tablist">
                                 <li class="nav-item active" role="presentation">
-                                    <button class="trk-btn active" id="pills-edit-profile-tab" data-bs-toggle="pill"
+                                    <button class="trk-btn active" id="pills-my-courses-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-my-courses" role="tab" aria-controls="pills-my-courses"
+                                        aria-selected="false"><i class="fa-solid fa-chalkboard-user"></i>My Courses</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="trk-btn" id="pills-edit-profile-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile"
                                         aria-selected="true"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
                                 </li>
@@ -157,11 +162,6 @@
                                     <button class="trk-btn" id="pills-transactions-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-transactions" role="tab" aria-controls="pills-transactions"
                                         aria-selected="false"><i class="fa-solid fa-building-columns"></i>Transactions</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="trk-btn" id="pills-my-courses-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-my-courses" role="tab" aria-controls="pills-my-courses"
-                                        aria-selected="false"><i class="fa-solid fa-chalkboard-user"></i>My Courses</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="trk-btn" id="pills-my-orders-tab" data-bs-toggle="pill"
@@ -183,7 +183,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-edit-profile" role="tabpanel" content
+                                <div class="tab-pane fade" id="pills-edit-profile" role="tabpanel" content
                                     aria-labelledby="pills-edit-profile-tab" tabindex="0">
                                     <div class="coursedetails__edit-profile" style="margin-top: 30px;">
                                         <div class="coursedetails__reviewform">
@@ -258,7 +258,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-my-courses" role="tabpanel"
+                                <div class="tab-pane fade  show active" id="pills-my-courses" role="tabpanel"
                                     aria-labelledby="pills-my-courses-tab" tabindex="0">
                                     <div class="coursedetails__my-courses" style="margin-top: 20px;">
                                         <div class="coursedetails__reviewform" style="padding-top: 10px">

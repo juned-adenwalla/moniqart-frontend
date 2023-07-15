@@ -781,12 +781,18 @@ function userLogin($emailOrPhone, $password) {
             // Store the user ID in the session
             $_SESSION['userid'] = $userid;
 
-            // Close the prepared statement and database connection
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-
-            // Login successful
-            return true;
+            if($row['_userverify'] != 'true'){
+                // Generate an OTP (One-Time Password)
+                $otp = rand(100000, 999999);
+                $query = "UPDATE `tblusers` SET `_userotp`= '$otp' WHERE `_userphone` = '$userid'";
+                $stmt = mysqli_query($conn,$query);
+                sendSMS($userid, $otp);
+                echo "<script>window.location.href = 'verify?phone=" . $userid . "';</script>";
+                return false;
+            }else{
+                // Login successful
+                return true;
+            }
         }else{
             require('includes/_alert.php');
             $alert = new PHPAlert();
@@ -958,9 +964,9 @@ function userCourses(){
         // Loop through each row and fetch the data
         while ($row = mysqli_fetch_assoc($result)) {
             $courseid = $row['_courseid'];
-            $coursestatus = $row['_coursestatus'];
             $purchasedate = date_create($row['CreationDate']);
-
+            $coursestatus = $row['_coursestatus'];
+            $coursetype = singleDetail('tblcourse', '_id', $courseid, '_coursechannel');
             // Output the data in the table rows ?>
 
             <div class="coursedetails__coursereviews">
@@ -984,8 +990,14 @@ function userCourses(){
                         </blockquote>
                     </div>
                 </div>
-                <div class="coursedetails__coursereviews-rating">
-                    <a class='trk-btn trk-btn--rounded trk-btn--primary1' href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
+                <div class="coursedetails__coursereviews-rating"><?php
+                    if($coursestatus == 'active' && $coursetype == 'online'){ ?>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
+                    <?php }else if($coursestatus == 'in-active'){ ?>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: red;color:white">Course Suspended</a>
+                    <?php }else if($coursetype == 'offline' ){ ?>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: #FFE3EC;">Visit Branch</a>
+                    <?php } ?>                    
                 </div>
             </div>
             <?php
@@ -1459,4 +1471,26 @@ function _usetemplate($template, $data)
 
     return $template;
 }
+
+// Function to get course status 
+function getCourseStatus($userId, $courseId) {
+    // Establish your database connection
+    require('_config.php');
+
+    // Construct the query
+    $query = "SELECT `_coursestatus` FROM `tblpurchasedcourses` WHERE `_userid` = $userId AND `_courseid` = $courseId";
+
+    // Execute the query and fetch the result
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    // Return the course status
+    if ($row) {
+        return $row['_coursestatus'];
+    }
+
+    // Return null if no result found
+    return null;
+}
+
 ?>

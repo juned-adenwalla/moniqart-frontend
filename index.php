@@ -42,10 +42,10 @@
 
                 <!-- banner content -->
                 <div class="banner__content banner__content--style1" data-aos="zoom-in" data-aos-duration="1000">
-                    <h1>Grow Your Skills to Advance Your Career path.</h1>
-                    <p>Educating, Inspiring, & Transforming Young Women. A Tuituon-Free Private Meddle School</p>
+                    <h1>Transform Your Imagination Into Reality</h1>
+                    <p>Creating art and forming artists since 2006</p>
                     <div class="btn-group justify-content-center">
-                        <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
+                        <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
                         <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" class="play-btn" data-fslightbox>
                             <img src="assets/images/icon/svg/4.svg" alt="play-btn">
                             Watch Video</a>
@@ -58,21 +58,21 @@
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="banner-image__item-inner ">
-                                    <img src="assets/images/banner/1.png" alt="banner-image-banner">
+                                    <img src="assets/images/banner/1.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="banner-image__item-inner banner-image__item-inner--style2">
-                                    <img src="assets/images/banner/2.png" alt="banner-image-banner">
+                                    <img src="assets/images/banner/2.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-left" data-aos-duration="1000">
                                 <div class="banner-image__item-inner">
-                                    <img src="assets/images/banner/3.png" alt="banner-image-banner">
+                                    <img src="assets/images/banner/3.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
             <div class="banner__shape-item">
                 <div class="reviews">
                     <div class="reviews__content">
-                        <p><span class="purecounter" data-purecounter-start="300" data-purecounter-end="365"
-                                data-purecounter-once="false">365</span>k+ enrolled students</p>
+                        <p><span class="purecounter" data-purecounter-start="3000" data-purecounter-end="5000"
+                                data-purecounter-once="false">5000</span>+ enrolled students</p>
                     </div>
                     <div class="reviews__thumb">
                         <ul>
@@ -134,9 +134,8 @@
                 <div class="row g-4">
                     <div class="col-lg-4" data-aos="fade-right" data-aos-duration="800">
                         <div class="section-header pe-3">
-                            <h2>Explore <br> Our Categories</h2>
-                            <p>Look into yourself, get something in return as your AchievementLook into yourself,
-                                get something Return as your achievement</p>
+                            <h2>GET <br> INSPIRED</h2>
+                            <p>At MONIQART, we cover a full range of courses across all levels of creativity and education.</p>
                             <a href="courses" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
                                 Categories</a>
                         </div>
@@ -164,7 +163,7 @@
                         <div class="about__thumb" data-aos="fade-right" data-aos-duration="800">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img src="assets/images/about/1.png" alt="about-image">
+                                    <img src="assets/images/about/1.jpg" alt="about-image">
                                     <div class="about__thumb-video">
                                         <img src="assets/images/about/2.png" alt="intro-thumbil">
                                         <div class="about__thumb-plybtn">
@@ -180,14 +179,15 @@
                         <div class="about__content" data-aos="fade-left" data-aos-duration="800">
                             <div class="about__content-inner">
                                 <span class="subtitle">About Us</span>
-                                <h2>We Are Maximize Your Learning Growth</h2>
-                                <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                    duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempo.</p>
+                                <h2>Studio Background</h2>
+                                <p>Moniqart strives to foster imagination and creativity in our studio by helping students create beautiful art. Whether you’re coming in to spend the day or to truly exploit your talent, you’ll find a blank canvas awaiting you where the world is your oyster. We opened our doors in 2006 and have been creating art and forming artists since.</p>
                                 <ul class="about-list">
-                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Training Services</li>
-                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Big Experience</li>
-                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Expert Trainer</li>
-                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Lifetime access</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Skill Development</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Creative Exploration</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Exam Preparation</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Exhibition and Showcase Opportunities</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Art Therapy and Emotional Well-being</li>
+                                    <li> <img src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Resources and Materials</li>
                                 </ul>
                                 <a href="about-us" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
                                     +</a>
@@ -208,8 +208,7 @@
         <div class="container-fluid px-lg-0" data-aos="fade-up" data-aos-duration="800">
             <div class="section-header text-center section-header--dark">
                 <h2>Our Most Popular Courses</h2>
-                <p class="style4">Minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. duis enim velit
-                    mollit. Exercitation veniam consequat.</p>
+                <p class="style4">Learn from a class of professional artists. Get unique insights and perspectives combined with access to effective resources.</p>
             </div>
             <div class="course__wrapper">
                 <div class="course__slider swiper">
@@ -231,16 +230,14 @@
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="section-header text-center">
                 <h2>Our Success Story</h2>
-                <p class="style2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-                    officia consequat
-                    duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <p class="style2">We believe that art has the ability to heal. Our therapy sessions are led by trained and certified art therapist Mona Joy who guides patients in the creative process, encourages them to express themselves through art, and provides support and guidance throughout the process.</p>
             </div>
             <div class="story__wrapper">
                 <div class="story__thumb">
                     <div class="story__thumb-inner">
-                        <img src="assets/images/story/1.png" alt="story-image">
+                        <img src="assets/images/story/1.jpg" alt="story-image">
                         <div class="story__thumb-playbtn">
-                            <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" data-fslightbox><img
+                            <a href="https://youtu.be/BQQS1guufeQ" data-fslightbox><img
                                     src="assets/images/story/2.png" alt="ply-btn"></a>
                         </div>
                     </div>
@@ -558,7 +555,7 @@
         <div class="container">
             <div class="blog__header">
                 <h2 class="style2-h2--max20">Latest News, Blog & Articles</h2>
-                <a href="blogs.html" class="trk-btn trk-btn--rounded trk-btn--secondary1">View More</a>
+                <a href="blogs" class="trk-btn trk-btn--rounded trk-btn--secondary1">View More</a>
             </div>
             <div class="blog__wrapper">
                 <div class="row g-4">

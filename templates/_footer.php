@@ -7,11 +7,7 @@
                             <div class="footer__about">
                                 <a href="index.html" class="footer__about-logo"><img style="width: 120px;" src="<?php echo base_url('uploads/images/' . _siteconfig('_sitelogo')); ?>"
                                         alt="Logo"></a>
-                                <p class="footer__about-moto">You minim mollit non deserunt ullamco est sit aliqua dolor
-                                    do
-                                    amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam
-                                    consequat
-                                    sunt nostrud amet.</p>
+                                <p class="footer__about-moto">At MONIQART, we cover a full-range of courses across all levels of creativity and education. We aim to inspire you no matter where you are with our online presence. Take a look at what we offer.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-6">
@@ -25,9 +21,7 @@
                                             <div class="footer__about-inner">
                                                 <img src="assets/images/footer/1.svg" alt="icon">
                                                 <div class="info">
-                                                    <p class="m-0">4517 Washington Ave. Manchester, Kentucky
-                                                        39495
-                                                    </p>
+                                                    <p class="m-0">Row house No 1, Jitender co-op society, Plot no 91, Sector 3, Koparkhairne, Navi Mumbai</p>
                                                 </div>
                                             </div>
 

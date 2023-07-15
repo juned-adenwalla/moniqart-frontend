@@ -101,14 +101,14 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/8.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/8.jpg)">
         <div class="container">
             <div class="pageheader__content">
-                <h2>404 Page</h2>
+                <h2>Subscriptions</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">404 Page</li>
+                        <li class="breadcrumb-item active" aria-current="page">Subscription</li>
                     </ol>
                 </nav>
             </div>

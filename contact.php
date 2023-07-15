@@ -36,7 +36,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/7.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/7.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>Contact Us</h2>
@@ -61,10 +61,7 @@
                         <div class="cotact__details">
                             <div class="contact__header">
                                 <h3>Always Here to Help you</h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humor, or randomized words which don't
-                                    look
-                                    even slightly believable.</p>
+                                <p>Welcome to Moniqart. Write to us and our executive will revert within 48 hours.</p>
                             </div>
 
                             <div class="contact__info">
@@ -74,7 +71,7 @@
                                     </div>
                                     <div class="contact__item-content">
                                         <h5>Location</h5>
-                                        <p class="mb-0">4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                        <p class="mb-0">Row house No 1, Jitender co-op society, Plot no 91, Sector 3, Koparkhairne, Navi Mumbai</p>
                                     </div>
                                 </div>
                                 <div class="contact__item">
@@ -83,8 +80,7 @@
                                     </div>
                                     <div class="contact__item-content">
                                         <h5>Contact</h5>
-                                        <p class="mb-0">(405) 555-0128</p>
-                                        <p class="mb-0">(603) 555-0123</p>
+                                        <p class="mb-0"><?php echo _siteconfig('_sitephone'); ?></p>
                                     </div>
                                 </div>
                                 <div class="contact__item">
@@ -93,7 +89,7 @@
                                     </div>
                                     <div class="contact__item-content">
                                         <h5>Email</h5>
-                                        <p class="mb-0">nvt.isst.nute@gmail.com</p>
+                                        <p class="mb-0"><?php echo _siteconfig('_siteemail'); ?></p>
                                     </div>
                                 </div>
                                 <div class="contact__item">
@@ -192,7 +188,7 @@
             <div class="contact__map">
                 <div class="mapouter">
                     <div class="gmap_canvas"><iframe id="gmap_canvas" class="map"
-                            src="https://maps.google.com/maps?q=california&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
+                            src="https://www.google.com/maps/embed/v1/place?q=Moniqart+-+Art+Therapy+online+/+offline,+Sector+3,+Kopar+Khairane,+Navi+Mumbai,+Maharashtra,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
                     </div>
                 </div>
             </div>

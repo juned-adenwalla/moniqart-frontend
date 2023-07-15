@@ -17,6 +17,9 @@
     $lessonTitle = singleDetail('tbllessons', '_id', $lesson, '_lessonname');
     $lessonDetail = singleDetail('tbllessons', '_id', $lesson, '_lessondescription');
     $lessomURL = singleDetail('tbllessons', '_id', $lesson, '_lessonurl');
+    // if(getCourseStatus($_SESSION['userid'], $courseID ) == 'in-active'){
+    //     echo "<script>window.location.href = 'my-account?access=false';</script>";
+    // }
 ?>
 <head>
     <meta charset="UTF-8">

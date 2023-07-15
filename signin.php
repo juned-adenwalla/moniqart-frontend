@@ -34,7 +34,9 @@
     <!-- ===============>> Header section end here <<================= -->
 
     <?php
-
+    if(isset($_SESSION['userid'])){
+        echo "<script>window.location.href = 'my-account';</script>";
+    }
     if(isset($_GET['status'])){
         if($_GET['status'] == false){
             require('includes/_alert.php');
@@ -62,7 +64,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/9.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/9.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>Login</h2>

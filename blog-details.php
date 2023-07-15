@@ -52,7 +52,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/5.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/5.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2><?php echo $blogName; ?></h2>

@@ -133,7 +133,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/2.png)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/2.jpg)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>Checkout</h2>
