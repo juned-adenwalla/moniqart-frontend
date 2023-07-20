@@ -24,18 +24,14 @@
     $courseSubCategory = singleDetail('tblcourse', '_parmalink', $param, '_subcategoryid');
     $courseCourseType = singleDetail('tblcourse', '_parmalink', $param, '_coursetype');
     $courseCourseChannel = singleDetail('tblcourse', '_parmalink', $param, '_coursechannel');
-    $courseStartDate = singleDetail('tblcourse', '_parmalink', $param, '_startdate');
-    $courseEndDate = singleDetail('tblcourse', '_parmalink', $param, '_enddate');
+    $courseStartDate = strtotime(singleDetail('tblcourse', '_parmalink', $param, '_startdate'));
+    $courseEndDate = strtotime(singleDetail('tblcourse', '_parmalink', $param, '_enddate'));
     $coursePreviewURL = singleDetail('tblcourse', '_parmalink', $param, '_previewurl');
     $courseEnrollStatus = singleDetail('tblcourse', '_parmalink', $param, '_enrollstatus');
     $courseid = singleDetail('tblcourse', '_parmalink', $param, '_id');
     // Get the current date
-    $currentDate = date('d F Y');
-    
-    // Convert both dates to comparable formats
-    $timestampToCompare = strtotime($courseEndDate);
-    $formattedCurrentDate = date('d F Y', time());
-    // Lesson Plan Data 
+    date_default_timezone_set(_siteconfig('_timezone'));
+    $currentDate = date("Y-m-d");
 
 ?>
 <head>
@@ -110,11 +106,17 @@
                             <?php 
                             if($courseEnrollStatus == 'false'){ ?>
                                 <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
-                            <?php }else{ ?>
+                            <?php }else if (strtotime($currentDate) < $courseStartDate) { ?>
+                                    <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
+                                    <p style="margin-top: 10px;">Booking Starts at <?php echo date("F d, Y", $courseStartDate); ?></p>
+                                <?php }else if(strtotime($currentDate) > $courseEndDate){ ?>
+                                    <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
+                                    <p style="margin-top: 10px;">Booking Closed at <?php echo date("F d, Y", $currentDate); ?></p>
+                                <?php }
+                                else{ ?>
                                 <a href="checkout?id=<?php echo $param; ?>&type=course" class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Buy
                                 Now</a>
-                            <?php }
-                            ?>
+                            <?php } ?>
 
                             <div class="coursedetails__offer-social">
                                 <ul class="social">

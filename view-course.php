@@ -12,11 +12,29 @@
     $courseID = singleDetail('tblcourse', '_parmalink', $param, '_id');
     $courseBanner = singleDetail('tblcourse', '_parmalink', $param, '_banner');
     $courseThumbnail = singleDetail('tblcourse', '_parmalink', $param, '_thumbnail');
+    $courseCategory = singleDetail('tblcourse', '_parmalink', $param, '_categoryid');
+    $courseSubCategory = singleDetail('tblcourse', '_parmalink', $param, '_subcategoryid');
+    $courseCourseChannel = singleDetail('tblcourse', '_parmalink', $param, '_coursechannel');
     $lessonType = singleDetail('tbllessons', '_id', $lesson, '_lessontype');
     $lessonVideo = singleDetail('tbllessons', '_id', $lesson, '_recordedfilename');
     $lessonTitle = singleDetail('tbllessons', '_id', $lesson, '_lessonname');
     $lessonDetail = singleDetail('tbllessons', '_id', $lesson, '_lessondescription');
     $lessomURL = singleDetail('tbllessons', '_id', $lesson, '_lessonurl');
+    $lessonDate = singleDetail('tbllessons', '_id', $lesson, '_lessondate');
+    $lessonTime = singleDetail('tbllessons', '_id', $lesson, '_lessontime');
+    date_default_timezone_set(_siteconfig('_timezone'));
+    $currentDate = date("Y-m-d");
+    $currentTime = date("H:i:s");
+    
+    // Combine the given date and time into a single string
+    $givenDateTime = $lessonDate . ' ' . $lessonTime . ':00';
+
+    // Calculate the difference in seconds between the given date/time and the current date/time
+    $timeDiff = strtotime($givenDateTime) - strtotime($currentDate . ' ' . $currentTime);
+
+    // Convert the time difference to minutes and seconds
+    $timeDiffMinutes = floor($timeDiff / 60);
+    $timeDiffSeconds = $timeDiff % 60;
     // if(getCourseStatus($_SESSION['userid'], $courseID ) == 'in-active'){
     //     echo "<script>window.location.href = 'my-account?access=false';</script>";
     // }
@@ -82,23 +100,36 @@
                             </div>
                         </div>
                     </div>
+                    <a href="my-account" style="width:105%;border-radius:8px;margin-top:50px;margin-left:-10px" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                        <span>Get Certificate</span>
+                    </a>
                 </div>
                 <div class="col-lg-8">
                     <div class="coursedetails__content">
                         <div class="coursedetails__header">
                             <?php 
                                 if($lessonType == 'live'){ ?>
-                                    <div class="coursedetails__coursereviews">
+                                    <div class="coursedetails__coursereviews" style="margin-bottom: 20px;">
                                         <div class="coursedetails__coursereviews-author">
-                                            <div class="coursedetails__coursereviews-designation">
-                                                <a href="<?php echo $lessomURL; ?>" target="_blank" class="trk-btn trk-btn--rounded trk-btn--primary1">
-                                                    Join Live Course
-                                                </a>
+                                            <div class="coursedetails__coursereviews-designation"><?php
+                                                if ($timeDiffMinutes > 15) { ?>
+                                                    <h3>Lecture Has Not Started Yet</h3>
+                                                    <p>Start Date : <?php echo date("F d, Y", strtotime($lessonDate));?>, <?php echo date("g:i A", strtotime($lessonTime));?> IST</p>
+                                                    <a class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                                        <?php echo $timeDiffMinutes;?> Minutes Remaining
+                                                    </a>
+                                                <?php }else{ ?>
+                                                    <h3>Lecture Started</h3>
+                                                    <p>Start Date : <?php echo date("F d, Y", strtotime($lessonDate));?>, <?php echo date("g:i A", strtotime($lessonTime));?> IST</p>
+                                                    <a href="<?php echo $lessomURL; ?>" target="_blank" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                                        Join Live Course
+                                                    </a>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
                                 <?php }else{ ?>
-                                    <video style="width: 100%;border-radius:10px" id="player" playsinline controls data-poster="<?php echo base_url('uploads/coursethumbnail/' . $courseThumbnail); ?>">
+                                    <video style="width: 100%;border-radius:10px;margin-bottom:20px" id="player" playsinline controls data-poster="<?php echo base_url('uploads/coursethumbnail/' . $courseThumbnail); ?>">
                                         <source src="<?php echo base_url('uploads/recordedlesson/' . $lessonVideo); ?>" type="video/mp4" />
                                         <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
 
@@ -106,6 +137,15 @@
                                         <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
                                     </video>
                                 <?php } ?>
+                                <span style="background-color: #FFE3EC;font-size: 0.75rem;padding: 0.60rem 1rem;border-radius: 50px;color: #081A28;font-weight: 500;text-transform: capitalize;">
+                                    <?php echo singleDetail('tblcategory', '_id', $courseCategory, '_categoryname'); ?>
+                                </span>&nbsp;
+                                <span style="background-color: #99fc96;font-size: 0.75rem;padding: 0.60rem 1rem;border-radius: 50px;color: #081A28;font-weight: 500;text-transform: capitalize;">
+                                    <?php echo singleDetail('tblsubcategory', '_id', $courseSubCategory, '_subcategoryname'); ?>
+                                </span>&nbsp;
+                                <span style="background-color: #F2E9FF;font-size: 0.75rem;padding: 0.60rem 1rem;border-radius: 50px;color: #081A28;font-weight: 500;text-transform: capitalize;">
+                                    <?php echo $courseCourseChannel; ?>
+                                </span>
                         </div>
                         <div class="coursedetails__info">
                             <ul class="nav nav-pills " id="pills-tab" role="tablist">
