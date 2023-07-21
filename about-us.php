@@ -113,10 +113,8 @@
                 <div class="subtitle subtitle--style5 justify-content-center">
                     <p class="mb-0">Our specialties</p>
                 </div>
-                <h2>Look into Featured Courses</h2>
-                <p class="style2">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                    duis deserunt
-                    mollit dolore cillum minim tempor enim.2</p>
+                <h2>Unparalleled Expertise for Your Every Need</h2>
+                <p class="style2">Experience Excellence in Services Tailored to Meet Your Goals and Exceed Your Expectations</p>
             </div>
             <div class="feature__wrapper">
                 <div class="row g-4">
@@ -208,7 +206,7 @@
 
 
     <!-- ===============>> Popular course section start here <<================= -->
-    <section class="course course--style1 padding-top padding-bottom brand-1">
+    <section class="course course--style1 padding-top padding-bottom brand-1" style="display: none;">
         <div class="container-fluid px-lg-0">
             <div class="section-header text-center section-header--dark" data-aos="zoom-in" data-aos-duration="800">
                 <h2>Our Popular Courses</h2>
@@ -231,7 +229,7 @@
 
 
     <!-- ===============>> Team section start here <<================= -->
-    <section class="team  team--style1 padding-bottom padding-top">
+    <section class="team  team--style1 padding-bottom padding-top" style="display: none;">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="team__wrapper">
                 <div class="row g-4">
@@ -347,7 +345,7 @@
 
 
     <!-- ===============>> Testimonial section start here <<================= -->
-    <section class="testimonial testimonial--style1 padding-top padding-bottom brand-1 mb-5">
+    <section class="testimonial testimonial--style1 padding-top padding-bottom brand-1 mb-5" style="display: none;">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="section-header text-center section-header--dark">
                 <h2>What Clients Have to Say About Us</h2>

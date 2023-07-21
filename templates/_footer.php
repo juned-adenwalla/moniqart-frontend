@@ -58,19 +58,18 @@
                                 </div>
                                 <div class="footer__links-content">
                                     <ul class="footer__linklist">
-                                        <li class="footer__linklist-item"> <a href="courses.html">Courses</a>
+                                        <li class="footer__linklist-item"> <a href="courses">Courses</a>
                                         </li>
-                                        <li class="footer__linklist-item"> <a href="about.html">About Us</a>
+                                        <li class="footer__linklist-item"> <a href="about-us">About Us</a>
                                         </li>
-                                        <li class="footer__linklist-item"> <a href="course-details.html">Content
-                                                Writing</a> </li>
-                                        <li class="footer__linklist-item"> <a href="course-details.html">Management</a>
+                                        <li class="footer__linklist-item"> <a href="blogs">Blog Posts</a> </li>
+                                        <!-- <li class="footer__linklist-item"> <a href="course-details.html">Management</a>
                                         </li>
                                         <li class="footer__linklist-item"> <a href="course-details.html">Web
                                                 Development</a>
                                         <li class="footer__linklist-item"> <a href="course-details.html">Art &
                                                 Design</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -95,21 +94,21 @@
                                     </ul>
                                     <ul class="social mt-4">
                                         <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
+                                            <a href="https://www.facebook.com/Moniqart.in/" class="social__link social__link--rounded1"><i
                                                     class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
+                                            <a href="https://www.instagram.com/moniqart.in/" class="social__link social__link--rounded1"><i
                                                     class="fab fa-instagram"></i></a>
                                         </li>
                                         <li class="social__item">
-                                            <a href="#" class="social__link social__link--rounded1"><i
+                                            <a href="https://www.youtube.com/@moniqart-artastherapy1929" class="social__link social__link--rounded1"><i
                                                     class="fab fa-youtube"></i></a>
                                         </li>
-                                        <li class="social__item">
+                                        <!-- <li class="social__item">
                                             <a href="signin.html" class="social__link social__link--rounded1"><i
                                                     class="fab fa-twitter"></i></a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -127,14 +126,14 @@
                                 <div>
                                     <ul class="footer__end-links">
                                         <li class="footer__end-item">
-                                            <a href="#"> Terms & Conditions </a>
+                                            <a href="terms-and-condition"> Terms & Conditions </a>
                                         </li>
                                         <li class="footer__end-item">
-                                            <a href="#"> Privacy Policy </a>
+                                            <a href="privacy-policy"> Privacy Policy </a>
                                         </li>
-                                        <li class="footer__end-item">
+                                        <!-- <li class="footer__end-item">
                                             <a href="#"> Sitemap </a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>

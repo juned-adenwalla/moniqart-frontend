@@ -20,7 +20,11 @@
     <!-- main css for template -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
+<style>
+    .menu--style1 li a {
+        color: black;
+    }
+</style>
 <body>
 
 
@@ -36,18 +40,18 @@
 
 
     <!-- ===============>> Banner section start here <<================= -->
-    <section class="banner brand-1">
+    <section class="banner brand-1" style="background-color:#e7e8e8">
         <div class="container">
             <div class="banner__wrapper">
 
                 <!-- banner content -->
                 <div class="banner__content banner__content--style1" data-aos="zoom-in" data-aos-duration="1000">
-                    <h1>Transform Your Imagination Into Reality</h1>
-                    <p>Creating art and forming artists since 2006</p>
+                    <h1 style="color: black;">Transform Your Imagination Into Reality</h1>
+                    <p style="color: black;">Creating art and forming artists since 2006</p>
                     <div class="btn-group justify-content-center">
                         <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" class="play-btn" data-fslightbox>
-                            <img src="assets/images/icon/svg/4.svg" alt="play-btn">
+                        <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" class="play-btn" data-fslightbox style="color: black;">
+                            <img src="assets/images/icon/svg/4.png" alt="play-btn">
                             Watch Video</a>
                     </div>
                 </div>
@@ -81,36 +85,36 @@
             </div>
         </div>
         <div class="banner__shape banner__shape--style1">
-            <span class="banner__shape-item banner__shape-item--animation"><img src="assets/images/shape/home1/1.png"
+            <span class="banner__shape-item banner__shape-item--animation"><img src="assets/images/shape/home1/1.webp"
                     alt="roket"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/2.png"
+            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/2.webp"
                     alt="book"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/3.png"
+            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/3.webp"
                     alt="belon"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/4.png"
+            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/4.webp"
                     alt="triangle"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/5.png"
+            <span class="banner__shape-item banner__shpae-item--animation"><img src="assets/images/shape/home1/5.webp"
                     alt="circle"></span>
             <div class="banner__shape-item">
                 <div class="reviews">
                     <div class="reviews__content">
-                        <p><span class="purecounter" data-purecounter-start="3000" data-purecounter-end="5000"
+                        <p style="color: black;"><span class="purecounter" data-purecounter-start="3000" data-purecounter-end="5000"
                                 data-purecounter-once="false">5000</span>+ enrolled students</p>
                     </div>
                     <div class="reviews__thumb">
                         <ul>
-                            <li><img src="assets/images/community/avator/home1/1.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/2.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/3.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/4.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/5.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/6.png" alt="user image"></li>
-                            <li><img src="assets/images/community/avator/home1/7.png" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/1.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/2.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/3.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/4.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/5.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/6.jpg" alt="user image"></li>
+                            <li><img style="width: 32px;height:32px" src="assets/images/community/avator/home1/7.jpg" alt="user image"></li>
                             <li>
                                 <div class="count">
                                     <p class="mb-0"><span class="purecounter" data-purecounter-start="0"
                                             data-purecounter-end="50" data-purecounter-once="false">50</span> <span
-                                            class="plus">+</span></p>
+                                            class="plus" style="color: black;">+</span></p>
 
                                 </div>
                             </li>
@@ -249,7 +253,7 @@
 
 
     <!-- ===============>> Team section start here <<================= -->
-    <section class="team  team--style1 padding-bottom">
+    <section class="team  team--style1 padding-bottom" style="display: none;">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="team__wrapper">
                 <div class="row g-4">
@@ -406,7 +410,7 @@
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="section-header text-center section-header--dark">
                 <h2>What Clients Have to Say About Us</h2>
-                <p class="style2">Interdum et malesuada fames ac ante ipsum</p>
+                <p class="style2">Our clients rave about our exceptional service and transformative results!</p>
             </div>
             <div class="testimonial__wrapper">
                 <div class="testimonial__slider swiper">
@@ -417,16 +421,14 @@
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
                                         <blockquote class="blockquote">
-                                            <p>Our family was traveling via bullet train between cities in japan
-                                                with our luggage - the location for this hotel made that so easy.
-                                                Agoda price was fantastic.</p>
+                                            <p>“My daughter has been a student of Moniqart and the progress that she has been showing is impressive, great teaching and personal attention has been provided to her, anytime the best place and will definitely recommend to my fellow parents.”</p>
                                         </blockquote>
                                         <blockquote class="blockquote">
                                             <p></p>
                                         </blockquote>
                                         <div class="testimonial__item-author">
-                                            <p>Brooklyn Simmons</p>
-                                            <span>UI/UX Designer</span>
+                                            <p>Verghese Joseph</p>
+                                            <span>Parent</span>
                                         </div>
                                     </div>
                                 </div>
@@ -438,14 +440,11 @@
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
                                         <blockquote class="blockquote">
-                                            <p>We the viewers have a quick and easy way to discover information about
-                                                the
-                                                company we are entering . IT is also simple to keep track of all the
-                                                qualification</p>
+                                            <p>“One of thee Best art teacher who has taught me so much. great place for working officials and teens to learn and explore 😙😙”</p>
                                         </blockquote>
                                         <div class="testimonial__item-author">
-                                            <p>James leo</p>
-                                            <span>Frontend Designer</span>
+                                            <p>Stefs Aloor</p>
+                                            <span>Student</span>
                                         </div>
                                     </div>
                                 </div>
@@ -457,13 +456,12 @@
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
                                         <blockquote class="blockquote">
-                                            <p>“Our family was traveling via bullet train between cities in japan
-                                                with our luggage - the location for this hotel made that so easy.
-                                                Agoda price was fantastic.”</p>
+                                            <p>“Quiet an impressive art and detailed work  and service.
+                                            Excellent place for kids and especially adults to get their inspiration & skills get perfected..👌”</p>
                                         </blockquote>
                                         <div class="testimonial__item-author">
-                                            <p>Robert Be</p>
-                                            <span>developer</span>
+                                            <p>The Juliusantony</p>
+                                            <span>Student</span>
                                         </div>
                                     </div>
                                 </div>
@@ -475,14 +473,11 @@
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
                                         <blockquote class="blockquote">
-                                            <p>“We the viewers have a quick and easy way to discover information about
-                                                the
-                                                company we are entering . IT is also simple to keep track of all the
-                                                qualification”</p>
+                                            <p>“Awesome place for kids and adults also ... excellent teaching ... specially Mona Mam thanks for giving me adorable knowledge ...!!!”</p>
                                         </blockquote>
                                         <div class="testimonial__item-author">
-                                            <p>Michael</p>
-                                            <span>Graphic Designer</span>
+                                            <p>Sarita Visave</p>
+                                            <span>Student</span>
                                         </div>
                                     </div>
                                 </div>
@@ -494,13 +489,12 @@
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
                                         <blockquote class="blockquote">
-                                            <p>“Our family was traveling via bullet train between cities in japan
-                                                with our luggage - the location for this hotel made that so easy.
-                                                Agoda price was fantastic.”</p>
+                                            <p>“I have been always referred to this place for art
+                                            Great piece of works ,must try place.”</p>
                                         </blockquote>
                                         <div class="testimonial__item-author">
-                                            <p>William </p>
-                                            <span>Api developer</span>
+                                            <p>Pritam Waithi</p>
+                                            <span>Student</span>
                                         </div>
                                     </div>
                                 </div>
@@ -567,7 +561,7 @@
     <!-- ===============>> Blog section end here <<================= -->
 
     <!-- ===============>> partner section start here <<================= -->
-    <section class="partner padding-bottom" data-aos="fade-up" data-aos-duration="800">
+    <section class="partner padding-bottom" data-aos="fade-up" data-aos-duration="800" style="display: none;">
         <div class="container">
             <div class="section-header text-center">
                 <h6>Trusted by 4,000+ companies</h6>

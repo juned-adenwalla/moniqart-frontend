@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="my-account" style="width:105%;border-radius:8px;margin-top:50px;margin-left:-10px" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                    <a href="my-account" style="width:105%;border-radius:8px;margin-top:50px;margin-left:-10px;background-color: #e5b519;" class="trk-btn trk-btn--rounded trk-btn--primary1">
                         <span>Get Certificate</span>
                     </a>
                 </div>
@@ -115,13 +115,13 @@
                                                 if ($timeDiffMinutes > 15) { ?>
                                                     <h3>Lecture Has Not Started Yet</h3>
                                                     <p>Start Date : <?php echo date("F d, Y", strtotime($lessonDate));?>, <?php echo date("g:i A", strtotime($lessonTime));?> IST</p>
-                                                    <a class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                                    <a class="trk-btn trk-btn--rounded trk-btn--primary1" style="background-color: #e5b519;">
                                                         <?php echo $timeDiffMinutes;?> Minutes Remaining
                                                     </a>
                                                 <?php }else{ ?>
                                                     <h3>Lecture Started</h3>
                                                     <p>Start Date : <?php echo date("F d, Y", strtotime($lessonDate));?>, <?php echo date("g:i A", strtotime($lessonTime));?> IST</p>
-                                                    <a href="<?php echo $lessomURL; ?>" target="_blank" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                                                    <a style="background-color: #e5b519;" href="<?php echo $lessomURL; ?>" target="_blank" class="trk-btn trk-btn--rounded trk-btn--primary1">
                                                         Join Live Course
                                                     </a>
                                                 <?php } ?>

@@ -992,11 +992,11 @@ function userCourses(){
                 </div>
                 <div class="coursedetails__coursereviews-rating"><?php
                     if($coursestatus == 'active' && $coursetype == 'online'){ ?>
-                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: green;color:white" href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
                     <?php }else if($coursestatus == 'in-active'){ ?>
                         <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: red;color:white">Course Suspended</a>
                     <?php }else if($coursetype == 'offline' ){ ?>
-                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: #FFE3EC;">Visit Branch</a>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: #e5b519;">Visit Branch</a>
                     <?php } ?>                    
                 </div>
             </div>
