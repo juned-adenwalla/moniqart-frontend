@@ -24,6 +24,9 @@
     .menu--style1 li a {
         color: black;
     }
+    .header-bar.header-bar.home1 span {
+        background-color: black;
+    }
 </style>
 <body>
 
