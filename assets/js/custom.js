@@ -646,35 +646,17 @@ if (pathName === "/index-3.html") {
 
 // Lazy Loading 
 // Function to lazy load images
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1 // Defines how much of the image should be visible before loading
-    };
+// Function to add the lazy loading attribute to all images
+function addLazyLoadAttribute() {
+    const images = document.querySelectorAll('img');
 
-    // Intersection Observer callback function
-    const handleIntersection = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-          observer.unobserve(img);
-        }
-      });
-    };
-
-    // Create an Intersection Observer instance
-    const observer = new IntersectionObserver(handleIntersection, options);
-
-    // Observe each image
-    images.forEach(img => observer.observe(img));
+    images.forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
   }
 
-  // Run the lazy loading function when the page loads
-  window.addEventListener('load', lazyLoadImages);
+  // Run the function when the page loads
+  window.addEventListener('load', addLazyLoadAttribute);
 
 
 
