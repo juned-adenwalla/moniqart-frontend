@@ -425,10 +425,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
+                <!-- <div class="text-center">
                     <a href="mentors.html" class="trk-btn trk-btn--secondary3 mt-5"> All Experts
                         <span><i class="fa-solid fa-arrow-right"></i></span> </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
