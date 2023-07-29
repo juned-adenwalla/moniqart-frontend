@@ -24,8 +24,8 @@
 <body>
 
 
-     <!-- ===============>> Preloader start here <<================= -->
-     <?php include('templates/_preloader.php'); ?>
+    <!-- ===============>> Preloader start here <<================= -->
+    <?php include('templates/_preloader.php'); ?>
     <!-- ===============>> Preloader end here <<================= -->
 
 
@@ -36,7 +36,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.jpg)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.webp)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>About US</h2>
@@ -97,6 +97,7 @@
                                 <div class="about__thumb-image">
                                     <img src="assets/images/about/2.png" alt="about-image">
                                 </div>
+                                <p style="margin-top: 10px;text-align:center;font-size:20px">Founder and Director</p>
                             </div>
                         </div>
                     </div>
@@ -204,6 +205,78 @@
     </section>
     <!-- ===============>> feature section end here <<================= -->
 
+    <!-- ===============>> About section start here <<================= -->
+    <section class="about about--style3 padding-top padding-bottom">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about__thumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="about__thumb-inner">
+                                <div class="about__thumb-image">
+                                    <img style="border-radius: 12px;" src="assets/images/about/home3/1.webp" alt="about-image">
+                                </div>
+                            </div>
+                            <div class="about__icon">
+                                <span class="about__icon-item about__icon-item--animation"><img
+                                        src="assets/images/about/home3/4.png" alt="dot icon"></span>
+                                <span class="about__icon-item about__icon-item--animation"><img
+                                        src="assets/images/about/home3/3.png" alt="star icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__content" data-aos="fade-up-left" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="about__content-inner">
+                                <div class="section-header">
+                                    <div class="subtitle subtitle--style3">
+                                        <img src="assets/images/icon/home3/1.png" alt="star icon">
+                                        <p class="mb-0">Art and Psychology for Healing and Creativity</p>
+                                    </div>
+                                    <h2>Mona Joy: Psychologist & Art Therapist</h2>
+                                    <p class="style2">Meet Mona Joy, a talented and versatile professional with a unique blend of expertise in psychology and the arts. With a Bachelor of Fine Arts (BFA) from the esteemed Government College of Art in Chandigarh and a Master's in Clinical Psychology (MA) from IGNOU, Mona's educational journey laid the foundation for her multidimensional career.</p><br><br>
+                                    <p>As an Art Therapist and Practitioner certified by both the American Art Therapy Association (AATA) and the Art Therapy Certification Board (ATCB), Mona has mastered the art of using creativity to heal and empower individuals. Her specialized training in Autism assessment and treatment further enhances her abilities to work with diverse populations.</p>
+                                </div>
+                                <!-- <div class="about__details">
+                                    <div class="about__details-item">
+                                        <img src="assets/images/icon/svg/2.svg" alt="icon">
+                                        <div class="about__details-text">
+                                            <h6>The American Art Therapy Association.</h6>
+                                        </div>
+                                    </div>
+                                    <div class="about__details-item">
+                                        <img src="assets/images/icon/svg/2.svg" alt="icon">
+                                        <div class="about__details-text">
+                                            <h6>The Bombay Art Society.</h6>
+                                        </div>
+                                    </div>
+                                    <div class="about__details-item">
+                                        <img src="assets/images/icon/svg/2.svg" alt="icon">
+                                        <div class="about__details-text">
+                                            <h6>Rotary Club.</h6>
+                                        </div>
+                                    </div>
+                                    <div class="about__details-item">
+                                        <img src="assets/images/icon/svg/2.svg" alt="icon">
+                                        <div class="about__details-text">
+                                            <h6>Video Tutorials</h6>
+                                            <p>Non deserunt ullamco est sit aliqua dolor do amet sint. enim velit
+                                                mollit.</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <!-- <a href="about.html" class="trk-btn trk-btn--secondary3">Learn more
+                                    <span><i class="fa-solid fa-arrow-right"></i></span> </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===============>> About section start here <<================= -->
 
     <!-- ===============>> Popular course section start here <<================= -->
     <section class="course course--style1 padding-top padding-bottom brand-1" style="display: none;">

@@ -131,9 +131,9 @@
                                         <li class="footer__end-item">
                                             <a href="privacy-policy"> Privacy Policy </a>
                                         </li>
-                                        <!-- <li class="footer__end-item">
-                                            <a href="#"> Sitemap </a>
-                                        </li> -->
+                                        <li class="footer__end-item">
+                                            <a href="refund-cancellation-policy"> Refund & Cancellation Policy </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

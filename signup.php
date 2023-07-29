@@ -40,7 +40,7 @@
         // Collect form data
         $username = $_POST['name'];
         $email = $_POST['email'];
-        $phone = $_POST['phone'];
+        $phone = removeCountryCode($_POST['phone']);
         $password = $_POST['password'];
         
         // Call the userSignup function
@@ -51,7 +51,7 @@
 
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/10.jpg)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.webp)">
         <div class="container">
             <div class="pageheader__content">
                 <h2>Sign Up</h2>

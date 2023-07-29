@@ -8,6 +8,26 @@ function limitText($text, $limit) {
     return $text;
 }
 
+// Function remove country code 
+function removeCountryCode($phone) {
+    // Define an array of country codes you want to check against
+    $countryCodes = array('+1', '+44', '+49', '+61', '+91', '0'); // Add more country codes if needed
+
+    // Check if the phone number starts with any of the country codes
+    foreach ($countryCodes as $code) {
+        if (strpos($phone, $code) === 0) {
+            // Remove the country code if found
+            $phone = substr($phone, strlen($code));
+            break; // Exit the loop after removing the country code
+        }
+    }
+
+    // Remove any non-numeric characters (e.g., spaces, dashes, etc.) from the phone number
+    $phone = preg_replace('/[^0-9]/', '', $phone);
+
+    return $phone;
+}
+
 // Function to call site settings 
 function _siteconfig($param)
 {
@@ -296,6 +316,26 @@ function singleDetail($tableName, $columnName, $columnValue, $returnColumn){
     }
 }
 
+// Function to get ASC single detail 
+function singleAscDetail($tableName, $columnName, $columnValue, $returnColumn){
+    require('_config.php');
+    // Prepare the SQL query
+    $query = "SELECT * FROM `$tableName` WHERE `$columnName` = '$columnValue' ORDER BY `_id` ASC LIMIT 1";
+
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+
+    // Check if any rows were found
+    if (mysqli_num_rows($result) > 0) {
+        // Fetch the data and return it as an associative array
+        while ($row = mysqli_fetch_assoc($result)){
+            return $row[$returnColumn];
+        }
+    } else {
+        return null;
+    }
+}
+
 // Function to get count of records 
 function recordCount($tableName, $columnName, $columnValue){
     require('_config.php');
@@ -419,8 +459,8 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                         <div class="course__item">
                             <div class="course__item-inner">
                                 <div class="course__thumb">
-                                    <img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images">
-                                    <a href="#" class="course__btn course__btn--save"><i class="fa-regular fa-bookmark"></i></a>
+                                    <a href="course-detail?id=' . $coursePermalink . '"><img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images"></a>
+                                    // <a href="#" class="course__btn course__btn--save"><i class="fa-regular fa-bookmark"></i></a>
                                 </div>
                                 <div class="course__content">
                                     <div class="course__content-top">
@@ -442,8 +482,8 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                         <div class="course__item">
                             <div class="course__item-inner">
                                 <div class="course__thumb">
-                                    <img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images">
-                                    <a href="#" class="course__btn course__btn--save course__btn--active"><i class="fa-regular fa-bookmark"></i></a>
+                                    <a href="course-detail?id=' . $coursePermalink . '"><img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images"></a>
+                                    // <a href="#" class="course__btn course__btn--save course__btn--active"><i class="fa-regular fa-bookmark"></i></a>
                                 </div>
                                 <div class="course__content">
                                     <div class="course__content-top">
@@ -537,7 +577,7 @@ function displayBlogPosts($category = null, $search = null, $page = 1, $limit = 
                         <div class="blog__item">
                             <div class="blog__item-inner">
                                 <div class="blog__thumb">
-                                    <img src="' . base_url('uploads/blogsPics/' . $blogThumb) . '" alt="blog Images">
+                                    <a href="blog-details?id=' . $blogParmalink . '"><img src="' . base_url('uploads/blogsPics/' . $blogThumb) . '" alt="blog Images"></a>
                                 </div>
 
                                 <div class="blog__content">
@@ -761,7 +801,7 @@ function userLogin($emailOrPhone, $password) {
     require('_config.php');
 
     // Prepare and bind the SELECT statement with prepared statements
-    $query = "SELECT `_userphone`, `_userpassword` FROM `tblusers` WHERE `_useremail` = ? OR `_userphone` = ?";
+    $query = "SELECT `_userphone`, `_userpassword`, `_userverify`  FROM `tblusers` WHERE `_useremail` = ? OR `_userphone` = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "ss", $emailOrPhone, $emailOrPhone);
 
@@ -780,8 +820,7 @@ function userLogin($emailOrPhone, $password) {
 
             // Store the user ID in the session
             $_SESSION['userid'] = $userid;
-
-            if($row['_userverify'] != 'true'){
+            if($row['_userverify'] == 'false' || $row['_userverify'] == false){
                 // Generate an OTP (One-Time Password)
                 $otp = rand(100000, 999999);
                 $query = "UPDATE `tblusers` SET `_userotp`= '$otp' WHERE `_userphone` = '$userid'";
@@ -928,21 +967,27 @@ function userTransactions(){
             $status = $row['_status'];
             $productid = $row['_productid'];
             $updationDate = date_create($row['CreationDate']);
-
-            // Output the data in the table rows
-            echo "<tr>";
-            echo "<th>$razorpayid</th>";
-            echo "<td>$currency</td>";
-            echo "<td>$amount</td>";
-            echo "<td><a href='course-detail?id=" . singleDetail('tblcourse', '_id', $productid, '_parmalink') . "'>Check Product</a></td>";
-            echo "<td>$couponcode</td>";
-            echo "<td>" . date_format($updationDate,"d F Y (h:i a)") . "</td>";
-            if($status == 'failed'){
-                echo "<td style='color:red'>Failed</td>";
-            }else{
-                echo "<td style='color:green'>Success</td>";
-            }
-            echo "</tr>";
+            ?>
+             <tr class="align-middle" style="white-space: nowrap;">
+                <td>
+                    <?php echo $razorpayid; ?>
+                </td>
+                <td><?php echo date_format($updationDate,"d F Y (h:i a)"); ?></td>
+                <td><a href='course-detail?id=<?php echo singleDetail('tblcourse', '_id', $productid, '_parmalink'); ?>'>Check Product</a></td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <span><?php echo $currency; ?>&nbsp;</span>
+                        <span><?php echo $amount; ?></span>
+                    </div>
+                </td>
+                <td><?php echo $couponcode; ?></td>
+                <td><?php 
+                    if($status == 'failed'){
+                    echo "<span style='color:red'>Failed</span>";
+                    }else{
+                    echo "<span style='color:green'>Success</span>";
+                    } ?>
+            </tr><?php 
         }
     } else {
         // No data found
@@ -992,7 +1037,7 @@ function userCourses(){
                 </div>
                 <div class="coursedetails__coursereviews-rating"><?php
                     if($coursestatus == 'active' && $coursetype == 'online'){ ?>
-                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: green;color:white" href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
+                        <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: green;color:white" href='view-course?id=<?php echo singleDetail('tblcourse', '_id', $courseid, '_parmalink'); ?>&lesson=<?php echo singleAscDetail('tbllessons', '_courseid', $courseid, '_id'); ?>'>View Course</a>
                     <?php }else if($coursestatus == 'in-active'){ ?>
                         <a class='trk-btn trk-btn--rounded trk-btn--primary1' style="background-color: red;color:white">Course Suspended</a>
                     <?php }else if($coursetype == 'offline' ){ ?>

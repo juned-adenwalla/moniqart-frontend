@@ -89,7 +89,7 @@
     ?>
 
     <!-- ==========Page Header Section Starts Here========== -->
-    <div class="pageheader" style="background-image:url(assets/images/bg/home1/3.jpg)">
+    <div class="pageheader" style="background-image:url(assets/images/bg/home1/1.webp)">
         <div class="container">
             <div class="pageheader__content">
                 <h2><?php echo singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_username'); ?></h2>
@@ -237,23 +237,31 @@
                                     aria-labelledby="pills-transactions-tab" tabindex="0">
                                     <div class="coursedetails__transactions">
                                         <div class="coursedetails__transactions">
-                                            <div class="coursedetails__reviewform table-responsive">
-                                                <table class="table" style="white-space: nowrap">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Payment ID</th>
-                                                            <th scope="col">Currency</th>
-                                                            <th scope="col">Amount</th>
-                                                            <th scope="col">Product</th>
-                                                            <th scope="col">Offer</th>
-                                                            <th scope="col">Date</th>
-                                                            <th scope="col">Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php userTransactions(); ?>
-                                                    </tbody>
-                                                </table>
+                                            <div class="position-relative card table-nowrap table-card">
+                                                <div class="card-header align-items-center">
+                                                    <h5 class="mb-0">Latest Transactions</h5>
+                                                    <p class="mb-0 small text-muted">All Payments</p>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0">
+                                                        <thead class="small text-uppercase bg-body text-muted">
+                                                            <tr>
+                                                                <th>Transaction ID</th>
+                                                                <th>Date</th>
+                                                                <th>Product</th>
+                                                                <th>Amount</th>
+                                                                <th>Offer</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php userTransactions(); ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- <div class="card-footer text-end">
+                                                    <a href="#!" class="btn btn-gray">View All Transactions</a>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

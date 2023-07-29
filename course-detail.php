@@ -104,7 +104,7 @@
                                 <p><i class="fa-solid fa-chart-simple"></i> <span><?php echo $courseCourseType;?></span> Level</p>
                             </div>
                             <?php 
-                            if($courseEnrollStatus == 'false'){ ?>
+                            if($courseEnrollStatus == 'false' || $courseEnrollStatus == false){ ?>
                                 <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>
                             <?php }else if (strtotime($currentDate) < $courseStartDate) { ?>
                                     <button disabled class="trk-btn trk-btn--border trk-btn--secondary1 d-block">Booking Closed</button>

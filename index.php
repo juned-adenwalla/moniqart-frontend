@@ -53,7 +53,7 @@
                     <p style="color: black;">Creating art and forming artists since 2006</p>
                     <div class="btn-group justify-content-center">
                         <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" class="play-btn" data-fslightbox style="color: black;">
+                        <a href="https://youtu.be/giP0Jhc3irU" class="play-btn" data-fslightbox style="color: black;">
                             <img src="assets/images/icon/svg/4.png" alt="play-btn">
                             Watch Video</a>
                     </div>
@@ -65,21 +65,21 @@
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="banner-image__item-inner ">
-                                    <img src="assets/images/banner/1.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img src="assets/images/banner/1.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="banner-image__item-inner banner-image__item-inner--style2">
-                                    <img src="assets/images/banner/2.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img src="assets/images/banner/2.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-left" data-aos-duration="1000">
                                 <div class="banner-image__item-inner">
-                                    <img src="assets/images/banner/3.jpeg" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img src="assets/images/banner/3.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
@@ -141,8 +141,8 @@
                 <div class="row g-4">
                     <div class="col-lg-4" data-aos="fade-right" data-aos-duration="800">
                         <div class="section-header pe-3">
-                            <h2>GET <br> INSPIRED</h2>
-                            <p>At MONIQART, we cover a full range of courses across all levels of creativity and education.</p>
+                            <h2>Art-Based Interventions</h2>
+                            <p>At MONIQART, we cover a full range of courses across all levels of creativity, knowledge and education.</p>
                             <a href="courses" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
                                 Categories</a>
                         </div>
@@ -159,8 +159,6 @@
     <!-- ===============>> Course categories section end here <<================= -->
 
 
-
-
     <!-- ===============>> About section start here <<================= -->
     <section class="about about--style1 padding-top padding-bottom">
         <div class="container">
@@ -170,11 +168,11 @@
                         <div class="about__thumb" data-aos="fade-right" data-aos-duration="800">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img src="assets/images/about/1.jpg" alt="about-image">
+                                    <img src="assets/images/about/1.webp" alt="about-image">
                                     <div class="about__thumb-video">
-                                        <img src="assets/images/about/2.png" alt="intro-thumbil">
+                                        <img src="assets/images/about/2.webp" alt="intro-thumbil">
                                         <div class="about__thumb-plybtn">
-                                            <a href="https://www.youtube.com/watch?v=Hh1UCOizzMc" data-fslightbox><img
+                                            <a href="https://www.youtube.com/watch?v=2bKSmmyJRug" data-fslightbox><img
                                                     src="assets/images/about/play-icon.png" alt="ply-btn"></a>
                                         </div>
                                     </div>
@@ -208,6 +206,42 @@
     <!-- ===============>> About section start here <<================= -->
 
 
+     <!-- ===============>> Community section start here <<================= -->
+     <div class="community community--style2 padding-bottom">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="community__wrapper" style="background-color: #E7E8E8;">
+                <div class="row align-items-center g-0">
+                    <div class="col-lg-6">
+                        <div class="community__content">
+                            <div class="community__content-inner">
+                                <span class="join-btn">ART THERAPY</span>
+                                <h2>What is Arts Based  Counselling ?</h2>
+                                <p>In psychology, the use of artistic methods to treat psychological disorders and enhance mental health is known as art therapy.
+                                    Art therapy is a therapeutic technique rooted in the idea that creative expression can foster healing and mental well-being.
+                                    AATA,American Art Therapy Association-  definition of the profession.</p>
+                                <a href="art-therapy" class="trk-btn trk-btn--border trk-btn--secondary2" style="background-color: red;">Learn More
+                                    <span><i class="fa-solid fa-arrow-right"></i></span> </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="community__thumb">
+                            <div class="community__thumb-inner">
+                                <img src="assets/images/story/1.webp" alt="commnunity-image">
+                                <div class="community__thumb-playbtn">
+                                    <a href="https://www.youtube.com/watch?v=01ChFIwexjc&t=85s" data-fslightbox><img
+                                            src="assets/images/community/home2/btn.png" alt="ply-btn"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============>> Community section end here <<================= -->
+
 
     <!-- ===============>> Popular course section start here <<================= -->
 
@@ -237,14 +271,14 @@
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="section-header text-center">
                 <h2>Our Success Story</h2>
-                <p class="style2">We believe that art has the ability to heal. Our therapy sessions are led by trained and certified art therapist Mona Joy who guides patients in the creative process, encourages them to express themselves through art, and provides support and guidance throughout the process.</p>
+                <p class="style2">Art therapy led by certified therapist Mona Joy helps patients express themselves through art, facilitating healing and providing vital support, we believe that art has the ability to heal.</p>
             </div>
             <div class="story__wrapper">
                 <div class="story__thumb">
                     <div class="story__thumb-inner">
-                        <img src="assets/images/story/1.jpg" alt="story-image">
+                        <img src="assets/images/story/11.webp" alt="story-image">
                         <div class="story__thumb-playbtn">
-                            <a href="https://youtu.be/BQQS1guufeQ" data-fslightbox><img
+                            <a href="https://www.youtube.com/watch?v=rlmtZnNQ_Z8&t=86s" data-fslightbox><img
                                     src="assets/images/story/2.png" alt="ply-btn"></a>
                         </div>
                     </div>
@@ -253,6 +287,152 @@
         </div>
     </section>
     <!-- ===============>> Story section end here <<================= -->
+
+
+    <!-- ===============>> Team section start here <<================= -->
+    <section class="team team--style2 padding-bottom">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="section-header text-center">
+                <h2>Meet with Our News</h2>
+                <p class="style2">Stay connected with us for daily updates, breaking news, and in-depth features. We are here to keep you informed, enlightened, and engaged with the world's most pressing stories.</p>
+            </div>
+            <div class="team__wrapper">
+                <div class="team__slider1 swiper mb-5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/1.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>MONIQART launch 2006</a> </h6>
+                                            <p>DNA navi-mumbai featured a half page article about MONIQART and Artist/Art Therapist Mona Joy in 2006 when the studio was inaugurated</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/2.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>MONIQART Art competition</a> </h6>
+                                            <p>The First Art Competition ever , where children had to use only the primary colours to create Magic of RBY !</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/3.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>CHIRP BEFORE TWITTER</a> </h6>
+                                            <p>Artist /Art Therapist Mona Joy was Invited to speak about Navi Mumbai</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/4.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>INDIA ART FESTIVAL 2015</a> </h6>
+                                            <p>Artist /Art Therapist Mona Joy was part of the huge Exhibition at Nehru Centre</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team__slider2 swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/5.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>TIMES OF INDIA - HAPPY STREETS !</a> </h6>
+                                            <p>Artist MONA JOY was invited to Jazz up the TOI event</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/6.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>CAMLIN INTERNATIONAL ART EVENT 2015/16</a> </h6>
+                                            <p>Camlin's International event which was captured by Drone camera and live telecasted in japan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/7.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>ARTIST /ART THERAPIST 2019 INTERVIEW</a> </h6>
+                                            <p>Laxmi Book Enterprises invited Artist / Art Therapist Mona Joy to sensitise kindergarten Teachers of 200 schools about ABT or Arts Based Therapy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/8.jpg" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>Art THERAPIST's ARTICLE</a> </h6>
+                                            <p>Artist / Art Therapist Mona Joy was invited to write an Article about ABT or Arts Based Therapy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="mentors.html" class="trk-btn trk-btn--secondary3 mt-5"> All Experts
+                        <span><i class="fa-solid fa-arrow-right"></i></span> </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===============>> Team section end here <<================= -->
 
 
     <!-- ===============>> Team section start here <<================= -->
@@ -407,31 +587,41 @@
     <!-- ===============>> Community section end here <<================= -->
 
 
-
-    <!-- ===============>> Testimonial section start here <<================= -->
-    <section class="testimonial testimonial--style1 padding-top padding-bottom brand-1">
-        <div class="container" data-aos="fade-up" data-aos-duration="800">
-            <div class="section-header text-center section-header--dark">
+     <!-- ===============>> Testimonial section start here <<================= -->
+     <section class="testimonial testimonial--style2 padding-top padding-bottom brand2-bg-3" style="background-color: #E5E8E8;">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="section-header text-center">
                 <h2>What Clients Have to Say About Us</h2>
                 <p class="style2">Our clients rave about our exceptional service and transformative results!</p>
             </div>
             <div class="testimonial__wrapper">
-                <div class="testimonial__slider swiper">
+                <div class="testimonial__slider2 swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testimonial__item">
                                 <div class="testimonial__item-inner">
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
-                                        <blockquote class="blockquote">
-                                            <p>“My daughter has been a student of Moniqart and the progress that she has been showing is impressive, great teaching and personal attention has been provided to her, anytime the best place and will definitely recommend to my fellow parents.”</p>
-                                        </blockquote>
-                                        <blockquote class="blockquote">
-                                            <p></p>
-                                        </blockquote>
-                                        <div class="testimonial__item-author">
-                                            <p>Verghese Joseph</p>
-                                            <span>Parent</span>
+                                        <p>
+                                            “I have been always referred to this place for art Great piece of works ,must try place.”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img src="assets/images/testimonial/home1/3.png" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Pritam Waithi</h6>
+                                                    <span>Student</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -442,12 +632,26 @@
                                 <div class="testimonial__item-inner">
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
-                                        <blockquote class="blockquote">
-                                            <p>“One of thee Best art teacher who has taught me so much. great place for working officials and teens to learn and explore 😙😙”</p>
-                                        </blockquote>
-                                        <div class="testimonial__item-author">
-                                            <p>Stefs Aloor</p>
-                                            <span>Student</span>
+                                        <p>
+                                            “Awesome place for kids and adults also ... excellent teaching ... specially Mona Mam thanks for giving me adorable knowledge ...!!!”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img src="assets/images/testimonial/home1/2.png" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Sarita Visave</h6>
+                                                    <span>Student</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -458,13 +662,27 @@
                                 <div class="testimonial__item-inner">
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
-                                        <blockquote class="blockquote">
-                                            <p>“Quiet an impressive art and detailed work  and service.
-                                            Excellent place for kids and especially adults to get their inspiration & skills get perfected..👌”</p>
-                                        </blockquote>
-                                        <div class="testimonial__item-author">
-                                            <p>The Juliusantony</p>
-                                            <span>Student</span>
+                                        <p>
+                                            “Quiet an impressive art and detailed work and service.
+                                            Excellent place for kids and especially adults to get their inspiration & skills get perfected..👌.”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img src="assets/images/testimonial/home1/1.png" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>The Juliusantony</h6>
+                                                    <span>Parent</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -475,71 +693,39 @@
                                 <div class="testimonial__item-inner">
                                     <div class="testimonial__item-content">
                                         <span><i class="fa-solid fa-quote-left"></i></span>
-                                        <blockquote class="blockquote">
-                                            <p>“Awesome place for kids and adults also ... excellent teaching ... specially Mona Mam thanks for giving me adorable knowledge ...!!!”</p>
-                                        </blockquote>
-                                        <div class="testimonial__item-author">
-                                            <p>Sarita Visave</p>
-                                            <span>Student</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__item">
-                                <div class="testimonial__item-inner">
-                                    <div class="testimonial__item-content">
-                                        <span><i class="fa-solid fa-quote-left"></i></span>
-                                        <blockquote class="blockquote">
-                                            <p>“I have been always referred to this place for art
-                                            Great piece of works ,must try place.”</p>
-                                        </blockquote>
-                                        <div class="testimonial__item-author">
-                                            <p>Pritam Waithi</p>
-                                            <span>Student</span>
+                                        <p>
+                                            “One of thee Best art teacher who has taught me so much. great place for working officials and teens to learn and explore 😙😙.”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img src="assets/images/testimonial/home1/5.png" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Stefs Aloor</h6>
+                                                    <span>Student</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="testimonial__pagination"></div> -->
+                    <div class="slider__pagination-3"></div>
                 </div>
-                <div class="testimonial__author swiper mt-5">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial__author-thumb">
-                                <img src="assets/images/testimonial/home1/1.png" alt="author-image">
-                            </div>
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__author-thumb">
-                                <img src="assets/images/testimonial/home1/2.png" alt="author-image">
-                            </div>
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__author-thumb">
-                                <img src="assets/images/testimonial/home1/3.png" alt="author-image">
-                            </div>
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__author-thumb">
-                                <img src="assets/images/testimonial/home1/4.png" alt="author-image">
-                            </div>
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__author-thumb">
-                                <img src="assets/images/testimonial/home1/5.png" alt="author-image">
-                            </div>
-
-                        </div>
-
-                    </div>
+                <div class="testimonial__shape">
+                    <span class="testimonial__shape-item"><img src="assets/images/shape/home1/1.webp"
+                            alt="shpae"></span>
+                    <span class="testimonial__shape-item"><img src="assets/images/shape/home1/2.webp"
+                            alt="shpae"></span>
                 </div>
             </div>
         </div>

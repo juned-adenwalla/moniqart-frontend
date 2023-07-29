@@ -30,7 +30,7 @@ echo _siteconfig('_customcss');
                         <div class="menu-area">
                             <ul class="menu menu--style1">
                                 <li>
-                                    <a href="<?php echo frontend_url(''); ?>">Homes </a>
+                                    <a href="<?php echo frontend_url(''); ?>">Home </a>
                                     <!-- <ul class="submenu">
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index-2.html">Home 2</a></li>
@@ -50,7 +50,7 @@ echo _siteconfig('_customcss');
                                     </ul> -->
                                 </li>
                                 <li>
-                                    <a href="blogs">Blogs</a>
+                                    <a href="art-therapy">Art Therapy</a>
                                     <!-- <ul class="submenu">
                                         <li><a href="blogs.html">Blogs </a></li>
                                         <li><a href="blogs-2.html">Blogs 2 </a></li>
@@ -59,17 +59,9 @@ echo _siteconfig('_customcss');
                                 </li>
                                 <li>
                                     <a href="about-us">About Us</a>
-                                    <!-- <ul class="submenu">
-                                                                                <li><a href="about.html">About Us</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">checkout</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                        <li><a href="signin.html">Sign In</a></li>
-                                        <li><a href="forgot-pass.html">Reset Password</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                        
-                                    </ul> -->
+                                    <ul class="submenu">
+                                        <li><a href="blogs">Blogs</a></li>
+                                    </ul>
 
                                 </li>
                                 <li>
