@@ -113,7 +113,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

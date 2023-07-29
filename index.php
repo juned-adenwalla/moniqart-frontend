@@ -27,6 +27,9 @@
     .header-bar.header-bar.home1 span {
         background-color: black;
     }
+    .testimonial--style2 .testimonial__item-inner {
+        height: 350px;
+    }
 </style>
 <body>
 
@@ -49,7 +52,7 @@
 
                 <!-- banner content -->
                 <div class="banner__content banner__content--style1" data-aos="zoom-in" data-aos-duration="1000">
-                    <h1 style="color: black;">Transform Your Imagination Into Reality</h1>
+                    <h1 style="color: black;">Exposing yourself to the "Fine Arts" Maximises your life's potential</h1>
                     <p style="color: black;">Creating art and forming artists since 2006</p>
                     <div class="btn-group justify-content-center">
                         <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
@@ -293,7 +296,7 @@
     <section class="team team--style2 padding-bottom">
         <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
             <div class="section-header text-center">
-                <h2>Meet with Our News</h2>
+                <h2>News and Articles</h2>
                 <p class="style2">Stay connected with us for daily updates, breaking news, and in-depth features. We are here to keep you informed, enlightened, and engaged with the world's most pressing stories.</p>
             </div>
             <div class="team__wrapper">
@@ -554,22 +557,20 @@
             <div class="section-header text-center">
                 <h2>Join the biggest <br>
                     Community of learning</h2>
-                <p class="style2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam, quis malesuada sed
-                    tristique sed
-                    vulputate eleifend urna potenti. Amet non sed eget</p>
+                <p class="style2">Don't miss out on this enriching and supportive learning journey. Join us today and embark on a path of continuous growth and discovery!</p>
             </div>
             <div class="community__wrapper">
                 <div class="community__map">
                     <div class="community__map-inner">
                         <div class="community__reviews" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
-                            <p> <i class="fa-solid fa-heart"></i> Happy Strudents</p>
+                            <p> <i class="fa-solid fa-heart"></i> Happy Students</p>
                             <div class="community__reviews-content">
                                 <ul>
-                                    <li><img src="assets/images/community/avator/1.png" alt="user image"></li>
-                                    <li><img src="assets/images/community/avator/2.png" alt="user image"></li>
-                                    <li><img src="assets/images/community/avator/3.png" alt="user image"></li>
-                                    <li><img src="assets/images/community/avator/4.png" alt="user image"></li>
-                                    <li><img src="assets/images/community/avator/5.png" alt="user image"></li>
+                                    <li><img src="assets/images/community/avator/home1/3.jpg" alt="user image"></li>
+                                    <li><img src="assets/images/community/avator/home1/1.jpg" alt="user image"></li>
+                                    <li><img src="assets/images/community/avator/home1/2.jpg" alt="user image"></li>
+                                    <li><img src="assets/images/community/avator/home1/4.jpg" alt="user image"></li>
+                                    <li><img src="assets/images/community/avator/home1/5.jpg" alt="user image"></li>
                                 </ul>
                                 <p class="count mb-0">+<span class="purecounter" data-purecounter-start="10"
                                         data-purecounter-end="25" data-purecounter-once="false">25</span>K</p>
@@ -578,7 +579,7 @@
                         </div>
                         <img src="assets/images/community/1.png" alt="community image" data-aos="fade-up"
                             data-aos-duration="800">
-                        <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--secondary1">Join Now</a>
+                        <a href="signup" class="trk-btn trk-btn--rounded trk-btn--secondary1">Join Now</a>
                     </div>
                 </div>
             </div>
@@ -595,7 +596,7 @@
                 <p class="style2">Our clients rave about our exceptional service and transformative results!</p>
             </div>
             <div class="testimonial__wrapper">
-                <div class="testimonial__slider2 swiper">
+                <div class="testimonial__slider2 swiper" style="height: 600px;">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testimonial__item">
@@ -737,7 +738,7 @@
     <section class="blog blog--style1 padding-top padding-bottom">
         <div class="container">
             <div class="blog__header">
-                <h2 class="style2-h2--max20">Latest News, Blog & Articles</h2>
+                <h2 class="style2-h2--max20">Latest Blog</h2>
                 <a href="blogs" class="trk-btn trk-btn--rounded trk-btn--secondary1">View More</a>
             </div>
             <div class="blog__wrapper">
@@ -814,7 +815,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

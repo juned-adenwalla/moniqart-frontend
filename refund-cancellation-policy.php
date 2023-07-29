@@ -70,19 +70,19 @@
                     We encourage all users to thoroughly explore the course details, curriculum, and instructor information before making a purchase. It is essential to ensure that the course aligns with your learning goals and expectations.<br><br>
 
                     3. Technical Issues:<br>
-                    In the unlikely event that you encounter technical difficulties accessing or viewing the course content, we have a dedicated support team available to assist you. Please reach out to our support team at [support email/phone number] to get the necessary help.<br><br>
+                    In the unlikely event that you encounter technical difficulties accessing or viewing the course content, we have a dedicated support team available to assist you. Please reach out to our support team at info@moniqart.com / +91 9867150714 to get the necessary help.<br><br>
 
                     4. Course Satisfaction:<br>
                     At Moniqart, we value your satisfaction and strive to provide the best learning experience possible. If you have any concerns or feedback regarding a course, its content, or the instructors, please don't hesitate to contact us. We'll do our best to address your concerns and improve our offerings continually.<br><br>
 
                     5. Changes to Course Content:<br>
-                    While we make every effort to maintain course content and accessibility, there might be occasions where updates or changes are necessary. Rest assured, any updates to course content will be made available to you without any additional charges.<br><br>
+                    While we make every effort to maintain course content and accessibility, there might be occasions where updates or changes are necessary. Rest assured, any updates to course content will be made available to you. However, there will be additional charges.<br><br>
 
                     6. Exceptions:<br>
                     As mentioned earlier, the only exceptions for a refund would be those required by law. In such cases, we will abide by the relevant regulations and process the refund accordingly.<br><br>
 
                     7. Contact Us:<br>
-                    If you have any questions or require further clarification about our refund policy, please feel free to contact our customer support team at [support email/phone number]. Our team will be glad to assist you with any inquiries you may have.<br><br>
+                    If you have any questions or require further clarification about our refund policy, please feel free to contact our customer support team at info@moniqart.com / +91 9867150714 Our team will be glad to assist you with any inquiries you may have.<br><br>
 
                     By making a purchase on Moniqart, you acknowledge that you have read, understood, and agreed to the terms of this refund policy.<br><br>
 
@@ -122,7 +122,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

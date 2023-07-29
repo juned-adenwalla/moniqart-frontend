@@ -20,7 +20,17 @@
     <!-- main css for template -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<?php
 
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+        emailNotification('contact', '','Contact Form Submitted','juned@adenwalla.in','',$name,$phone,$email,$message);
+    }
+
+?>
 <body>
 
 
@@ -111,12 +121,12 @@
                             <h3>Ready To Get Started?</h3>
                             <p>You email address will not be published. Required fields are marked.</p>
                             <!-- account form -->
-                            <form action="#" class="account__form">
+                            <form action="#" method="post" class="account__form">
                                 <div class="row g-4">
                                     <div class="col-lg-12">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="account-name"
-                                                placeholder="Jhon Doe" required>
+                                                placeholder="Name" name="name" required>
                                             <div class="valid-tooltip">
                                                 Looks good!
                                             </div>
@@ -127,7 +137,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="email" class="form-control" id="account-email"
+                                            <input type="email" name="email" class="form-control" id="account-email"
                                                 placeholder="Email" required>
                                             <div class="valid-tooltip">
                                                 This email is valid
@@ -139,7 +149,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="account-mobile"
+                                            <input type="text" name="phone" class="form-control" id="account-mobile"
                                                 placeholder="Enter number" required>
                                             <div class="valid-tooltip">
                                                 This mobile is valid
@@ -152,7 +162,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <textarea id="account-desc" class="form-control" rows="4"
+                                            <textarea id="account-desc" name="message" class="form-control" rows="4"
                                                 placeholder="Write a message..." cols="50"></textarea>
                                         </div>
                                     </div>
@@ -161,14 +171,14 @@
                                 <div class="account__form-passcheck">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" value="" id="terms-check">
-                                        <label for="terms-check" class="form-check-label">Accept <a href="#"> terms
-                                            </a> and <a href="#"> privacy
+                                        <label for="terms-check" class="form-check-label">Accept <a href="http://localhost/moniqart-frontend/terms-and-condition"> terms
+                                            </a> and <a href="http://localhost/moniqart-frontend/privacy-policy"> privacy
                                                 policy</a>.
                                         </label>
                                     </div>
                                 </div>
 
-                                <button type="submit" class="trk-btn trk-btn--rounded trk-btn--secondary1">Send
+                                <button type="submit" name="submit" class="trk-btn trk-btn--rounded trk-btn--secondary1">Send
                                     Message</button>
                             </form>
                         </div>
@@ -216,7 +226,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

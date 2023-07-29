@@ -101,11 +101,7 @@
                             data: { paymentId: paymentId, userID: userID, amount: amount, currency : '$currency', status : 'success', product_type : '$producttype', product_id : '$accproductid', coupon : couponCode },
                             success: function (data) {
                                 console.log(data);
-                                if(data){
-                                    window.location.href = 'my-account?purchase=success';
-                                }else{
-                                    window.location.href = 'my-account?purchase=failed';
-                                }    
+                                window.location.href = 'my-account?purchase=success';  
                                 // Handle the response from the PHP script
                             },
                             error: function (xhr, status, error) {
@@ -124,6 +120,7 @@
                 rzp1.on('payment.failed', function (response) {
                     // Handle the payment failure callback
                     console.log(response.error);
+                    window.location.href = 'my-account?purchase=failed';
                     // You can show an error message or redirect to a failure page
                 });
                 rzp1.open();
@@ -411,7 +408,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home1"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

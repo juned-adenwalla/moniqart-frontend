@@ -2760,7 +2760,7 @@
     <section class="team team--style2 padding-bottom">
         <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
             <div class="section-header text-center">
-                <h2>Meet with Our News</h2>
+                <h2>News and Articles</h2>
                 <p class="style2">Stay connected with us for daily updates, breaking news, and in-depth features. We are here to keep you informed, enlightened, and engaged with the world's most pressing stories.</p>
             </div>
             <div class="team__wrapper">
@@ -3273,7 +3273,7 @@
 
 
     <!-- scrollToTop start here -->
-    <a href="#" class="scrollToTop scrollToTop--home3"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <a href="#" class="scrollToTop scrollToTop--home3"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- scrollToTop ending here -->
 
 

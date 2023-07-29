@@ -460,7 +460,6 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                             <div class="course__item-inner">
                                 <div class="course__thumb">
                                     <a href="course-detail?id=' . $coursePermalink . '"><img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images"></a>
-                                    // <a href="#" class="course__btn course__btn--save"><i class="fa-regular fa-bookmark"></i></a>
                                 </div>
                                 <div class="course__content">
                                     <div class="course__content-top">
@@ -483,7 +482,6 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                             <div class="course__item-inner">
                                 <div class="course__thumb">
                                     <a href="course-detail?id=' . $coursePermalink . '"><img src="' . base_url('uploads/coursethumbnail/' . $courseThumbnail) . '" alt="course Images"></a>
-                                    // <a href="#" class="course__btn course__btn--save course__btn--active"><i class="fa-regular fa-bookmark"></i></a>
                                 </div>
                                 <div class="course__content">
                                     <div class="course__content-top">
@@ -773,12 +771,14 @@ function verifyOTP($phone,$otp){
      // Your database connection code here
 
     // Fetch the stored OTP for the given email from the database
-    $query = "SELECT `_userotp` FROM `tblusers` WHERE `_userphone` = '$phone' LIMIT 1";
+    $query = "SELECT * FROM `tblusers` WHERE `_userphone` = '$phone' LIMIT 1";
     $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $storedOTP = $row['_userotp'];
+        $username = $row['_username'];
+        $useremail = $row['_useremail'];
 
         // Compare the stored OTP with the OTP entered by the user
         if ($storedOTP == $otp) {
@@ -786,7 +786,7 @@ function verifyOTP($phone,$otp){
             // Update the user's verification status in the database
             $updateQuery = "UPDATE `tblusers` SET `_userverify` = 'true' WHERE `_userphone` = '$phone'";
             mysqli_query($conn, $updateQuery);
-
+            emailNotification('signup', $username ,'Signup Success',$useremail);
             return true;
         }else{
             return false;
@@ -1236,7 +1236,14 @@ function paymentCallback($razorpayId, $userEmail, $amount, $currency, $status, $
                     return false;
                 }
             }else if($producttype == 'membership'){
-                if(updateUserMembership($userEmail, $productid, date('Y-m-d'), singleDetail('tblmembership', '_id', $productid, '_duration'))){
+                $monthsToAdd = singleDetail('tblmembership', '_id', $productid, '_duration'); // Change this value to the desired number of months
+
+                // Get the current date
+                $currentDate = date('Y-m-d');
+
+                // Add the specified number of months to the current date
+                $futureDate = date('Y-m-d', strtotime("+" . $monthsToAdd . " months", strtotime($currentDate)));
+                if(updateUserMembership($userEmail, $productid, date('Y-m-d'), $futureDate)){
                     return true;
                 }else{
                     return false;
@@ -1262,8 +1269,9 @@ function insertPurchasedCourse($courseId, $userId) {
     $query = "INSERT INTO `tblpurchasedcourses`(`_courseid`, `_userid`, `_coursestatus`) VALUES ('$courseId', '$userId', 'active')";
     // Execute the query
     if (mysqli_query($conn, $query)) {
-        emailNotification('purchase',$courseId,'test mail');
-        return true;
+        if(emailNotification('purchase',$courseId,'Purchase Successfull')){
+            return true;
+        }
     } else {
         return false;
     }
@@ -1278,7 +1286,9 @@ function updateUserMembership($userPhone, $userMembership, $userMemStart, $userM
 
     // Execute the query
     if (mysqli_query($conn, $query)) {
-        return true;
+        if(emailNotification('membership',$userMembership,'Subscription Started')){
+            return true;
+        }
     } else {
         return false;
     }
@@ -1447,13 +1457,15 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 // Function to send email notification 
-function emailNotification($notification,$productid = null,$subject){
+function emailNotification($notification,$productid = null,$subject,$sendemail = null,$lessonid = null,$name = null,$phone = null, $email = null, $message = null){
     require('_config.php');
-
+    if(!session_status()){
+        session_start();
+    }
     $sql = "SELECT * FROM `tblemailconfig` WHERE `_supplierstatus` = 'true'";
     $query = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($query);
-    require_once "../vendor/autoload.php";
+    require_once "vendor/autoload.php";
     $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
     //Set PHPMailer to use SMTP.
     $mail->isSMTP();
@@ -1478,7 +1490,7 @@ function emailNotification($notification,$productid = null,$subject){
         $mail->addReplyTo($data['_emailaddress'], "Reply");
     }
     //To address and namS
-    $mail->addAddress(singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_useremail')); //Recipient name is optional
+    $mail->addAddress($sendemail ? $sendemail : singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_useremail')); //Recipient name is optional
 
     $mail->isHTML(true);
 
@@ -1487,6 +1499,40 @@ function emailNotification($notification,$productid = null,$subject){
     foreach ($query as $data) {
         if($notification == 'purchase'){
             $template = $data['_purchasetemplate'];
+        }else if($notification == 'membership'){
+            $template = $data['_purchasetemplate'];
+        }else if($notification == 'reminder'){
+            $template = $data['_remindertemplate'];
+        }else if($notification == 'cancelled'){
+            $template = $data['_canceltemplate'];
+        }else if($notification == 'lesson'){
+            $template = $data['_lecturetemplate'];
+        }else if($notification == 'signup'){
+            $template = $data['_signuptemplate'];
+        }else if($notification == 'contact'){
+            $template = '
+            <table cellpadding="5" cellspacing="0" border="1" style="border-collapse: collapse;">
+            <tr>
+              <th style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px;">Field</th>
+              <th style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px;">Value</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Name:</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">' . $name . '</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Email:</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">' . $email . '</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Phone:</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">' . $phone . '</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Message:</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">' . $message . '</td>
+            </tr>
+          </table>';
         }
     }
     if($notification == 'purchase'){
@@ -1497,9 +1543,47 @@ function emailNotification($notification,$productid = null,$subject){
         $variables['site_title'] = _siteconfig('_sitetitle');
         $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
         $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'membership'){
+        $variables = array();
+        $variables['user_name'] = singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_username');
+        $variables['product_price'] = singleDetail('tblmembership', '_id', $productid, '_price');
+        $variables['product_name'] = singleDetail('tblmembership', '_id', $productid, '_membershipname');
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'reminder'){
+        $variables = array();
+        $variables['user_name'] = $productid;
+        $variables['subscription'] = singleDetail('tblmembership', '_id', singleDetail('tblusers', '_userphone', $_SESSION['userid'], '_usermembership'), '_membershipname');
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'cancelled'){
+        $variables = array();
+        $variables['user_name'] = $productid;
+        $variables['subscription'] = singleDetail('tblmembership', '_id', singleDetail('tblusers', '_id', $productid, '_usermembership'), '_membershipname');
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'lesson'){
+        $variables = array();
+        $variables['user_name'] = $productid;
+        $variables['lesson_name'] = singleDetail('tbllessons', '_id', $lessonid, '_lessonname');
+        $variables['lesson_link'] = singleDetail('tbllessons', '_id', $lessonid, '_lessonurl');
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'signup'){
+        $variables = array();
+        $variables['user_name'] = $productid;
+        $variables['site_title'] = _siteconfig('_sitetitle');
+        $variables['site_logo'] = $dashboard_url . '/uploads/images/' . _siteconfig('_sitelogo');
+        $sendmail = _usetemplate($template, $variables);
+    }else if($notification == 'contact'){
+        $sendmail = $template;
     }
 
-    $mail->Subject = 'Test Email';
+    $mail->Subject = $subject;
     $mail->Body = $sendmail;
     $mail->IsHTML(true);
     if ($mail->send()) {

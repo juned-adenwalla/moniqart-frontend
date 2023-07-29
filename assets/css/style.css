@@ -6702,7 +6702,7 @@ ol {
   font-size: inherit;
 }
 .social__link:hover.social__link--rounded1 {
-  background-color: #B1FDAF;
+  background-color: red;
 }
 .social__link:hover.social__link--rounded1 svg,
 .social__link:hover.social__link--rounded1 i {
@@ -6716,7 +6716,7 @@ ol {
   color: #fff;
 }
 .social__link:hover.social__link--rounded5 {
-  background-color: #B1FDAF;
+  background-color: red;
 }
 .social__link:hover.social__link--rounded5 svg,
 .social__link:hover.social__link--rounded5 i {
