@@ -1,5 +1,25 @@
+# Enable the rewrite engine
 RewriteEngine On
+
+# Rule for course-detail.php
+# This rule will internally rewrite URLs like "example.com/course-id/post-slug" to "example.com/course-detail.php?id=course-id&post=post-slug"
 RewriteRule ^([^/\.]+)/([^/\.]+)?$ course-detail.php?id=$1&post=$2
+
+# Rule for removing .php extension from URLs
+# This rule will internally rewrite URLs like "example.com/some-page" to "example.com/some-page.php"
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Cache policy for static assets (PNG, WebP, JPG, JPEG)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
+
+# Custom 404 error page
 ErrorDocument 404 /404.php

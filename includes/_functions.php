@@ -421,21 +421,21 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
     require('_config.php');
 
     // Prepare the query
-    $query = "SELECT * FROM tblcourse WHERE _status = 'true' ORDER BY CreationDate DESC";
-    
+    $query = "SELECT * FROM tblcourse WHERE _status = 'true'";
+
     // Add category filter if provided
     if ($category !== null) {
         $query .= " AND _categoryid = '$category'";
     }
-    
+
     // Add search filter if provided
     if ($search !== null) {
         $query .= " AND (_coursename LIKE '%$search%' OR _coursedescription LIKE '%$search%')";
     }
-    
-    // Add pagination limits
-    $query .= " LIMIT $limit OFFSET $offset";
-    
+
+    // Add pagination limits and ORDER BY clause
+    $query .= " ORDER BY CreationDate DESC LIMIT $limit OFFSET $offset";
+
     $result = mysqli_query($conn, $query);
 
     // Prepare the HTML code
@@ -514,18 +514,18 @@ function getTotalCourses($category = null, $search = null) {
     require('_config.php');
     
     // Prepare the query
-    $query = "SELECT COUNT(*) as total FROM tblcourse WHERE _status = 'true' ORDER BY CreationDate DESC";
-    
+    $query = "SELECT COUNT(*) as total FROM tblcourse WHERE _status = 'true'";
+
     // Add category filter if provided
     if ($category !== null) {
         $query .= " AND _categoryid = '$category'";
     }
-    
+
     // Add search filter if provided
     if ($search !== null) {
         $query .= " AND (_coursename LIKE '%$search%' OR _coursedescription LIKE '%$search%')";
     }
-    
+
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     
