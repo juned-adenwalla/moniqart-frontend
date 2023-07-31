@@ -108,7 +108,7 @@
                                 data-purecounter-once="false">5000</span>+ enrolled students</p>
                     </div>
                     <div class="reviews__thumb">
-                        <ul>
+                        <!-- <ul>
                             <li><img loading="lazy" decoding="async" style="width: 32px;height:32px" src="assets/images/community/avator/home1/1.jpg" alt="user image"></li>
                             <li><img loading="lazy" decoding="async" style="width: 32px;height:32px" src="assets/images/community/avator/home1/2.jpg" alt="user image"></li>
                             <li><img loading="lazy" decoding="async" style="width: 32px;height:32px" src="assets/images/community/avator/home1/3.jpg" alt="user image"></li>
@@ -124,7 +124,7 @@
 
                                 </div>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>
