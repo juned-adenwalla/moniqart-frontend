@@ -1,4 +1,4 @@
-<div class="preloader">
+<!-- <div class="preloader">
         <div class="preloader__book">
             <div class="inner">
                 <div class="left"></div>
@@ -26,4 +26,4 @@
                 <li></li>
             </ul>
         </div>
-    </div>
+    </div> -->
