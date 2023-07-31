@@ -57,7 +57,7 @@
                     <div class="btn-group justify-content-center">
                         <a href="signup" class="trk-btn trk-btn--rounded trk-btn--primary1">Get Started</a>
                         <a href="https://youtu.be/giP0Jhc3irU" class="play-btn" data-fslightbox style="color: black;">
-                            <img loading="lazy" decoding="async" src="assets/images/icon/svg/4.png" alt="play-btn">
+                            <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/4.png" alt="play-btn">
                             Watch Video</a>
                     </div>
                 </div>
@@ -68,21 +68,21 @@
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="banner-image__item-inner ">
-                                    <img loading="lazy" decoding="async" src="assets/images/banner/1.webp" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/banner/1.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="banner-image__item-inner banner-image__item-inner--style2">
-                                    <img loading="lazy" decoding="async" src="assets/images/banner/2.webp" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/banner/2.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="banner-image__item" data-aos="fade-left" data-aos-duration="1000">
                                 <div class="banner-image__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/banner/3.webp" style="border-radius: 15px;" alt="banner-image-banner">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/banner/3.webp" style="border-radius: 15px;" alt="banner-image-banner">
                                 </div>
                             </div>
                         </div>
@@ -91,15 +91,15 @@
             </div>
         </div>
         <div class="banner__shape banner__shape--style1">
-            <span class="banner__shape-item banner__shape-item--animation"><img loading="lazy" decoding="async" src="assets/images/shape/home1/1.webp"
+            <span class="banner__shape-item banner__shape-item--animation"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/1.webp"
                     alt="roket"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp"
+            <span class="banner__shape-item banner__shpae-item--animation"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp"
                     alt="book"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img loading="lazy" decoding="async" src="assets/images/shape/home1/3.webp"
+            <span class="banner__shape-item banner__shpae-item--animation"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/3.webp"
                     alt="belon"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img loading="lazy" decoding="async" src="assets/images/shape/home1/4.webp"
+            <span class="banner__shape-item banner__shpae-item--animation"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/4.webp"
                     alt="triangle"></span>
-            <span class="banner__shape-item banner__shpae-item--animation"><img loading="lazy" decoding="async" src="assets/images/shape/home1/5.webp"
+            <span class="banner__shape-item banner__shpae-item--animation"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/5.webp"
                     alt="circle"></span>
             <div class="banner__shape-item">
                 <div class="reviews">
@@ -171,11 +171,11 @@
                         <div class="about__thumb" data-aos="fade-right" data-aos-duration="800">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img loading="lazy" decoding="async" src="assets/images/about/1.webp" alt="about-image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/about/1.webp" alt="about-image">
                                     <div class="about__thumb-video">
-                                        <img loading="lazy" decoding="async" src="assets/images/about/2.webp" alt="intro-thumbil">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/about/2.webp" alt="intro-thumbil">
                                         <div class="about__thumb-plybtn">
-                                            <a href="https://www.youtube.com/watch?v=2bKSmmyJRug" data-fslightbox><img loading="lazy" decoding="async"
+                                            <a href="https://www.youtube.com/watch?v=2bKSmmyJRug" data-fslightbox><img width="auto" height="100%" loading="lazy" decoding="async"
                                                     src="assets/images/about/play-icon.png" alt="ply-btn"></a>
                                         </div>
                                     </div>
@@ -190,12 +190,12 @@
                                 <h2>Studio Background</h2>
                                 <p>Moniqart strives to foster imagination and creativity in our studio by helping students create beautiful art. Whether you’re coming in to spend the day or to truly exploit your talent, you’ll find a blank canvas awaiting you where the world is your oyster. We opened our doors in 2006 and have been creating art and forming artists since.</p>
                                 <ul class="about-list">
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Skill Development</li>
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Creative Exploration</li>
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exam Preparation</li>
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exhibition and Showcase Opportunities</li>
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Art Therapy and Emotional Well-being</li>
-                                    <li> <img loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Resources and Materials</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Skill Development</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Creative Exploration</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exam Preparation</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exhibition and Showcase Opportunities</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Art Therapy and Emotional Well-being</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Resources and Materials</li>
                                 </ul>
                                 <a href="about-us" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
                                     +</a>
@@ -231,9 +231,9 @@
                     <div class="col-lg-6">
                         <div class="community__thumb">
                             <div class="community__thumb-inner">
-                                <img loading="lazy" decoding="async" src="assets/images/story/1.webp" alt="commnunity-image">
+                                <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/story/1.webp" alt="commnunity-image">
                                 <div class="community__thumb-playbtn">
-                                    <a href="https://www.youtube.com/watch?v=01ChFIwexjc&t=85s" data-fslightbox><img loading="lazy" decoding="async"
+                                    <a href="https://www.youtube.com/watch?v=01ChFIwexjc&t=85s" data-fslightbox><img width="auto" height="100%" loading="lazy" decoding="async"
                                             src="assets/images/community/home2/btn.png" alt="ply-btn"></a>
                                 </div>
                             </div>
@@ -279,10 +279,10 @@
             <div class="story__wrapper">
                 <div class="story__thumb">
                     <div class="story__thumb-inner">
-                        <img loading="lazy" decoding="async" src="assets/images/story/11.webp" alt="story-image">
+                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/story/11.webp" alt="story-image">
                         <div class="story__thumb-playbtn">
                             <a href="https://www.youtube.com/watch?v=rlmtZnNQ_Z8&t=86s" data-fslightbox><img
-                                loading="lazy" decoding="async" src="assets/images/story/2.png" alt="ply-btn"></a>
+                                loading="lazy" width="auto" height="100%" decoding="async" src="assets/images/story/2.png" alt="ply-btn"></a>
                         </div>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/1.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/1.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -321,7 +321,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/2.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/2.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -336,7 +336,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/3.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/3.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -351,7 +351,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/4.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/4.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -370,7 +370,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/5.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/5.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -385,7 +385,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/6.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/6.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -400,7 +400,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/7.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/7.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -415,7 +415,7 @@
                             <div class="team__item">
                                 <div class="team__item-inner">
                                     <div class="team__item-thumb">
-                                        <img loading="lazy" decoding="async" src="assets/images/team/home3/8.jpg" alt="Team Image">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home3/8.jpg" alt="Team Image">
                                     </div>
                                     <div class="team__item-content">
                                         <div class="team__item-author">
@@ -457,7 +457,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/1.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/1.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -472,7 +472,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/2.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/2.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -488,7 +488,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/3.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/3.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -503,7 +503,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/4.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/4.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -518,7 +518,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/5.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/5.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -533,7 +533,7 @@
                         <div class="team__item">
                             <div class="team__item-inner">
                                 <div class="team__item-thumb">
-                                    <img loading="lazy" decoding="async" src="assets/images/team/home1/6.png" alt="Team Image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/team/home1/6.png" alt="Team Image">
                                 </div>
                                 <div class="team__item-content team__item-content--style1">
                                     <div class="team__item-author">
@@ -566,18 +566,18 @@
                             <p> <i class="fa-solid fa-heart"></i> Happy Students</p>
                             <div class="community__reviews-content">
                                 <ul>
-                                    <li><img loading="lazy" decoding="async" src="assets/images/community/avator/home1/3.jpg" alt="user image"></li>
-                                    <li><img loading="lazy" decoding="async" src="assets/images/community/avator/home1/1.jpg" alt="user image"></li>
-                                    <li><img loading="lazy" decoding="async" src="assets/images/community/avator/home1/2.jpg" alt="user image"></li>
-                                    <li><img loading="lazy" decoding="async" src="assets/images/community/avator/home1/4.jpg" alt="user image"></li>
-                                    <li><img loading="lazy" decoding="async" src="assets/images/community/avator/home1/5.jpg" alt="user image"></li>
+                                    <li><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/avator/home1/3.jpg" alt="user image"></li>
+                                    <li><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/avator/home1/1.jpg" alt="user image"></li>
+                                    <li><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/avator/home1/2.jpg" alt="user image"></li>
+                                    <li><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/avator/home1/4.jpg" alt="user image"></li>
+                                    <li><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/avator/home1/5.jpg" alt="user image"></li>
                                 </ul>
                                 <p class="count mb-0">+<span class="purecounter" data-purecounter-start="10"
                                         data-purecounter-end="25" data-purecounter-once="false">25</span>K</p>
 
                             </div>
                         </div>
-                        <img loading="lazy" decoding="async" src="assets/images/community/1.png" alt="community image" data-aos="fade-up"
+                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/1.png" alt="community image" data-aos="fade-up"
                             data-aos-duration="800">
                         <a href="signup" class="trk-btn trk-btn--rounded trk-btn--secondary1">Join Now</a>
                     </div>
@@ -609,7 +609,7 @@
                                         <div class="testimonial__footer">
                                             <div class="testimonial__author">
                                                 <div class="testimonial__author-thumb">
-                                                    <img loading="lazy" decoding="async" src="assets/images/testimonial/home1/3.png" alt="author">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/3.png" alt="author">
                                                 </div>
                                                 <div class="testimonial__author-designation">
                                                     <h6>Pritam Waithi</h6>
@@ -639,7 +639,7 @@
                                         <div class="testimonial__footer">
                                             <div class="testimonial__author">
                                                 <div class="testimonial__author-thumb">
-                                                    <img loading="lazy" decoding="async" src="assets/images/testimonial/home1/2.png" alt="author">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/2.png" alt="author">
                                                 </div>
                                                 <div class="testimonial__author-designation">
                                                     <h6>Sarita Visave</h6>
@@ -670,7 +670,7 @@
                                         <div class="testimonial__footer">
                                             <div class="testimonial__author">
                                                 <div class="testimonial__author-thumb">
-                                                    <img loading="lazy" decoding="async" src="assets/images/testimonial/home1/1.png" alt="author">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/1.png" alt="author">
                                                 </div>
                                                 <div class="testimonial__author-designation">
                                                     <h6>The Juliusantony</h6>
@@ -700,7 +700,7 @@
                                         <div class="testimonial__footer">
                                             <div class="testimonial__author">
                                                 <div class="testimonial__author-thumb">
-                                                    <img loading="lazy" decoding="async" src="assets/images/testimonial/home1/5.png" alt="author">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/5.png" alt="author">
                                                 </div>
                                                 <div class="testimonial__author-designation">
                                                     <h6>Stefs Aloor</h6>
@@ -723,9 +723,9 @@
                     <div class="slider__pagination-3"></div>
                 </div>
                 <div class="testimonial__shape">
-                    <span class="testimonial__shape-item"><img loading="lazy" decoding="async" src="assets/images/shape/home1/1.webp"
+                    <span class="testimonial__shape-item"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/1.webp"
                             alt="shpae"></span>
-                    <span class="testimonial__shape-item"><img loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp"
+                    <span class="testimonial__shape-item"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp"
                             alt="shpae"></span>
                 </div>
             </div>
@@ -762,35 +762,35 @@
                         <div class="swiper-slide">
                             <div class="partner__item">
                                 <div class="partner__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/partner/1.png" alt="partner logo">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/partner/1.png" alt="partner logo">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="partner__item">
                                 <div class="partner__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/partner/2.png" alt="partner logo">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/partner/2.png" alt="partner logo">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="partner__item">
                                 <div class="partner__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/partner/3.png" alt="partner logo">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/partner/3.png" alt="partner logo">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="partner__item">
                                 <div class="partner__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/partner/4.png" alt="partner logo">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/partner/4.png" alt="partner logo">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="partner__item">
                                 <div class="partner__item-inner">
-                                    <img loading="lazy" decoding="async" src="assets/images/partner/5.png" alt="partner logo">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/partner/5.png" alt="partner logo">
                                 </div>
                             </div>
                         </div>
