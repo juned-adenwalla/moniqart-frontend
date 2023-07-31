@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moniqart is a Art Therapy studio/Art Gallery / Art School belonging to Mona Joy an Artist / Art Therapist based in Kopar Khairane Navi Mumbai India.   classes /sessions with various art forms , offering coaching and mentoring  for entrances like NIFT, NID, NATA as well as Elementary and Intermediate Art Exams. career counselling and personality assessments with ART. Meta Cognition thorugh Art.">
+    <meta name="keywords" content="Moniqart, Art School In Koparkhairane, Art school , Art studio, moniqart drawing school, school in koparkhairane, NIFT, NID, NATA, Paintings, Calligraphy, Guitar Classes, Glass Painting, Canvas Painting">
     <title>Art Therapy | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
@@ -26,6 +28,10 @@
     }
     .header-bar.header-bar.home1 span {
         background-color: black;
+    }
+    .team__item-thumb{
+        height: 270px;
+        width: 270px;
     }
 </style>
 <body>
@@ -90,7 +96,42 @@
     <!-- ===============>> Banner section end here <<================= -->
 
 
-
+    <section style="margin-top: 70px;" class="about about--style1 padding-top">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row gx-4 gy-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about__thumb" data-aos="fade-right" data-aos-duration="800">
+                            <div class="about__thumb-inner">
+                                <div class="about__thumb-image">
+                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/about/thumb.webp" alt="about-image">
+                                    <div class="about__thumb-video">
+                                        <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/about/2.webp" alt="intro-thumbil">
+                                        <div class="about__thumb-plybtn">
+                                            <a href="https://youtu.be/01ChFIwexjc" data-fslightbox><img width="auto" height="100%" loading="lazy" decoding="async"
+                                                    src="assets/images/about/play-icon.png" alt="ply-btn"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__content" data-aos="fade-left" data-aos-duration="800">
+                            <div class="about__content-inner">
+                                <span class="subtitle">About Us</span>
+                                <h2>Studio Background</h2>
+                                <p>AATA,American Art Therapy Association-  definition of the profession:
+                                Art therapy is the therapeutic use of art making, within a professional relationship, by people who experience illness, trauma or challenges in living, and by people who seek personal development.</p>
+                                <a href="about-us" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
+                                    +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- ===============>> partner section start here <<================= -->
@@ -2826,6 +2867,51 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/14.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>CAMLIN ORGANISED ART TEACHERS TRAINING</a> </h6>
+                                            <p>Artist / Art Therapist  Mona Joy was invited to conduct  this programe at THANE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/15.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>ARTIST /ART THERAPIST MONA JOY</a> </h6>
+                                            <p>Judging the BMC  Kala sparda Event 2020</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/16.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>GUEST SPEAKER 2020</a> </h6>
+                                            <p>Art as Therapy , Training teachers to identify  issues to be addressed and the need of Art  as an important subject</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="team__slider2 swiper">
@@ -2890,6 +2976,51 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/11.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>ARTIST/ART THERAPIST MONA JOY  JUDGING AN ART EVENT</a> </h6>
+                                            <!-- <p>Artist / Art Therapist Mona Joy was invited to write an Article about ABT or Arts Based Therapy</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/12.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>ARTIST MONA JOY PART OF THE INTERNATIONAL JURY MEMBER</a> </h6>
+                                            <p>Kokyo Camlin had an international Art Competition  and Artist MONA JOY was part of the 3 member international jury</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team__item">
+                                <div class="team__item-inner">
+                                    <div class="team__item-thumb">
+                                        <img src="assets/images/team/home3/13.webp" alt="Team Image">
+                                    </div>
+                                    <div class="team__item-content">
+                                        <div class="team__item-author">
+                                            <h6><a>KOKYO CAMLIN ORGANISED ART TEACHER'S MEET</a> </h6>
+                                            <p>Talk on Art  as  Therapy to 300 Art Teachers from Navi Mumbai</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center">
@@ -2898,8 +3029,6 @@
         </div>
     </section>
     <!-- ===============>> Team section end here <<================= -->
-
-
 
 
     <!-- ===============>> Testimonial section start here <<================= -->

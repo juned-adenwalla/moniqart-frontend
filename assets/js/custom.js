@@ -647,16 +647,16 @@ if (pathName === "/index-3.html") {
 // Lazy Loading 
 // Function to lazy load images
 // Function to add the lazy loading attribute to all images
-function addLazyLoadAttribute() {
-    const images = document.querySelectorAll('img');
+// function addLazyLoadAttribute() {
+//     const images = document.querySelectorAll('img');
 
-    images.forEach(img => {
-      img.setAttribute('loading', 'lazy');
-    });
-  }
+//     images.forEach(img => {
+//       img.setAttribute('loading', 'lazy');
+//     });
+//   }
 
-  // Run the function when the page loads
-  window.addEventListener('load', addLazyLoadAttribute);
+//   // Run the function when the page loads
+//   window.addEventListener('load', addLazyLoadAttribute);
 
 
 

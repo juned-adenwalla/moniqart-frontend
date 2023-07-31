@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moniqart is a Art studio, belonging to Mona Joy an Artist based in Kopar Khairane NaviMumbai India. School in koparkhairane and Art studio with classes for various art forms and also offers coaching for entrances like NIFT, NID, NATA as well as Elementary and Intermediate Art Exams.">
+    <meta name="keywords" content="Moniqart, Art School In Koparkhairane, Art school , Art studio, moniqart drawing school, school in koparkhairane, NIFT, NID, NATA, Paintings, Calligraphy, Guitar Classes, Glass Painting, Canvas Painting">
     <title>All Courses | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">

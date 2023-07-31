@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage | <?php echo _siteconfig('_sitetitle') ?></title>
+    <meta name="description" content="Moniqart is a Art studio, belonging to Mona Joy an Artist based in Kopar Khairane NaviMumbai India. School in koparkhairane and Art studio with classes for various art forms and also offers coaching for entrances like NIFT, NID, NATA as well as Elementary and Intermediate Art Exams.">
+    <meta name="keywords" content="Moniqart, Art School In Koparkhairane, Art school , Art studio, moniqart drawing school, school in koparkhairane, NIFT, NID, NATA, Paintings, Calligraphy, Guitar Classes, Glass Painting, Canvas Painting">
+    <title>Moniqart | Art Studio | Navi Mumbai | Art School | Koparkhairane | <?php echo _siteconfig('_sitetitle') ?></title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
@@ -28,7 +30,7 @@
         background-color: black;
     }
     .testimonial--style2 .testimonial__item-inner {
-        height: 350px;
+        height: 380px;
     }
 </style>
 <body>
@@ -192,10 +194,13 @@
                                 <ul class="about-list">
                                     <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Skill Development</li>
                                     <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Creative Exploration</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Emotional Well-being</li>
                                     <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exam Preparation</li>
-                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exhibition and Showcase Opportunities</li>
-                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Art Therapy and Emotional Well-being</li>
-                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Resources and Materials</li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Exhibition </li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Showcase Opportunities </li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Art Therapy </li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Resources </li>
+                                    <li> <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/icon/svg/1.svg" alt="list-icon"> Access to Materials</li>
                                 </ul>
                                 <a href="about-us" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore More
                                     +</a>
@@ -439,7 +444,7 @@
 
 
     <!-- ===============>> Team section start here <<================= -->
-    <section class="team  team--style1 padding-bottom" style="display: none;">
+    <!-- <section class="team  team--style1 padding-bottom" style="display: none;">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="team__wrapper">
                 <div class="row g-4">
@@ -547,7 +552,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ===============>> Team section end here <<================= -->
 
 
@@ -719,14 +724,103 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial__item">
+                                <div class="testimonial__item-inner">
+                                    <div class="testimonial__item-content">
+                                        <span><i class="fa-solid fa-quote-left"></i></span>
+                                        <p>
+                                            “Best  place  for working professionals, who want to learn and grow in Art. I joined Moniqart on Jan 2016, achieved incredible growth in Art. More forms to explore..journey continues....”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/6.webp" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Debashree Mullick</h6>
+                                                    <span>Senior Design Engineer</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial__item">
+                                <div class="testimonial__item-inner">
+                                    <div class="testimonial__item-content">
+                                        <span><i class="fa-solid fa-quote-left"></i></span>
+                                        <p>
+                                            “Very good learning Experience ,not only in class  but also in the online sessions taken by Mona Madam; she is  very pleasant & generous if i have any difficulty , she helps with voice and video calls , the smallest query  is sorted out by her, i recommend MONIQART to those who want to improve their Art-skills and get certified as an Art Teacher  .”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/7.webp" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Rekha Bhanushali</h6>
+                                                    <span>Art Teacher</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial__item">
+                                <div class="testimonial__item-inner">
+                                    <div class="testimonial__item-content">
+                                        <span><i class="fa-solid fa-quote-left"></i></span>
+                                        <p>
+                                            “I commissioned a Portrait as an  Anniversary gift  for my  Uncle and Aunt and i got a bigger size [than i expected ]Realistic portrait  which looks like  a 'photograph ', i am so thrilled ! thanks to Artist / Art Therapist Mona joy .”
+                                        </p>
+                                        <div class="testimonial__footer">
+                                            <div class="testimonial__author">
+                                                <div class="testimonial__author-thumb">
+                                                    <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/testimonial/home1/8.webp" alt="author">
+                                                </div>
+                                                <div class="testimonial__author-designation">
+                                                    <h6>Satisfied</h6>
+                                                    <span>Art Buyer</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial__rating">
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="slider__pagination-3"></div>
                 </div>
                 <div class="testimonial__shape">
                     <span class="testimonial__shape-item"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/1.webp"
                             alt="shpae"></span>
-                    <span class="testimonial__shape-item"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp"
-                            alt="shpae"></span>
+                    <span class="testimonial__shape-item"><img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/shape/home1/2.webp" alt="shpae"></span>
                 </div>
             </div>
         </div>
@@ -751,7 +845,7 @@
     <!-- ===============>> Blog section end here <<================= -->
 
     <!-- ===============>> partner section start here <<================= -->
-    <section class="partner padding-bottom" data-aos="fade-up" data-aos-duration="800" style="display: none;">
+    <!-- <section class="partner padding-bottom" data-aos="fade-up" data-aos-duration="800" style="display: none;">
         <div class="container">
             <div class="section-header text-center">
                 <h6>Trusted by 4,000+ companies</h6>
@@ -798,7 +892,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ===============>> partner section end here <<================= -->
 
 
