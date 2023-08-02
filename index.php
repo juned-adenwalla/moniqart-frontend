@@ -148,6 +148,7 @@
                         <div class="section-header pe-3">
                             <h2>Art-Based Interventions</h2>
                             <p>At MONIQART, we cover a full range of courses across all levels of creativity, knowledge and education.</p>
+                            <span>* Remedial Art classes  for concentration improvement * Behaviour modification through ART * cognitive development through ART.* Arts  based exercises , ebooks specially created by Art therapist Mona Joy</span>
                             <a href="courses" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
                                 Categories</a>
                         </div>

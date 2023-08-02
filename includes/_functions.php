@@ -491,7 +491,7 @@ function displayCourses($category = null, $search = null, $layout = 'slider', $l
                                     <div class="course__content-bottom">
                                         <a><img src="assets/images/avatar/2.png" alt="avatar">' . singleDetail('tblusers', '_id', $mentorName, '_username') . '</a>
                                         <div class="course-price">
-                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($discountPrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($coursePrice,$_SESSION['baseCurrency']) . '</span>
+                                            <del>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($coursePrice,$_SESSION['baseCurrency']) . '</del> <span>' . currency_symbol($_SESSION['baseCurrency']) . ' ' . _conversion($discountPrice,$_SESSION['baseCurrency']) . '</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1250,7 +1250,7 @@ function paymentCallback($razorpayId, $userEmail, $amount, $currency, $status, $
                 }
             }
         }else{
-            echo "<script>window.location.href = 'my-account?purchase=failed';</script>";
+            return false;
         }
     } else {
         echo "Error: " . $stmt->error;
@@ -1269,7 +1269,7 @@ function insertPurchasedCourse($courseId, $userId) {
     $query = "INSERT INTO `tblpurchasedcourses`(`_courseid`, `_userid`, `_coursestatus`) VALUES ('$courseId', '$userId', 'active')";
     // Execute the query
     if (mysqli_query($conn, $query)) {
-        if(emailNotification('purchase',$courseId,'Purchase Successfull')){
+        if(emailNotification('purchase',$courseId,'Purchase Successfull',singleDetail('tblusers','_userphone',$userId,'_useremail'))){
             return true;
         }
     } else {
@@ -1459,9 +1459,9 @@ use PHPMailer\PHPMailer\Exception;
 // Function to send email notification 
 function emailNotification($notification,$productid = null,$subject,$sendemail = null,$lessonid = null,$name = null,$phone = null, $email = null, $message = null){
     require('_config.php');
-    if(!session_status()){
+    // if(!session_status()){
         session_start();
-    }
+    // }
     $sql = "SELECT * FROM `tblemailconfig` WHERE `_supplierstatus` = 'true'";
     $query = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($query);
