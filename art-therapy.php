@@ -2802,7 +2802,7 @@
         <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
             <div class="section-header text-center">
                 <h2>News and Articles</h2>
-                <p class="style2">Stay connected with us for daily updates, breaking news, and in-depth features. We are here to keep you informed, enlightened, and engaged with the world's most pressing stories.</p>
+                <p class="style2">Stay connected with us for daily updates, breaking news, and in-depth features. We are here to keep you informed, enlightened, and engaged</p>
             </div>
             <div class="team__wrapper">
                 <div class="team__slider1 swiper mb-5">
