@@ -67,7 +67,7 @@
                                 </div>
                                 <h2 class="about-title">Healing Through Art: Guided Therapy with Mona Joy</h2>
                                 <p>We believe that art has the ability to heal. Our therapy sessions are led by trained and certified art therapist Mona Joy who guides patients in the creative process, encourages them to express themselves through art, and provides support and guidance throughout the process</p>
-                                <q style="font-style:italic;">Many of the motions involved in making art, such as holding a paintbrush or scribbling with a crayon, are essential to the growth of fine motor skills in young children and adults as well</q>- Mona Joy
+                                <q style="font-style:italic;">You can't teach  " A " for apple to a child without an illustration of it ....just the sound  "Aah" cannot be understood by a child  , hence 'Art' in its root is important from the start </q>- Mona Joy
                             </div>
                             <div class="about__counter">
                                 <div class="about__counter-item">
@@ -97,7 +97,7 @@
                         <div class="about__thumb" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img src="assets/images/about/2.png" alt="about-image">
+                                    <img src="assets/images/about/2.webp" alt="about-image">
                                 </div>
                                 <p style="margin-top: 10px;text-align:center;font-size:20px">Founder and Director</p>
                             </div>

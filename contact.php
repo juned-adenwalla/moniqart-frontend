@@ -110,8 +110,9 @@
                                     </div>
                                     <div class="contact__item-content">
                                         <h5>Hours of operation</h5>
-                                        <p class="mb-0">Monday - Friday: 09.00 - 20.00</p>
-                                        <p class="mb-0">Sunday & Saturday: 10.30 - 22..30</p>
+                                        <p class="mb-0">Tuesday - Saturday: 11:30AM - 7:30PM</p>
+                                        <p class="mb-0">Sunday : 11:30AM - 3:00PM</p>
+                                        <p class="mb-0">Monday : Closed</p>
                                     </div>
                                 </div>
                             </div>

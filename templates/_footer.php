@@ -83,13 +83,13 @@
                                 <div class="footer__links-content">
                                     <ul class="footer__linklist">
                                         <li class="footer__linklist-item">
-                                            <p class="m-0">Mon-Sat: 10:00AM - 4.00PM</p>
+                                            <p class="m-0">Tue-Sat: 11:30AM - 7:30PM</p>
                                         </li>
                                         <li class="footer__linklist-item">
-                                            <p class="m-0">Sunday: 10:00AM - 4.00PM</p>
+                                            <p class="m-0">Sunday: 11:30AM - 3:00PM</p>
                                         </li>
                                         <li class="footer__linklist-item">
-                                            <p class="m-0">Friday: Close</p>
+                                            <p class="m-0">Monday: Closed</p>
                                         </li>
                                     </ul>
                                     <ul class="social mt-4">
