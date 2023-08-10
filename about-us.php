@@ -216,7 +216,7 @@
                         <div class="about__thumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                             <div class="about__thumb-inner">
                                 <div class="about__thumb-image">
-                                    <img style="border-radius: 12px;" src="assets/images/about/home3/1.webp" alt="about-image">
+                                    <img style="border-radius: 12px;" src="assets/images/about/home3/1.jpeg" alt="about-image">
                                 </div>
                             </div>
                             <div class="about__icon">
