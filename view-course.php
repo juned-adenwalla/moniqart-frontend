@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="my-account" style="width:105%;border-radius:8px;margin-top:50px;margin-left:-10px;background-color: #e5b519;" class="trk-btn trk-btn--rounded trk-btn--primary1">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSci0jnyK7ruSZqiOCle1zgxwDHDRzFP4moh1qjFKSJ3vm7eiA/viewform?usp=sf_link" style="width:105%;border-radius:8px;margin-top:50px;margin-left:-10px;background-color: #e5b519;" class="trk-btn trk-btn--rounded trk-btn--primary1">
                         <span>Get Certificate</span>
                     </a>
                 </div>

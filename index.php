@@ -148,7 +148,11 @@
                         <div class="section-header pe-3">
                             <h2>Art-Based Interventions</h2>
                             <p>At MONIQART, we cover a full range of courses across all levels of creativity, knowledge and education.</p>
-                            <span>* Remedial Art classes  for concentration improvement * Behaviour modification through ART * cognitive development through ART.* Arts  based exercises , ebooks specially created by Art therapist Mona Joy</span>
+                            <span>* Remedial Art classes  for concentration improvement</span><br>
+                            <span>* Behaviour modification through ART</span><br>
+                            <span>* cognitive development through ART</span><br>
+                            <span>* Arts  based exercises</span><br>
+                            <span>ebooks specially created by Art therapist Mona Joy</span><br>
                             <a href="courses" class="trk-btn trk-btn--rounded trk-btn--secondary1">Explore
                                 Categories</a>
                         </div>
@@ -585,7 +589,7 @@
                         </div>
                         <img width="auto" height="100%" loading="lazy" decoding="async" src="assets/images/community/1.png" alt="community image" data-aos="fade-up"
                             data-aos-duration="800">
-                        <a href="signup" class="trk-btn trk-btn--rounded trk-btn--secondary1">Join Now</a>
+                        <a href="https://chat.whatsapp.com/FurI1R0Je4H77eYBHgCr9A" class="trk-btn trk-btn--rounded trk-btn--secondary1">Join Now</a>
                     </div>
                 </div>
             </div>
